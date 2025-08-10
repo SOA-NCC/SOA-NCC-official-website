@@ -334,3 +334,79 @@ document.addEventListener('DOMContentLoaded', function() {
         dropdown.classList.toggle('active');
     });
 });
+
+
+// About section image slideshow
+let aboutSlideIndex = 0;
+let aboutSlideInterval;
+
+function showAboutSlide(index) {
+    const slides = document.querySelectorAll('.about-slide');
+    const indicators = document.querySelectorAll('.indicator');
+    
+    // Remove active class from all slides and indicators
+    slides.forEach(slide => slide.classList.remove('active'));
+    indicators.forEach(indicator => indicator.classList.remove('active'));
+    
+    // Show current slide and highlight indicator
+    slides[index].classList.add('active');
+    indicators[index].classList.add('active');
+}
+
+function nextAboutSlide() {
+    const slides = document.querySelectorAll('.about-slide');
+    aboutSlideIndex = (aboutSlideIndex + 1) % slides.length;
+    showAboutSlide(aboutSlideIndex);
+}
+
+function currentSlide(index) {
+    aboutSlideIndex = index - 1;
+    showAboutSlide(aboutSlideIndex);
+    
+    // Restart the interval
+    clearInterval(aboutSlideInterval);
+    startAboutSlideshow();
+}
+
+function startAboutSlideshow() {
+    aboutSlideInterval = setInterval(nextAboutSlide, 8000); // Change every 8 seconds
+}
+
+// Initialize about slideshow when page loads
+document.addEventListener('DOMContentLoaded', function() {
+    // Start the slideshow
+    startAboutSlideshow();
+    
+    // Feature card interactions
+    const featureCards = document.querySelectorAll('.feature-card');
+    
+    featureCards.forEach(card => {
+        card.addEventListener('click', function() {
+            const feature = this.dataset.feature;
+            
+            // Add a subtle animation
+            this.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+                this.style.transform = '';
+            }, 150);
+            
+            // You can add more specific actions for each feature here
+            console.log(`Feature clicked: ${feature}`);
+        });
+    });
+});
+
+// Pause slideshow when user hovers over the image container
+document.addEventListener('DOMContentLoaded', function() {
+    const imageContainer = document.querySelector('.about-image-container');
+    
+    if (imageContainer) {
+        imageContainer.addEventListener('mouseenter', function() {
+            clearInterval(aboutSlideInterval);
+        });
+        
+        imageContainer.addEventListener('mouseleave', function() {
+            startAboutSlideshow();
+        });
+    }
+});

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="styles.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
+
 <body>
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
@@ -23,7 +25,7 @@
                 </div>
                 <div class="brand-text">
                     <span class="brand-title">SOA NCC</span>
-                    <span class="brand-subtitle">4 (O) CTC        |       1 (O) BN</span>
+                    <span class="brand-subtitle">4 (O) CTC | 1 (O) BN</span>
                     <!-- <span class="brand-subtitle">1 (O) BN</span> -->
 
                 </div>
@@ -59,9 +61,9 @@
         <div class="hero-content">
             <div class="hero-text">
                 <h1 class="hero-title">SOA NCC</h1>
-                <h2 class="hero-subtitle">4 (O) CTC        |       1 (O) BN</h2>
+                <h2 class="hero-subtitle">4 (O) CTC | 1 (O) BN</h2>
                 <p class="hero-description">Unity and Discipline | Character. Leadership. Service.</p>
-                
+
                 <div class="hero-buttons">
                     <button class="btn btn-primary" onclick="scrollToSection('about')">Explore</button>
                     <button class="btn btn-outline" onclick="scrollToSection('join')">Why Join</button>
@@ -69,85 +71,135 @@
                 </div>
             </div>
         </div>
-        
+
         <div class="scroll-indicator">
             <i class="fas fa-chevron-down"></i>
         </div>
     </section>
 
-    <!-- About Section -->
+    <!-- About section -->
     <section id="about" class="about">
         <div class="container">
             <div class="about-grid">
-                <div class="about-image">
-                    <img src="soanccwebsite/media/AboutPic.jpg" />
+                <!-- Auto-changing image slideshow -->
+                <div class="about-image-container">
+                    <div class="about-image">
+                        <img src="AboutPic.jpg" alt="NCC Training 1" class="about-slide active" />
+                        <img src="about-pic-2.jpg"
+                            alt="NCC cadets in uniform participating in a group outdoor training exercise on a green field with trees in the background. The cadets appear focused and disciplined, creating an atmosphere of teamwork and determination."
+                            class="about-slide" />
+                        <img src="about-pic-3.jpg" alt="NCC Training 3" class="about-slide" />
+                    </div>
+                    <div class="image-indicators">
+                        <span class="indicator active" onclick="currentSlide(1)"></span>
+                        <span class="indicator" onclick="currentSlide(2)"></span>
+                        <span class="indicator" onclick="currentSlide(3)"></span>
+                    </div>
                 </div>
-                
+
                 <div class="about-content">
-                    <h2>About SOA NCC</h2>
+
                     <div class="about-text">
-                        <p>Established as part of the prestigious 4(O) CTC under the Odisha Directorate, SOA NCC Unit has been a beacon of discipline, leadership, and national service since its formation.</p>
-                        <p>Affiliated with Siksha 'O' Anusandhan University, our unit is committed to developing the character and leadership qualities of young cadets while instilling a deep sense of patriotism and national unity.</p>
-                    </div>
-                    
-                    <div class="vision-mission">
-                        <div class="vision-card">
-                            <h3>Our Vision</h3>
-                            <p>To empower youth with leadership skills and national consciousness</p>
-                        </div>
-                        <div class="mission-card">
-                            <h3>Our Motto</h3>
-                            <p>"Unity and Discipline" - Building tomorrow's leaders today</p>
-                        </div>
+                        <p>
+                            Established as an integral part of the prestigious <strong>4(O) CTC | 1(O) BN under the
+                                Odisha
+                                Directorate</strong>,
+                            SOA NCC Unit stands as a beacon of excellence in character development, leadership training,
+                            and national service.
+                        </p>
+                        <p>
+                            Affiliated with <strong>Siksha 'O' Anusandhan University</strong>, we are committed to
+                            nurturing young minds
+                            into disciplined citizens and future leaders who embody the highest ideals of patriotism,
+                            integrity, and service.
+                        </p>
                     </div>
                 </div>
+
+                <!-- Interactive Features Grid
+                <div class="interactive-features">
+                    <div class="feature-card" data-feature="leadership">
+                        <i class="fas fa-medal"></i>
+                        <h3>Leadership Development</h3>
+                        <p>Building future leaders through structured training and real-world experience</p>
+                    </div>
+                    <div class="feature-card" data-feature="discipline">
+                        <i class="fas fa-shield-alt"></i>
+                        <h3>Character Building</h3>
+                        <p>Instilling values of discipline, integrity, and national service</p>
+                    </div>
+                    <div class="feature-card" data-feature="adventure">
+                        <i class="fas fa-mountain"></i>
+                        <h3>Adventure Training</h3>
+                        <p>Exciting camps, trekking, and outdoor activities for holistic development</p>
+                    </div>
+                    <div class="feature-card" data-feature="service">
+                        <i class="fas fa-hands-helping"></i>
+                        <h3>Community Service</h3>
+                        <p>Contributing to society through various social service initiatives</p>
+                    </div>
+                </div> -->
             </div>
+        </div>
         </div>
     </section>
 
-    <!-- Objectives Section -->
-    <section id="objectives" class="objectives">
+
+    <!-- Enhanced Objectives Section -->
+   <section class="ncc-objectives">
         <div class="container">
-            <div class="section-header">
-                <h2>NCC Objectives</h2>
-                <p>Building character, developing leadership, and fostering national unity through disciplined training</p>
+            <div class="core-principles-badge">
+                <svg class="star-icon" viewBox="0 0 24 24">
+                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                </svg>
+                Core Principles
             </div>
             
-            <div class="objectives-grid">
-                <div class="objective-card" >
-                    <div class="objective-icon">
-                        <i class="fas fa-bullseye"></i>
+            <h1 class="main-title">NCC Objectives</h1>
+            
+            <p class="subtitle">
+                Building character, developing leadership, and fostering national unity through disciplined training and service
+            </p>
+            
+            <div class="cards-container">
+                <div class="card">
+                    <div class="card-icon aims-icon"></div>
+                    <h3 class="card-title">NCC Aims</h3>
+                    <div class="card-content">
+                        <ul>
+                            <li>Develop character, comradeship, discipline, and leadership</li>
+                            <li>Create a human resource of organized, trained youth</li>
+                            <li>Provide environment to motivate young people</li>
+                        </ul>
                     </div>
-                    <h3>NCC Aims</h3>
-                    <ul>
-                        <li>Develop character and leadership</li>
-                        <li>Create a human resource of organized youth</li>
-                        <li>Provide environment to motivate youth</li>
-                    </ul>
                 </div>
                 
-                <div class="objective-card">
-                    <div class="objective-icon">
-                        <i class="fas fa-shield-alt"></i>
+                <div class="card">
+                    <div class="card-icon vision-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
+                        </svg>
                     </div>
-                    <h3>Vision</h3>
-                    <ul>
-                        <li>Empower volunteer youth</li>
-                        <li>Develop leadership and character</li>
-                        <li>Create disciplined citizens</li>
-                    </ul>
+                    <h3 class="card-title">Vision</h3>
+                    <div class="card-content">
+                        <ul>
+                            <li>Empower volunteer youth to become leaders</li>
+                            <li>Develop leadership and character building</li>
+                            <li>Create disciplined and responsible citizens</li>
+                        </ul>
+                    </div>
                 </div>
                 
-                <div class="objective-card">
-                    <div class="objective-icon">
-                        <i class="fas fa-users"></i>
+                <div class="card">
+                    <div class="card-icon motto-icon"></div>
+                    <h3 class="card-title">Motto</h3>
+                    <div class="card-content">
+                        <ul>
+                            <li>Unity and Discipline as core values</li>
+                            <li>National Integration and secular outlook</li>
+                            <li>Spirit of adventure and sportsmanship</li>
+                        </ul>
                     </div>
-                    <h3>Motto</h3>
-                    <ul>
-                        <li>Unity and Discipline</li>
-                        <li>National Integration</li>
-                        <li>Secular Outlook</li>
-                    </ul>
                 </div>
             </div>
         </div>
@@ -158,9 +210,10 @@
         <div class="container">
             <div class="section-header">
                 <h2>Our Activities</h2>
-                <p>Engaging in diverse activities that build character, serve the nation, and develop leadership skills</p>
+                <p>Engaging in diverse activities that build character, serve the nation, and develop
+                    leadership skills</p>
             </div>
-            
+
             <div class="activities-grid">
                 <div class="activity-card">
                     <div class="activity-icon">
@@ -169,7 +222,7 @@
                     <h3>Parade</h3>
                     <p>Precision drill and ceremonial parades showcasing discipline and coordination</p>
                 </div>
-                
+
                 <div class="activity-card">
                     <div class="activity-icon">
                         <i class="fas fa-heart"></i>
@@ -177,15 +230,16 @@
                     <h3>Blood Donation</h3>
                     <p>Regular blood donation camps serving the community and saving lives</p>
                 </div>
-                
+
                 <div class="activity-card">
                     <div class="activity-icon">
                         <i class="fas fa-tree"></i>
                     </div>
                     <h3>Tree Plantation</h3>
-                    <p>Environmental conservation through tree plantation drives and awareness campaigns</p>
+                    <p>Environmental conservation through tree plantation drives and awareness campaigns
+                    </p>
                 </div>
-                
+
                 <div class="activity-card">
                     <div class="activity-icon">
                         <i class="fas fa-users"></i>
@@ -193,7 +247,7 @@
                     <h3>Swachh Bharat</h3>
                     <p>Cleanliness drives and awareness programs for a cleaner, healthier India</p>
                 </div>
-                
+
                 <div class="activity-card">
                     <div class="activity-icon">
                         <i class="fas fa-award"></i>
@@ -201,7 +255,7 @@
                     <h3>Guard of Honour</h3>
                     <p>Ceremonial duties and guard of honour for distinguished guests and events</p>
                 </div>
-                
+
                 <div class="activity-card">
                     <div class="activity-icon">
                         <i class="fas fa-campground"></i>
@@ -220,7 +274,7 @@
                 <h2>Leadership Messages</h2>
                 <p>Words of wisdom from our esteemed officers</p>
             </div>
-            
+
             <div class="messages-grid">
                 <div class="message-card">
                     <div class="officer-image">
@@ -228,25 +282,28 @@
                     </div>
                     <h3>Col. Satyabrata Swain</h3>
                     <p class="rank">Group Commander</p>
-                    <blockquote>"Leadership is not about being in charge. It's about taking care of those in your charge."</blockquote>
+                    <blockquote>"Leadership is not about being in charge. It's about taking care of
+                        those in your charge."</blockquote>
                 </div>
-                
+
                 <div class="message-card">
                     <div class="officer-image">
                         <img src="media/Leaders/shantunu dey.jpg" alt="Maj. Priya Sharma" />
                     </div>
                     <h3>Lt.Col. Shantunu Dey</h3>
                     <p class="rank">Officer Commanding</p>
-                    <blockquote>"Discipline is the bridge between goals and accomplishment. NCC builds this bridge."</blockquote>
+                    <blockquote>"Discipline is the bridge between goals and accomplishment. NCC builds
+                        this bridge."</blockquote>
                 </div>
-                
+
                 <div class="message-card">
                     <div class="officer-image">
                         <img src="media/Leaders/SSP CTO.png" />
                     </div>
                     <h3>Sreyanshu Satya Prakash</h3>
                     <p class="rank">CTO</p>
-                    <blockquote>"Character is built through challenges. NCC provides the platform to build unshakeable character."</blockquote>
+                    <blockquote>"Character is built through challenges. NCC provides the platform to
+                        build unshakeable character."</blockquote>
                 </div>
             </div>
         </div>
@@ -259,7 +316,7 @@
                 <h2>Current Cadet Leadership</h2>
                 <p>Meet our distinguished cadet officers leading by example</p>
             </div>
-            
+
             <div class="ranks-grid">
                 <div class="cadet-card">
                     <div class="cadet-image">
@@ -268,9 +325,10 @@
                     <h3>Devi Prasad Sarangi</h3>
                     <p class="cadet-rank">SUO</p>
                     <p class="cadet-year">Third Year</p>
-                    <p class="cadet-intro">Leading with dedication and inspiring fellow cadets through exemplary service.</p>
+                    <p class="cadet-intro">Leading with dedication and inspiring fellow cadets through
+                        exemplary service.</p>
                 </div>
-                
+
                 <div class="cadet-card">
                     <div class="cadet-image">
                         <img src="media/Rank Holders/JUO Raj pic.png" />
@@ -278,9 +336,10 @@
                     <h3>Raj Sahasranshu Biswal</h3>
                     <p class="cadet-rank">JUO</p>
                     <p class="cadet-year">Third Year</p>
-                    <p class="cadet-intro">Committed to excellence and fostering team spirit among junior cadets.</p>
+                    <p class="cadet-intro">Committed to excellence and fostering team spirit among
+                        junior cadets.</p>
                 </div>
-                
+
                 <div class="cadet-card">
                     <div class="cadet-image">
                         <img src="media/Rank Holders/JUO Nick pic.png" />
@@ -288,17 +347,19 @@
                     <h3>Nikhilesh Sahoo</h3>
                     <p class="cadet-rank">JUO</p>
                     <p class="cadet-year">Third Year</p>
-                    <p class="cadet-intro">Passionate about training and mentoring new cadets in NCC values.</p>
+                    <p class="cadet-intro">Passionate about training and mentoring new cadets in NCC
+                        values.</p>
                 </div>
-                
+
                 <div class="cadet-card">
                     <div class="cadet-image">
                         <img src="media/Rank Holders/JUO Anubhav Pic.png" />
                     </div>
                     <h3>Anubhav Samantray</h3>
                     <p class="cadet-rank">JUO</p>
-                    <p class="cadet-year">Second Year</p>
-                    <p class="cadet-intro">Dedicated to community service and upholding the highest standards of discipline.</p>
+                    <p class="cadet-year">Third Year</p>
+                    <p class="cadet-intro">Dedicated to community service and upholding the highest
+                        standards of discipline.</p>
                 </div>
             </div>
         </div>
@@ -311,35 +372,39 @@
                 <h2>Our Achievements</h2>
                 <p>Celebrating excellence in training, competitions, and national service</p>
             </div>
-            
+
             <div class="achievements-grid">
                 <div class="achievement-card">
                     <div class="achievement-image">
-                        <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=400&h=300&fit=crop" alt="RDC Winner 2023" />
+                        <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=400&h=300&fit=crop"
+                            alt="RDC Winner 2023" />
                     </div>
                     <h3>RDC Winner 2023</h3>
                     <p>Republic Day Camp representation with outstanding performance</p>
                 </div>
-                
+
                 <div class="achievement-card">
                     <div class="achievement-image">
-                        <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=400&h=300&fit=crop" alt="TSC Excellence" />
+                        <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=400&h=300&fit=crop"
+                            alt="TSC Excellence" />
                     </div>
                     <h3>TSC Excellence</h3>
                     <p>Thal Sainik Camp participation with distinction</p>
                 </div>
-                
+
                 <div class="achievement-card">
                     <div class="achievement-image">
-                        <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9d1?w=400&h=300&fit=crop" alt="EBSB Program" />
+                        <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9d1?w=400&h=300&fit=crop"
+                            alt="EBSB Program" />
                     </div>
                     <h3>EBSB Program</h3>
                     <p>Ek Bharat Shreshtha Bharat cultural exchange program</p>
                 </div>
-                
+
                 <div class="achievement-card">
                     <div class="achievement-image">
-                        <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?w=400&h=300&fit=crop" alt="Best Unit Award" />
+                        <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?w=400&h=300&fit=crop"
+                            alt="Best Unit Award" />
                     </div>
                     <h3>Best Unit Award</h3>
                     <p>Recognized as the best performing NCC unit in the region</p>
@@ -350,73 +415,79 @@
 
     <!-- Alumni Section -->
     <section id="alumni" class="alumni">
-    <div class="container">
-        <div class="section-header">
-            <h2>SOA NCC Alumni</h2>
-            <p>Celebrating our distinguished alumni and their inspiring journeys beyond NCC</p>
+        <div class="container">
+            <div class="section-header">
+                <h2>SOA NCC Alumni</h2>
+                <p>Celebrating our distinguished alumni and their inspiring journeys beyond NCC</p>
+            </div>
+            <div class="alumni-grid">
+                <div class="alumni-card">
+                    <div class="alumni-image">
+                        <img src="media/Alumni/sushant.jpg" alt="JUO Sushant Dhar" />
+                    </div>
+                    <h3>Sushant Dhar</h3>
+                    <p class="alumni-position">Navy SSC IT (Recommended), 33 SSB Bhopal</p>
+                    <p class="alumni-desc">
+                        Currently recommended for Navy SSC IT, Sushant is set to join the Indian Navy as
+                        a Short Service Commissioned Officer in the IT branch.
+                    </p>
+                </div>
+                <div class="alumni-card">
+                    <div class="alumni-image">
+                        <img src="media/Alumni/abhinash.jpg" alt="JUO Kumar Abinash" />
+                    </div>
+                    <h3>Kumar Abinash</h3>
+                    <p class="alumni-position">OPSC Rank 278 (2022)</p>
+                    <p class="alumni-desc">
+                        Serving as a Group B Officer in Odisha Government after clearing OPSC with an
+                        impressive rank, Kumar is contributing to state administration.
+                    </p>
+                </div>
+                <div class="alumni-card">
+                    <div class="alumni-image">
+                        <img src="media/Alumni/ankit.jpg" alt="Lt. Ankit Raj Biswal" />
+                    </div>
+                    <h3>Ankit Raj Biswal</h3>
+                    <p class="alumni-position">Lieutenant, Indian Army</p>
+                    <p class="alumni-desc">
+                        Commissioned as a Lieutenant in the Indian Army, Ankit leads his unit after
+                        completing training at OTA Chennai.
+                    </p>
+                </div>
+                <div class="alumni-card">
+                    <div class="alumni-image">
+                        <img src="media/Alumni/ranbir.jpg" alt="JUO Ranbir Singh" />
+                    </div>
+                    <h3>Ranbir Singh</h3>
+                    <p class="alumni-position">Indian Air Force (Recommended via AFCAT)</p>
+                    <p class="alumni-desc">
+                        Recommended for the Indian Air Force through AFCAT and SSB, Ranbir is on track
+                        to serve as an officer in the Air Force.
+                    </p>
+                </div>
+            </div>
         </div>
-        <div class="alumni-grid">
-            <div class="alumni-card">
-                <div class="alumni-image">
-                    <img src="media/Alumni/sushant.jpg" alt="JUO Sushant Dhar" />
-                </div>
-                <h3>Sushant Dhar</h3>
-                <p class="alumni-position">Navy SSC IT (Recommended), 33 SSB Bhopal</p>
-                <p class="alumni-desc">
-                    Currently recommended for Navy SSC IT, Sushant is set to join the Indian Navy as a Short Service Commissioned Officer in the IT branch.
-                </p>
-            </div>
-            <div class="alumni-card">
-                <div class="alumni-image">
-                    <img src="media/Alumni/abhinash.jpg" alt="JUO Kumar Abinash" />
-                </div>
-                <h3>Kumar Abinash</h3>
-                <p class="alumni-position">OPSC Rank 278 (2022)</p>
-                <p class="alumni-desc">
-                    Serving as a Group B Officer in Odisha Government after clearing OPSC with an impressive rank, Kumar is contributing to state administration.
-                </p>
-            </div>
-            <div class="alumni-card">
-                <div class="alumni-image">
-                    <img src="media/Alumni/ankit.jpg" alt="Lt. Ankit Raj Biswal" />
-                </div>
-                <h3>Ankit Raj Biswal</h3>
-                <p class="alumni-position">Lieutenant, Indian Army</p>
-                <p class="alumni-desc">
-                    Commissioned as a Lieutenant in the Indian Army, Ankit leads his unit after completing training at OTA Chennai.
-                </p>
-            </div>
-            <div class="alumni-card">
-                <div class="alumni-image">
-                    <img src="media/Alumni/ranbir.jpg" alt="JUO Ranbir Singh" />
-                </div>
-                <h3>Ranbir Singh</h3>
-                <p class="alumni-position">Indian Air Force (Recommended via AFCAT)</p>
-                <p class="alumni-desc">
-                    Recommended for the Indian Air Force through AFCAT and SSB, Ranbir is on track to serve as an officer in the Air Force.
-                </p>
-            </div>
-        </div>
-    </div>
-</section>
+    </section>
 
     <!-- Join Section -->
     <section id="join" class="join">
         <div class="container">
             <div class="section-header">
                 <h2>Experience the Uniform. Live the Discipline.</h2>
-                <p>Join SOA NCC and embark on a transformative journey of leadership, character building, and national service</p>
+                <p>Join SOA NCC and embark on a transformative journey of leadership, character
+                    building, and national service</p>
             </div>
-            
+
             <div class="benefits-grid">
                 <div class="benefit-card">
                     <div class="benefit-icon">
                         <i class="fas fa-bullseye"></i>
                     </div>
                     <h3>Adventure</h3>
-                    <p>Thrilling camps, trekking, and outdoor activities that build resilience and teamwork</p>
+                    <p>Thrilling camps, trekking, and outdoor activities that build resilience and
+                        teamwork</p>
                 </div>
-                
+
                 <div class="benefit-card">
                     <div class="benefit-icon">
                         <i class="fas fa-award"></i>
@@ -424,7 +495,7 @@
                     <h3>Skill Building</h3>
                     <p>Develop leadership, communication, and technical skills valued by employers</p>
                 </div>
-                
+
                 <div class="benefit-card">
                     <div class="benefit-icon">
                         <i class="fas fa-users"></i>
@@ -432,7 +503,7 @@
                     <h3>Personality</h3>
                     <p>Build confidence, discipline, and a strong character that lasts a lifetime</p>
                 </div>
-                
+
                 <div class="benefit-card">
                     <div class="benefit-icon">
                         <i class="fas fa-shield-alt"></i>
@@ -441,7 +512,7 @@
                     <p>NCC certificate provides advantages in defense services and government jobs</p>
                 </div>
             </div>
-            
+
             <div class="join-cta">
                 <button class="btn btn-large btn-primary">Apply to Join NCC</button>
             </div>
@@ -455,7 +526,7 @@
                 <h2>Frequently Asked Questions</h2>
                 <p>Get answers to common questions about joining NCC</p>
             </div>
-            
+
             <div class="faq-list">
                 <div class="faq-item">
                     <div class="faq-question" onclick="toggleFAQ(this)">
@@ -463,47 +534,57 @@
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>NCC develops leadership skills, builds character, provides adventure opportunities, and offers career advantages in defense and government services. It's a platform for personal growth and national service.</p>
+                        <p>NCC develops leadership skills, builds character, provides adventure
+                            opportunities, and offers career advantages in defense and government
+                            services. It's a platform for personal growth and national service.</p>
                     </div>
                 </div>
-                
+
                 <div class="faq-item">
                     <div class="faq-question" onclick="toggleFAQ(this)">
                         <h3>What are the benefits of NCC?</h3>
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>Benefits include leadership development, adventure activities, career opportunities in defense services, personality development, national integration, and lifelong friendships with like-minded individuals.</p>
+                        <p>Benefits include leadership development, adventure activities, career
+                            opportunities in defense services, personality development, national
+                            integration, and lifelong friendships with like-minded individuals.</p>
                     </div>
                 </div>
-                
+
                 <div class="faq-item">
                     <div class="faq-question" onclick="toggleFAQ(this)">
                         <h3>Is there any fee for joining NCC?</h3>
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>No, there is no fee for joining NCC. The program is completely free, and cadets receive uniforms, training, and participate in camps without any cost.</p>
+                        <p>No, there is no fee for joining NCC. The program is completely free, and
+                            cadets receive uniforms, training, and participate in camps without any
+                            cost.</p>
                     </div>
                 </div>
-                
+
                 <div class="faq-item">
                     <div class="faq-question" onclick="toggleFAQ(this)">
                         <h3>What is the selection process?</h3>
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>Selection is based on academic performance, physical fitness, and interview. Interested students need to apply during the admission process and clear the basic fitness and interview rounds.</p>
+                        <p>Selection is based on academic performance, physical fitness, and interview.
+                            Interested students need to apply during the admission process and clear the
+                            basic fitness and interview rounds.</p>
                     </div>
                 </div>
-                
+
                 <div class="faq-item">
                     <div class="faq-question" onclick="toggleFAQ(this)">
                         <h3>What events and activities are conducted?</h3>
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>We conduct regular parades, adventure camps, community service activities, blood donation drives, tree plantation, cultural programs, and participate in national-level competitions and camps.</p>
+                        <p>We conduct regular parades, adventure camps, community service activities,
+                            blood donation drives, tree plantation, cultural programs, and participate
+                            in national-level competitions and camps.</p>
                     </div>
                 </div>
             </div>
@@ -517,7 +598,7 @@
                 <h2>Associated Organizations</h2>
                 <p>Our proud associations with premier defense and government organizations</p>
             </div>
-            
+
             <div class="org-grid">
                 <div class="org-item">
                     <div class="org-logo">
@@ -527,16 +608,17 @@
                     </div>
                     <p>Indian Army</p>
                 </div>
-                
+
                 <div class="org-item">
                     <div class="org-logo">
-                        <a href="https://www.joinindiannavy.gov.in/en/about-us/ranks-insignia.html" target="_blank" rel="noopener">
+                        <a href="https://www.joinindiannavy.gov.in/en/about-us/ranks-insignia.html" target="_blank"
+                            rel="noopener">
                             <img src="media/Navy logo.png" alt="Indian Navy Logo" />
                         </a>
                     </div>
                     <p>Indian Navy</p>
                 </div>
-                
+
                 <div class="org-item">
                     <div class="org-logo">
                         <a href="https://afcat.cdac.in/AFCAT/" target="_blank" rel="noopener">
@@ -545,7 +627,7 @@
                     </div>
                     <p>Indian Air Force</p>
                 </div>
-                
+
                 <div class="org-item">
                     <div class="org-logo">
                         <a href="https://mod.gov.in/" target="_blank" rel="noopener">
@@ -554,7 +636,7 @@
                     </div>
                     <p>Ministry of Defence</p>
                 </div>
-                
+
                 <div class="org-item">
                     <div class="org-logo">
                         <a href="https://indiancc.mygov.in/" target="_blank" rel="noopener">
@@ -563,7 +645,7 @@
                     </div>
                     <p>DG NCC</p>
                 </div>
-                
+
                 <div class="org-item">
                     <div class="org-logo">
                         <a href="https://www.mygov.in/" target="_blank" rel="noopener">
@@ -572,7 +654,7 @@
                     </div>
                     <p>MyGov</p>
                 </div>
-                
+
                 <div class="org-item">
                     <div class="org-logo">
                         <a href="https://ssb.gov.in/" target="_blank" rel="noopener">
@@ -599,7 +681,8 @@
                             <p>4(O) CTC</p>
                         </div>
                     </div>
-                    <p>Building tomorrow's leaders through discipline, character, and national service.</p>
+                    <p>Building tomorrow's leaders through discipline, character, and national service.
+                    </p>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-facebook"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
@@ -607,7 +690,7 @@
                         <a href="#"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
-                
+
                 <div class="footer-contact">
                     <h4>Contact Information</h4>
                     <div class="contact-item">
@@ -627,7 +710,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="footer-links">
                     <h4>Quick Links</h4>
                     <ul>
@@ -640,7 +723,7 @@
                     </ul>
                 </div>
             </div>
-            
+
             <div class="footer-bottom">
                 <p>&copy; 2025 SOA NCC Unit | All Rights Reserved.</p>
                 <div class="footer-bottom-links">
@@ -658,70 +741,71 @@
     <script src="script.js"></script>
     <!-- Custom cursor script -->
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const cursor = document.querySelector('.cursor');
             const follower = document.querySelector('.cursor-follower');
             const hoverElements = document.querySelectorAll('a, button, [data-cursor-hover]');
-            
+
             let posX = 0, posY = 0;
             let mouseX = 0, mouseY = 0;
             let followerX = 0, followerY = 0;
-            
+
             // Smoothing factor for follower (lower = smoother)
             const smoothing = 0.2;
-            
+
             // Update cursor position
-            document.addEventListener('mousemove', function(e) {
+            document.addEventListener('mousemove', function (e) {
                 mouseX = e.clientX;
                 mouseY = e.clientY;
-                
+
                 // Immediate cursor
                 cursor.style.left = mouseX + 'px';
                 cursor.style.top = mouseY + 'px';
             });
-            
+
             // Animation loop for follower
             function animate() {
                 // Calculate distance between cursor and follower
                 const distX = mouseX - followerX;
                 const distY = mouseY - followerY;
-                
+
                 // Move follower with easing
                 followerX += distX * smoothing;
                 followerY += distY * smoothing;
-                
+
                 // Apply new position
                 follower.style.left = followerX + 'px';
                 follower.style.top = followerY + 'px';
-                
+
                 requestAnimationFrame(animate);
             }
-            
+
             // Start animation
             animate();
-            
+
             // Hover effects
             hoverElements.forEach(el => {
                 el.addEventListener('mouseenter', () => {
                     cursor.classList.add('hover');
                     follower.classList.add('hover');
                 });
-                
+
                 el.addEventListener('mouseleave', () => {
                     cursor.classList.remove('hover');
                     follower.classList.remove('hover');
                 });
             });
-            
+
             // Click effect
             document.addEventListener('mousedown', () => {
                 cursor.style.transform = 'translate(-50%, -50%) scale(0.8)';
             });
-            
+
             document.addEventListener('mouseup', () => {
                 cursor.style.transform = 'translate(-50%, -50%) scale(1)';
             });
         });
     </script>
 </body>
+
 </html>
