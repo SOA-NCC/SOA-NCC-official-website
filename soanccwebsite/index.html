@@ -462,103 +462,232 @@
 
     <!-- Achievements Section -->
     <section id="achievements" class="achievements">
+        <div class="achievements-background"></div>
         <div class="container">
             <div class="section-header">
-                <h2>Our Achievements</h2>
-                <p>Celebrating excellence in training, competitions, and national service</p>
+                <div class="section-badge white">
+                    <i class="fas fa-award"></i>
+                    <span>Our Pride</span>
+                </div>
+                <h2 class="section-title white">Celebrating Excellence</h2>
+                <p class="section-subtitle white">
+                    Recognizing outstanding achievements in training, competitions, and dedicated national service
+                </p>
             </div>
 
-            <div class="achievements-grid">
-                <div class="achievement-card">
-                    <div class="achievement-image">
-                        <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=400&h=300&fit=crop"
-                            alt="RDC Winner 2023" />
+            <div class="achievements-carousel">
+                <div class="carousel-container">
+                    <div class="carousel-slide active">
+                        <div class="slide-image slide-tsc2025"></div>
+                        <div class="slide-content">
+                            <h3>TSC 2025</h3>
+                            <p>4 Cadets of SOA NCC got selected in IUC and are representing Cuttack group in IGC</p>
+                        </div>
                     </div>
-                    <h3>RDC Winner 2023</h3>
-                    <p>Republic Day Camp representation with outstanding performance</p>
+                    <div class="carousel-slide">
+                        <div class="slide-image slide-yep"></div>
+                        <div class="slide-content">
+                            <h3>YEP 2024</h3>
+                            <p>JUO Abinash Nanda represented India at the Youth Exchange Program (YEP) in Kyrgyzstan.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="carousel-slide">
+                        <div class="slide-image slide-tsc2024"></div>
+                        <div class="slide-content">
+                            <h3>TSC 2024</h3>
+                            <p>Thal Sainik Camp representation with outstanding performance at Rajpath, New Delhi</p>
+                        </div>
+                    </div>
+                    <div class="carousel-slide">
+                        <div class="slide-image slide-foundation"></div>
+                        <div class="slide-content">
+                            <h3>2nd Best Troop</h3>
+                            <p>06 Cadets of SOA NCC participated in the 77th Capital Foundation Day Celebrations and
+                                were awarded the 2nd Prize for their remarkable performance.</p>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="achievement-card">
-                    <div class="achievement-image">
-                        <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=400&h=300&fit=crop"
-                            alt="TSC Excellence" />
-                    </div>
-                    <h3>TSC Excellence</h3>
-                    <p>Thal Sainik Camp participation with distinction</p>
-                </div>
+                <button class="carousel-btn prev" onclick="changeSlide(-1)">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="carousel-btn next" onclick="changeSlide(1)">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
 
-                <div class="achievement-card">
-                    <div class="achievement-image">
-                        <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9d1?w=400&h=300&fit=crop"
-                            alt="EBSB Program" />
-                    </div>
-                    <h3>EBSB Program</h3>
-                    <p>Ek Bharat Shreshtha Bharat cultural exchange program</p>
-                </div>
-
-                <div class="achievement-card">
-                    <div class="achievement-image">
-                        <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?w=400&h=300&fit=crop"
-                            alt="Best Unit Award" />
-                    </div>
-                    <h3>Best Unit Award</h3>
-                    <p>Recognized as the best performing NCC unit in the region</p>
+                <div class="carousel-dots">
+                    <span class="dot active" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                    <span class="dot" onclick="currentSlide(4)"></span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Alumni Section -->
+    <!-- Enhanced Alumni Section -->
     <section id="alumni" class="alumni">
+        <div class="alumni-background">
+            <div class="floating-particles"></div>
+            <div class="gradient-orb orb-1"></div>
+            <div class="gradient-orb orb-2"></div>
+            <div class="gradient-orb orb-3"></div>
+        </div>
+
         <div class="container">
-            <div class="section-header">
-                <h2>SOA NCC Alumni</h2>
-                <p>Celebrating our distinguished alumni and their inspiring journeys beyond NCC</p>
+            <div class="section-header" data-aos="fade-up">
+                <div class="section-badge">
+                    <i class="fas fa-star"></i>
+                    <span>Alumni Excellence</span>
+                </div>
+                <h2 class="section-title">
+                    Our Distinguished
+                    <span class="ncc-gradient-text">Alumni</span>
+                </h2>
+                <p class="section-subtitle">
+                    Celebrating our exceptional alumni and their inspiring journeys of service to the nation
+                </p>
             </div>
+
             <div class="alumni-grid">
-                <div class="alumni-card">
+                <!-- Alumni Card 1 -->
+                <div class="alumni-card ncc-navy" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card-glow"></div>
                     <div class="alumni-image">
-                        <img src="media/Alumni/sushant.jpg" alt="JUO Sushant Dhar" />
+                        <img src="media/Alumni/Susant_dhar.png" alt="Sushant Dhar" />
+                        <div class="image-overlay"></div>
+                        <div class="alumni-badge">Alumni</div>
                     </div>
-                    <h3>Sushant Dhar</h3>
-                    <p class="alumni-position">Navy SSC IT (Recommended), 33 SSB Bhopal</p>
-                    <p class="alumni-desc">
-                        Currently recommended for Navy SSC IT, Sushant is set to join the Indian Navy as
-                        a Short Service Commissioned Officer in the IT branch.
-                    </p>
+                    <div class="card-content">
+                        <h3>Sushant Dhar</h3>
+                        <p class="alumni-position">Navy SSC IT Officer</p>
+                        <p class="alumni-achievement">Recommended at 33 SSB Bhopal</p>
+                        <p class="alumni-description">Successfully recommended for Navy SSC IT, exemplifying technical
+                            excellence and leadership in naval service.</p>
+                    </div>
+                    <div class="card-footer">
+                        <div class="achievement-stats">
+                            <span class="stat-item">
+                                <i class="fas fa-anchor"></i>
+                                Navy
+                            </span>
+                            <span class="stat-item">
+                                <i class="fas fa-code"></i>
+                                IT Officer
+                            </span>
+                        </div>
+                    </div>
                 </div>
-                <div class="alumni-card">
+
+                <!-- Alumni Card 2 -->
+                <div class="alumni-card ncc-red" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card-glow"></div>
                     <div class="alumni-image">
-                        <img src="media/Alumni/abhinash.jpg" alt="JUO Kumar Abinash" />
+                        <img src="media/Alumni/Kumar_Abinash.png" alt="Kumar Abinash" />
+                        <div class="image-overlay"></div>
+                        <div class="alumni-badge">Alumni</div>
                     </div>
-                    <h3>Kumar Abinash</h3>
-                    <p class="alumni-position">OPSC Rank 278 (2022)</p>
-                    <p class="alumni-desc">
-                        Serving as a Group B Officer in Odisha Government after clearing OPSC with an
-                        impressive rank, Kumar is contributing to state administration.
-                    </p>
+                    <div class="card-content">
+                        <h3>Kumar Abinash</h3>
+                        <p class="alumni-position">OPSC Officer</p>
+                        <p class="alumni-achievement">Rank 278 (2022)</p>
+                        <p class="alumni-description">Serving with distinction as a Group B Officer in Odisha
+                            Government, contributing to state administration excellence.</p>
+                    </div>
+                    <div class="card-footer">
+                        <div class="achievement-stats">
+                            <span class="stat-item">
+                                <i class="fas fa-building"></i>
+                                OPSC
+                            </span>
+                            <span class="stat-item">
+                                <i class="fas fa-trophy"></i>
+                                Rank 278
+                            </span>
+                        </div>
+                    </div>
                 </div>
-                <div class="alumni-card">
-                    <div class="alumni-image">
-                        <img src="media/Alumni/ankit.jpg" alt="Lt. Ankit Raj Biswal" />
+
+                <!-- Alumni Card 3 - Featured -->
+                <div class="alumni-card ncc-white-card featured" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card-glow"></div>
+                    <div class="featured-ribbon">
+                        <span>Featured</span>
                     </div>
-                    <h3>Ankit Raj Biswal</h3>
-                    <p class="alumni-position">Lieutenant, Indian Army</p>
-                    <p class="alumni-desc">
-                        Commissioned as a Lieutenant in the Indian Army, Ankit leads his unit after
-                        completing training at OTA Chennai.
-                    </p>
+                    <div class="alumni-image">
+                        <img src="media/Alumni/Ankit_Biswal.png" alt="Ankit Raj Biswal" />
+                        <div class="image-overlay"></div>
+                        <div class="alumni-badge ncc-navy-badge">Alumni</div>
+                    </div>
+                    <div class="card-content">
+                        <h3>Ankit Raj Biswal</h3>
+                        <p class="alumni-position">Lieutenant</p>
+                        <p class="alumni-achievement">Indian Army</p>
+                        <p class="alumni-description">Commissioned as Lieutenant in the Indian Army, leading with honor
+                            after completing training at OTA Chennai.</p>
+                    </div>
+                    <div class="card-footer">
+                        <div class="achievement-stats">
+                            <span class="stat-item">
+                                <i class="fas fa-shield-alt"></i>
+                                Army
+                            </span>
+                            <span class="stat-item">
+                                <i class="fas fa-star"></i>
+                                Lieutenant
+                            </span>
+                        </div>
+                    </div>
                 </div>
-                <div class="alumni-card">
+
+                <!-- Alumni Card 4 -->
+                <div class="alumni-card ncc-skyblue" data-aos="fade-up" data-aos-delay="400">
+                    <div class="card-glow"></div>
                     <div class="alumni-image">
-                        <img src="media/Alumni/ranbir.jpg" alt="JUO Ranbir Singh" />
+                        <img src="media/Alumni/Ranbir_Singh.png" alt="Ranbir Singh" />
+                        <div class="image-overlay"></div>
+                        <div class="alumni-badge">Alumni</div>
                     </div>
-                    <h3>Ranbir Singh</h3>
-                    <p class="alumni-position">Indian Air Force (Recommended via AFCAT)</p>
-                    <p class="alumni-desc">
-                        Recommended for the Indian Air Force through AFCAT and SSB, Ranbir is on track
-                        to serve as an officer in the Air Force.
-                    </p>
+                    <div class="card-content">
+                        <h3>Ranbir Singh</h3>
+                        <p class="alumni-position">Flying Officer</p>
+                        <p class="alumni-achievement">Indian Air Force (AFCAT)</p>
+                        <p class="alumni-description">Recommended for Indian Air Force through AFCAT, ready to serve the
+                            nation in the skies with distinction.</p>
+                    </div>
+                    <div class="card-footer">
+                        <div class="achievement-stats">
+                            <span class="stat-item">
+                                <i class="fas fa-plane"></i>
+                                Air Force
+                            </span>
+                            <span class="stat-item">
+                                <i class="fas fa-wings"></i>
+                                Flying Officer
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Statistics Section -->
+            <div class="alumni-stats" data-aos="fade-up" data-aos-delay="500">
+                <div class="stat-card">
+                    <div class="stat-number" data-count="50">0</div>
+                    <div class="stat-label">Distinguished Alumni</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" data-count="25">0</div>
+                    <div class="stat-label">Defense Services</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" data-count="15">0</div>
+                    <div class="stat-label">Civil Services</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" data-count="98">0</div>
+                    <div class="stat-label">Success Rate %</div>
                 </div>
             </div>
         </div>

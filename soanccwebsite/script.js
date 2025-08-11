@@ -414,41 +414,41 @@ document.addEventListener('DOMContentLoaded', function () {
 /* ===== ACTIVITIES SECTION JAVASCRIPT ===== */
 
 // Wait for DOM to be fully loaded
-document.addEventListener('DOMContentLoaded', function() {
-    
-    // ===== ACTIVITY CARD CLICK HANDLERS =====
-    const activityCards = document.querySelectorAll('.activity-card');
-    
-    activityCards.forEach(card => {
-        card.addEventListener('click', function(e) {
-            // Prevent default action
-            e.preventDefault();
-            
-            // Get activity type from data attribute
-            const activityType = this.getAttribute('data-activity');
-            
-            // Call function to open gallery
-            openGallery(activityType);
-        });
+document.addEventListener('DOMContentLoaded', function () {
+
+  // ===== ACTIVITY CARD CLICK HANDLERS =====
+  const activityCards = document.querySelectorAll('.activity-card');
+
+  activityCards.forEach(card => {
+    card.addEventListener('click', function (e) {
+      // Prevent default action
+      e.preventDefault();
+
+      // Get activity type from data attribute
+      const activityType = this.getAttribute('data-activity');
+
+      // Call function to open gallery
+      openGallery(activityType);
     });
-    
-    // ===== VIEW GALLERY BUTTON HANDLERS =====
-    const galleryButtons = document.querySelectorAll('.view-gallery-btn');
-    
-    galleryButtons.forEach(button => {
-        button.addEventListener('click', function(e) {
-            // Prevent event bubbling and default behavior
-            e.preventDefault();
-            e.stopPropagation();
-            
-            // Get activity type from parent card
-            const activityCard = this.closest('.activity-card');
-            const activityType = activityCard.getAttribute('data-activity');
-            
-            // Call function to open gallery
-            openGallery(activityType);
-        });
+  });
+
+  // ===== VIEW GALLERY BUTTON HANDLERS =====
+  const galleryButtons = document.querySelectorAll('.view-gallery-btn');
+
+  galleryButtons.forEach(button => {
+    button.addEventListener('click', function (e) {
+      // Prevent event bubbling and default behavior
+      e.preventDefault();
+      e.stopPropagation();
+
+      // Get activity type from parent card
+      const activityCard = this.closest('.activity-card');
+      const activityType = activityCard.getAttribute('data-activity');
+
+      // Call function to open gallery
+      openGallery(activityType);
     });
+  });
 });
 
 /* ===== GALLERY NAVIGATION FUNCTIONS ===== */
@@ -458,35 +458,35 @@ document.addEventListener('DOMContentLoaded', function() {
  * @param {string} activityType - The type of activity (parade, blood-donation, etc.)
  */
 function openGallery(activityType) {
-    try {
-        // Create URL for gallery page
-        const galleryUrl = `gallery.html?activity=${activityType}`;
-        
-        // Navigate to gallery page
-        window.location.href = galleryUrl;
-        
-        // Alternative method if you want to open in new tab
-        // window.open(galleryUrl, '_blank');
-        
-    } catch (error) {
-        console.error('Error opening gallery:', error);
-        
-        // Fallback: Try to find gallery section on same page
-        const gallerySection = document.getElementById(`${activityType}-gallery`);
-        if (gallerySection) {
-            // Hide activities section
-            const activitiesSection = document.getElementById('activities');
-            if (activitiesSection) {
-                activitiesSection.style.display = 'none';
-            }
-            
-            // Show gallery section
-            gallerySection.style.display = 'block';
-            gallerySection.scrollIntoView({ behavior: 'smooth' });
-        } else {
-            alert('Gallery page not found. Please ensure gallery.html exists.');
-        }
+  try {
+    // Create URL for gallery page
+    const galleryUrl = `gallery.html?activity=${activityType}`;
+
+    // Navigate to gallery page
+    window.location.href = galleryUrl;
+
+    // Alternative method if you want to open in new tab
+    // window.open(galleryUrl, '_blank');
+
+  } catch (error) {
+    console.error('Error opening gallery:', error);
+
+    // Fallback: Try to find gallery section on same page
+    const gallerySection = document.getElementById(`${activityType}-gallery`);
+    if (gallerySection) {
+      // Hide activities section
+      const activitiesSection = document.getElementById('activities');
+      if (activitiesSection) {
+        activitiesSection.style.display = 'none';
+      }
+
+      // Show gallery section
+      gallerySection.style.display = 'block';
+      gallerySection.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      alert('Gallery page not found. Please ensure gallery.html exists.');
     }
+  }
 }
 
 /* ===== UTILITY FUNCTIONS ===== */
@@ -497,8 +497,8 @@ function openGallery(activityType) {
  * @returns {string|null} Parameter value or null if not found
  */
 function getUrlParameter(param) {
-    const urlParams = new URLSearchParams(window.location.search);
-    return urlParams.get(param);
+  const urlParams = new URLSearchParams(window.location.search);
+  return urlParams.get(param);
 }
 
 /**
@@ -506,63 +506,300 @@ function getUrlParameter(param) {
  * @param {string} elementId - ID of element to scroll to
  */
 function scrollToElement(elementId) {
-    const element = document.getElementById(elementId);
-    if (element) {
-        element.scrollIntoView({ 
-            behavior: 'smooth',
-            block: 'start'
-        });
-    }
+  const element = document.getElementById(elementId);
+  if (element) {
+    element.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+    });
+  }
 }
 
 /* ===== ANIMATION ENHANCEMENTS ===== */
 
 // Add entrance animations when section comes into view
 const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
+  threshold: 0.1,
+  rootMargin: '0px 0px -50px 0px'
 };
 
 const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            // Add animation classes to cards
-            const cards = entry.target.querySelectorAll('.activity-card');
-            cards.forEach((card, index) => {
-                setTimeout(() => {
-                    card.style.opacity = '1';
-                    card.style.transform = 'translateY(0)';
-                }, index * 100);
-            });
-        }
-    });
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      // Add animation classes to cards
+      const cards = entry.target.querySelectorAll('.activity-card');
+      cards.forEach((card, index) => {
+        setTimeout(() => {
+          card.style.opacity = '1';
+          card.style.transform = 'translateY(0)';
+        }, index * 100);
+      });
+    }
+  });
 }, observerOptions);
 
 // Observe activities section when DOM is loaded
-document.addEventListener('DOMContentLoaded', function() {
-    const activitiesSection = document.getElementById('activities');
-    if (activitiesSection) {
-        // Set initial state for animation
-        const cards = activitiesSection.querySelectorAll('.activity-card');
-        cards.forEach(card => {
-            card.style.opacity = '0';
-            card.style.transform = 'translateY(30px)';
-            card.style.transition = 'all 0.6s ease';
-        });
-        
-        // Start observing
-        observer.observe(activitiesSection);
-    }
+document.addEventListener('DOMContentLoaded', function () {
+  const activitiesSection = document.getElementById('activities');
+  if (activitiesSection) {
+    // Set initial state for animation
+    const cards = activitiesSection.querySelectorAll('.activity-card');
+    cards.forEach(card => {
+      card.style.opacity = '0';
+      card.style.transform = 'translateY(30px)';
+      card.style.transition = 'all 0.6s ease';
+    });
+
+    // Start observing
+    observer.observe(activitiesSection);
+  }
 });
 
 /* ===== ERROR HANDLING ===== */
 
 // Global error handler for navigation issues
-window.addEventListener('error', function(e) {
-    console.error('Navigation error:', e.error);
+window.addEventListener('error', function (e) {
+  console.error('Navigation error:', e.error);
 });
 
 // Handle navigation failures
-window.addEventListener('unhandledrejection', function(e) {
-    console.error('Navigation promise rejection:', e.reason);
+window.addEventListener('unhandledrejection', function (e) {
+  console.error('Navigation promise rejection:', e.reason);
+});
+
+
+
+// Achievement Section 
+let slideIndex = 1;
+
+// Function to change slide by n positions
+function changeSlide(n) {
+  showSlide(slideIndex += n);
+}
+
+// Function to show a specific slide
+function currentSlide(n) {
+  showSlide(slideIndex = n);
+}
+
+// Function to display the slide
+function showSlide(n) {
+  const slides = document.querySelectorAll('.carousel-slide');
+  const dots = document.querySelectorAll('.dot');
+
+  // Handle slide index boundaries
+  if (n > slides.length) {
+    slideIndex = 1;
+  }
+  if (n < 1) {
+    slideIndex = slides.length;
+  }
+
+  // Hide all slides
+  slides.forEach(slide => {
+    slide.classList.remove('active');
+  });
+
+  // Remove active class from all dots
+  dots.forEach(dot => {
+    dot.classList.remove('active');
+  });
+
+  // Show current slide and activate corresponding dot
+  if (slides[slideIndex - 1]) {
+    slides[slideIndex - 1].classList.add('active');
+  }
+  if (dots[slideIndex - 1]) {
+    dots[slideIndex - 1].classList.add('active');
+  }
+}
+
+// Auto-play functionality (uncomment to enable)
+function autoSlide() {
+  slideIndex++;
+  showSlide(slideIndex);
+}
+
+// Enable auto-play every 5 seconds (uncomment the line below)
+// setInterval(autoSlide, 5000);
+
+// Touch/swipe support for mobile devices
+let startX = 0;
+let endX = 0;
+
+// Initialize touch events when DOM is loaded
+document.addEventListener('DOMContentLoaded', function () {
+  const carouselContainer = document.querySelector('.carousel-container');
+
+  if (carouselContainer) {
+    carouselContainer.addEventListener('touchstart', handleTouchStart, { passive: true });
+    carouselContainer.addEventListener('touchend', handleTouchEnd, { passive: true });
+  }
+
+  // Keyboard navigation
+  document.addEventListener('keydown', handleKeyDown);
+});
+
+function handleTouchStart(e) {
+  startX = e.touches[0].clientX;
+}
+
+function handleTouchEnd(e) {
+  endX = e.changedTouches[0].clientX;
+  handleSwipe();
+}
+
+function handleSwipe() {
+  const swipeThreshold = 50;
+  const diff = startX - endX;
+
+  if (Math.abs(diff) > swipeThreshold) {
+    if (diff > 0) {
+      // Swipe left - next slide
+      changeSlide(1);
+    } else {
+      // Swipe right - previous slide
+      changeSlide(-1);
+    }
+  }
+}
+
+// Keyboard navigation
+function handleKeyDown(e) {
+  // Only respond to arrow keys when carousel is visible
+  const achievementsSection = document.querySelector('.achievements');
+  if (!achievementsSection) return;
+
+  const rect = achievementsSection.getBoundingClientRect();
+  const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
+
+  if (isVisible) {
+    if (e.key === 'ArrowLeft') {
+      changeSlide(-1);
+      e.preventDefault();
+    } else if (e.key === 'ArrowRight') {
+      changeSlide(1);
+      e.preventDefault();
+    }
+  }
+}
+
+// Optional: Pause auto-play on hover
+function pauseAutoPlay() {
+  // Clear any existing intervals
+  if (window.carouselInterval) {
+    clearInterval(window.carouselInterval);
+  }
+}
+
+function resumeAutoPlay() {
+  // Resume auto-play (only if it was enabled)
+  // window.carouselInterval = setInterval(autoSlide, 5000);
+}
+
+// Add hover listeners for auto-play control (uncomment if using auto-play)
+/*
+document.addEventListener('DOMContentLoaded', function() {
+    const carouselContainer = document.querySelector('.carousel-container');
+    if (carouselContainer) {
+        carouselContainer.addEventListener('mouseenter', pauseAutoPlay);
+        carouselContainer.addEventListener('mouseleave', resumeAutoPlay);
+    }
+});
+*/
+
+// Smooth initialization
+document.addEventListener('DOMContentLoaded', function () {
+  // Ensure the first slide is active
+  showSlide(slideIndex);
+});
+
+
+
+
+// Alumni Section
+document.addEventListener('DOMContentLoaded', function () {
+  // Initialize AOS (Animate On Scroll) for card animations
+  AOS.init({
+    duration: 800,
+    easing: 'ease-in-out',
+    once: true,
+    offset: 100
+  });
+
+  // Counter animation for statistics
+  const statNumbers = document.querySelectorAll('.stat-number');
+
+  const animateCounters = () => {
+    statNumbers.forEach(stat => {
+      const target = parseInt(stat.getAttribute('data-count'));
+      const duration = 2000;
+      const start = 0;
+      const increment = target / (duration / 16); // 60fps
+
+      let current = start;
+      const timer = setInterval(() => {
+        current += increment;
+        stat.textContent = Math.floor(current);
+
+        if (current >= target) {
+          stat.textContent = target;
+          clearInterval(timer);
+        }
+      }, 16);
+    });
+  };
+
+  // Intersection Observer for counter animation
+  const statsSection = document.querySelector('.alumni-stats');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        animateCounters();
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  if (statsSection) {
+    observer.observe(statsSection);
+  }
+
+  // Card hover effects
+  const cards = document.querySelectorAll('.alumni-card');
+
+  cards.forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+
+      const angleX = (y - centerY) / 20;
+      const angleY = (centerX - x) / 20;
+
+      card.style.transform = `perspective(1000px) rotateX(${angleX}deg) rotateY(${angleY}deg) translateY(-10px)`;
+
+      // Glow effect
+      const glow = card.querySelector('.card-glow');
+      glow.style.background = `radial-gradient(circle at ${x}px ${y}px, rgba(255,255,255,0.2) 0%, transparent 70%)`;
+    });
+
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateY(-10px)';
+    });
+  });
+
+  // Parallax effect for background elements
+  window.addEventListener('mousemove', (e) => {
+    const x = e.clientX / window.innerWidth;
+    const y = e.clientY / window.innerHeight;
+
+    const orbs = document.querySelectorAll('.gradient-orb');
+    orbs[0].style.transform = `translate(${x * 30}px, ${y * 30}px)`;
+    orbs[1].style.transform = `translate(${-x * 40}px, ${-y * 40}px)`;
+    orbs[2].style.transform = `translate(${x * 20}px, ${-y * 20}px)`;
+  });
 });
