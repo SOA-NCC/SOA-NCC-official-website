@@ -326,13 +326,13 @@ window.addEventListener("load", () => {
 })
 
 // Hamburger menu toggle for dropdown
-document.addEventListener('DOMContentLoaded', function() {
-    const hamburger = document.getElementById('hamburger');
-    const dropdown = document.getElementById('dropdown-menu');
-    hamburger.addEventListener('click', function() {
-        hamburger.classList.toggle('active');
-        dropdown.classList.toggle('active');
-    });
+document.addEventListener('DOMContentLoaded', function () {
+  const hamburger = document.getElementById('hamburger');
+  const dropdown = document.getElementById('dropdown-menu');
+  hamburger.addEventListener('click', function () {
+    hamburger.classList.toggle('active');
+    dropdown.classList.toggle('active');
+  });
 });
 
 
@@ -341,72 +341,228 @@ let aboutSlideIndex = 0;
 let aboutSlideInterval;
 
 function showAboutSlide(index) {
-    const slides = document.querySelectorAll('.about-slide');
-    const indicators = document.querySelectorAll('.indicator');
-    
-    // Remove active class from all slides and indicators
-    slides.forEach(slide => slide.classList.remove('active'));
-    indicators.forEach(indicator => indicator.classList.remove('active'));
-    
-    // Show current slide and highlight indicator
-    slides[index].classList.add('active');
-    indicators[index].classList.add('active');
+  const slides = document.querySelectorAll('.about-slide');
+  const indicators = document.querySelectorAll('.indicator');
+
+  // Remove active class from all slides and indicators
+  slides.forEach(slide => slide.classList.remove('active'));
+  indicators.forEach(indicator => indicator.classList.remove('active'));
+
+  // Show current slide and highlight indicator
+  slides[index].classList.add('active');
+  indicators[index].classList.add('active');
 }
 
 function nextAboutSlide() {
-    const slides = document.querySelectorAll('.about-slide');
-    aboutSlideIndex = (aboutSlideIndex + 1) % slides.length;
-    showAboutSlide(aboutSlideIndex);
+  const slides = document.querySelectorAll('.about-slide');
+  aboutSlideIndex = (aboutSlideIndex + 1) % slides.length;
+  showAboutSlide(aboutSlideIndex);
 }
 
 function currentSlide(index) {
-    aboutSlideIndex = index - 1;
-    showAboutSlide(aboutSlideIndex);
-    
-    // Restart the interval
-    clearInterval(aboutSlideInterval);
-    startAboutSlideshow();
+  aboutSlideIndex = index - 1;
+  showAboutSlide(aboutSlideIndex);
+
+  // Restart the interval
+  clearInterval(aboutSlideInterval);
+  startAboutSlideshow();
 }
 
 function startAboutSlideshow() {
-    aboutSlideInterval = setInterval(nextAboutSlide, 8000); // Change every 8 seconds
+  aboutSlideInterval = setInterval(nextAboutSlide, 8000); // Change every 8 seconds
 }
 
 // Initialize about slideshow when page loads
+document.addEventListener('DOMContentLoaded', function () {
+  // Start the slideshow
+  startAboutSlideshow();
+
+  // Feature card interactions
+  const featureCards = document.querySelectorAll('.feature-card');
+
+  featureCards.forEach(card => {
+    card.addEventListener('click', function () {
+      const feature = this.dataset.feature;
+
+      // Add a subtle animation
+      this.style.transform = 'scale(0.95)';
+      setTimeout(() => {
+        this.style.transform = '';
+      }, 150);
+
+      // You can add more specific actions for each feature here
+      console.log(`Feature clicked: ${feature}`);
+    });
+  });
+});
+
+// Pause slideshow when user hovers over the image container
+document.addEventListener('DOMContentLoaded', function () {
+  const imageContainer = document.querySelector('.about-image-container');
+
+  if (imageContainer) {
+    imageContainer.addEventListener('mouseenter', function () {
+      clearInterval(aboutSlideInterval);
+    });
+
+    imageContainer.addEventListener('mouseleave', function () {
+      startAboutSlideshow();
+    });
+  }
+});
+
+/* ===== ACTIVITIES SECTION JAVASCRIPT ===== */
+
+// Wait for DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', function() {
-    // Start the slideshow
-    startAboutSlideshow();
     
-    // Feature card interactions
-    const featureCards = document.querySelectorAll('.feature-card');
+    // ===== ACTIVITY CARD CLICK HANDLERS =====
+    const activityCards = document.querySelectorAll('.activity-card');
     
-    featureCards.forEach(card => {
-        card.addEventListener('click', function() {
-            const feature = this.dataset.feature;
+    activityCards.forEach(card => {
+        card.addEventListener('click', function(e) {
+            // Prevent default action
+            e.preventDefault();
             
-            // Add a subtle animation
-            this.style.transform = 'scale(0.95)';
-            setTimeout(() => {
-                this.style.transform = '';
-            }, 150);
+            // Get activity type from data attribute
+            const activityType = this.getAttribute('data-activity');
             
-            // You can add more specific actions for each feature here
-            console.log(`Feature clicked: ${feature}`);
+            // Call function to open gallery
+            openGallery(activityType);
+        });
+    });
+    
+    // ===== VIEW GALLERY BUTTON HANDLERS =====
+    const galleryButtons = document.querySelectorAll('.view-gallery-btn');
+    
+    galleryButtons.forEach(button => {
+        button.addEventListener('click', function(e) {
+            // Prevent event bubbling and default behavior
+            e.preventDefault();
+            e.stopPropagation();
+            
+            // Get activity type from parent card
+            const activityCard = this.closest('.activity-card');
+            const activityType = activityCard.getAttribute('data-activity');
+            
+            // Call function to open gallery
+            openGallery(activityType);
         });
     });
 });
 
-// Pause slideshow when user hovers over the image container
-document.addEventListener('DOMContentLoaded', function() {
-    const imageContainer = document.querySelector('.about-image-container');
-    
-    if (imageContainer) {
-        imageContainer.addEventListener('mouseenter', function() {
-            clearInterval(aboutSlideInterval);
-        });
+/* ===== GALLERY NAVIGATION FUNCTIONS ===== */
+
+/**
+ * Open gallery page for specific activity
+ * @param {string} activityType - The type of activity (parade, blood-donation, etc.)
+ */
+function openGallery(activityType) {
+    try {
+        // Create URL for gallery page
+        const galleryUrl = `gallery.html?activity=${activityType}`;
         
-        imageContainer.addEventListener('mouseleave', function() {
-            startAboutSlideshow();
+        // Navigate to gallery page
+        window.location.href = galleryUrl;
+        
+        // Alternative method if you want to open in new tab
+        // window.open(galleryUrl, '_blank');
+        
+    } catch (error) {
+        console.error('Error opening gallery:', error);
+        
+        // Fallback: Try to find gallery section on same page
+        const gallerySection = document.getElementById(`${activityType}-gallery`);
+        if (gallerySection) {
+            // Hide activities section
+            const activitiesSection = document.getElementById('activities');
+            if (activitiesSection) {
+                activitiesSection.style.display = 'none';
+            }
+            
+            // Show gallery section
+            gallerySection.style.display = 'block';
+            gallerySection.scrollIntoView({ behavior: 'smooth' });
+        } else {
+            alert('Gallery page not found. Please ensure gallery.html exists.');
+        }
+    }
+}
+
+/* ===== UTILITY FUNCTIONS ===== */
+
+/**
+ * Get URL parameters
+ * @param {string} param - Parameter name to get
+ * @returns {string|null} Parameter value or null if not found
+ */
+function getUrlParameter(param) {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(param);
+}
+
+/**
+ * Smooth scroll to element
+ * @param {string} elementId - ID of element to scroll to
+ */
+function scrollToElement(elementId) {
+    const element = document.getElementById(elementId);
+    if (element) {
+        element.scrollIntoView({ 
+            behavior: 'smooth',
+            block: 'start'
         });
     }
+}
+
+/* ===== ANIMATION ENHANCEMENTS ===== */
+
+// Add entrance animations when section comes into view
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            // Add animation classes to cards
+            const cards = entry.target.querySelectorAll('.activity-card');
+            cards.forEach((card, index) => {
+                setTimeout(() => {
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, index * 100);
+            });
+        }
+    });
+}, observerOptions);
+
+// Observe activities section when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    const activitiesSection = document.getElementById('activities');
+    if (activitiesSection) {
+        // Set initial state for animation
+        const cards = activitiesSection.querySelectorAll('.activity-card');
+        cards.forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'all 0.6s ease';
+        });
+        
+        // Start observing
+        observer.observe(activitiesSection);
+    }
+});
+
+/* ===== ERROR HANDLING ===== */
+
+// Global error handler for navigation issues
+window.addEventListener('error', function(e) {
+    console.error('Navigation error:', e.error);
+});
+
+// Handle navigation failures
+window.addEventListener('unhandledrejection', function(e) {
+    console.error('Navigation promise rejection:', e.reason);
 });

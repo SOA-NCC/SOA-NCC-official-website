@@ -146,21 +146,23 @@
 
 
     <!-- Enhanced Objectives Section -->
-   <section class="ncc-objectives">
+    <section class="ncc-objectives">
         <div class="container">
             <div class="core-principles-badge">
                 <svg class="star-icon" viewBox="0 0 24 24">
-                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                    <path
+                        d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
                 </svg>
                 Core Principles
             </div>
-            
+
             <h1 class="main-title">NCC Objectives</h1>
-            
+
             <p class="subtitle">
-                Building character, developing leadership, and fostering national unity through disciplined training and service
+                Building character, developing leadership, and fostering national unity through disciplined training and
+                service
             </p>
-            
+
             <div class="cards-container">
                 <div class="card">
                     <div class="card-icon aims-icon"></div>
@@ -173,11 +175,11 @@
                         </ul>
                     </div>
                 </div>
-                
+
                 <div class="card">
                     <div class="card-icon vision-icon">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
+                            <!-- <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/> -->
                         </svg>
                     </div>
                     <h3 class="card-title">Vision</h3>
@@ -189,7 +191,7 @@
                         </ul>
                     </div>
                 </div>
-                
+
                 <div class="card">
                     <div class="card-icon motto-icon"></div>
                     <h3 class="card-title">Motto</h3>
@@ -205,67 +207,160 @@
         </div>
     </section>
 
-    <!-- Activities Section -->
+    <!-- ===== ACTIVITIES SECTION ===== -->
     <section id="activities" class="activities">
         <div class="container">
+            <!-- Section Header -->
             <div class="section-header">
                 <h2>Our Activities</h2>
-                <p>Engaging in diverse activities that build character, serve the nation, and develop
-                    leadership skills</p>
+                <p>Engaging in diverse activities that build character, serve the nation, and develop leadership skills
+                </p>
             </div>
 
+            <!-- Activities Grid -->
             <div class="activities-grid">
-                <div class="activity-card">
-                    <div class="activity-icon">
-                        <i class="fas fa-shield-alt"></i>
+                <!-- Parade Card -->
+                <div class="activity-card" data-activity="parade">
+                    <div class="activity-image">
+                        <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=500&h=300&fit=crop"
+                            alt="Parade Activity">
+
+                        <!-- Hover Overlay with Description -->
+                        <div class="activity-overlay">
+                            <div class="overlay-description">
+                                Experience the precision and discipline of NCC parade formations. Our cadets demonstrate
+                                exceptional coordination through synchronized drill movements and ceremonial displays.
+                            </div>
+                            <a href="gallery.html" class="view-gallery-btn">View Gallery</a>
+                        </div>
+
+                        <!-- Title Overlay on Image -->
+                        <div class="activity-title-overlay">
+                            <h3>Parade</h3>
+                        </div>
                     </div>
-                    <h3>Parade</h3>
-                    <p>Precision drill and ceremonial parades showcasing discipline and coordination</p>
+
+                    <!-- Card Content Below Image -->
+                    <div class="activity-content">
+                        <h3>Parade</h3>
+                        <p>Precision drill and ceremonial parades showcasing discipline and coordination</p>
+                    </div>
                 </div>
 
-                <div class="activity-card">
-                    <div class="activity-icon">
-                        <i class="fas fa-heart"></i>
+                <!-- Blood Donation Card -->
+                <div class="activity-card" data-activity="blood-donation">
+                    <div class="activity-image">
+                        <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=500&h=300&fit=crop"
+                            alt="Blood Donation">
+                        <div class="activity-overlay">
+                            <div class="overlay-description">
+                                Join our life-saving mission through regular blood donation camps. Every drop counts in
+                                our commitment to serve humanity and save precious lives in our community.
+                            </div>
+                            <a href="gallery.html" class="view-gallery-btn">View Gallery</a>
+                        </div>
+                        <div class="activity-title-overlay">
+                            <h3>Blood Donation</h3>
+                        </div>
                     </div>
-                    <h3>Blood Donation</h3>
-                    <p>Regular blood donation camps serving the community and saving lives</p>
+                    <div class="activity-content">
+                        <h3>Blood Donation</h3>
+                        <p>Regular blood donation camps serving the community and saving lives</p>
+                    </div>
                 </div>
 
-                <div class="activity-card">
-                    <div class="activity-icon">
-                        <i class="fas fa-tree"></i>
+                <!-- Tree Plantation Card -->
+                <div class="activity-card" data-activity="tree-plantation">
+                    <div class="activity-image">
+                        <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=500&h=300&fit=crop"
+                            alt="Tree Plantation">
+                        <div class="activity-overlay">
+                            <div class="overlay-description">
+                                Contributing to environmental conservation through extensive tree plantation drives.
+                                We're committed to creating a greener future for generations to come.
+                            </div>
+                            <a href="gallery.html" class="view-gallery-btn">View Gallery</a>
+                        </div>
+                        <div class="activity-title-overlay">
+                            <h3>Tree Plantation</h3>
+                        </div>
                     </div>
-                    <h3>Tree Plantation</h3>
-                    <p>Environmental conservation through tree plantation drives and awareness campaigns
-                    </p>
+                    <div class="activity-content">
+                        <h3>Tree Plantation</h3>
+                        <p>Environmental conservation through tree plantation drives and awareness campaigns</p>
+                    </div>
                 </div>
 
-                <div class="activity-card">
-                    <div class="activity-icon">
-                        <i class="fas fa-users"></i>
+                <!-- Swachh Bharat Card -->
+                <div class="activity-card" data-activity="swachh-bharat">
+                    <div class="activity-image">
+                        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&h=300&fit=crop"
+                            alt="Swachh Bharat">
+                        <div class="activity-overlay">
+                            <div class="overlay-description">
+                                Leading the charge for a cleaner India through community cleanliness drives and
+                                awareness programs. Together we build a healthier and cleaner nation.
+                            </div>
+                            <a href="gallery.html" class="view-gallery-btn">View Gallery</a>
+                        </div>
+                        <div class="activity-title-overlay">
+                            <h3>Swachh Bharat</h3>
+                        </div>
                     </div>
-                    <h3>Swachh Bharat</h3>
-                    <p>Cleanliness drives and awareness programs for a cleaner, healthier India</p>
+                    <div class="activity-content">
+                        <h3>Swachh Bharat</h3>
+                        <p>Cleanliness drives and awareness programs for a cleaner, healthier India</p>
+                    </div>
                 </div>
 
-                <div class="activity-card">
-                    <div class="activity-icon">
-                        <i class="fas fa-award"></i>
+                <!-- Guard of Honour Card -->
+                <div class="activity-card" data-activity="guard-of-honour">
+                    <div class="activity-image">
+                        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=500&h=300&fit=crop"
+                            alt="Guard of Honour">
+                        <div class="activity-overlay">
+                            <div class="overlay-description">
+                                Performing ceremonial duties with utmost respect and precision. Our cadets provide guard
+                                of honour for distinguished guests and important national events.
+                            </div>
+                            <a href="gallery.html" class="view-gallery-btn">View Gallery</a>
+                        </div>
+                        <div class="activity-title-overlay">
+                            <h3>Guard of Honour</h3>
+                        </div>
                     </div>
-                    <h3>Guard of Honour</h3>
-                    <p>Ceremonial duties and guard of honour for distinguished guests and events</p>
+                    <div class="activity-content">
+                        <h3>Guard of Honour</h3>
+                        <p>Ceremonial duties and guard of honour for distinguished guests and events</p>
+                    </div>
                 </div>
 
-                <div class="activity-card">
-                    <div class="activity-icon">
-                        <i class="fas fa-campground"></i>
+                <!-- Camps Card -->
+                <div class="activity-card" data-activity="camps">
+                    <div class="activity-image">
+                        <img src="https://images.unsplash.com/photo-1504851149312-7a075b496cc7?w=500&h=300&fit=crop"
+                            alt="Camps">
+                        <div class="activity-overlay">
+                            <div class="overlay-description">
+                                Immersive training camps focused on adventure activities, leadership development, and
+                                essential life skills that shape confident future leaders.
+                            </div>
+                            <a href="gallery.html" class="view-gallery-btn">View Gallery</a>
+                        </div>
+                        <div class="activity-title-overlay">
+                            <h3>Camps</h3>
+                        </div>
                     </div>
-                    <h3>Camps</h3>
-                    <p>Training camps, adventure activities, and skill development programs</p>
+                    <div class="activity-content">
+                        <h3>Camps</h3>
+                        <p>Training camps, adventure activities, and skill development programs</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
+
+
 
     <!-- Messages Section -->
     <section id="messages" class="messages">
