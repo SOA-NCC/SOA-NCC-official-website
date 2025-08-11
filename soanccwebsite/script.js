@@ -803,3 +803,91 @@ document.addEventListener('DOMContentLoaded', function () {
     orbs[2].style.transform = `translate(${x * 20}px, ${-y * 20}px)`;
   });
 });
+
+
+
+// Contributors Section Animations
+document.addEventListener('DOMContentLoaded', function() {
+    // Animate skill bars on scroll
+    const skillBars = document.querySelectorAll('.skill-progress');
+    
+    const animateSkillBars = () => {
+        skillBars.forEach(bar => {
+            const parent = bar.parentElement;
+            const level = parent.getAttribute('data-level');
+            bar.style.width = '0';
+            
+            setTimeout(() => {
+                bar.style.width = level + '%';
+                
+                // Animate percentage counter
+                const percentElement = parent.querySelector('.skill-percent');
+                let current = 0;
+                const duration = 1500;
+                const increment = level / (duration / 16);
+                
+                const counter = setInterval(() => {
+                    current += increment;
+                    percentElement.textContent = Math.floor(current) + '%';
+                    
+                    if (current >= level) {
+                        percentElement.textContent = level + '%';
+                        clearInterval(counter);
+                    }
+                }, 16);
+            }, 300);
+        });
+    };
+
+    // Intersection Observer for skill bars
+    const contributorsSection = document.querySelector('#contributors');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                animateSkillBars();
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.3 });
+
+    if (contributorsSection) {
+        observer.observe(contributorsSection);
+    }
+
+    // 3D tilt effect
+    const contributorCards = document.querySelectorAll('.contributor-card');
+    
+    contributorCards.forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+            
+            const angleX = (y - centerY) / 15;
+            const angleY = (centerX - x) / 15;
+            
+            card.style.transform = `perspective(1000px) rotateX(${angleX}deg) rotateY(${angleY}deg) translateY(-10px)`;
+            
+            // Glow effect follow
+            const glow = card.querySelector('.card-glow');
+            glow.style.background = `radial-gradient(circle at ${x}px ${y}px, rgba(0, 255, 255, 0.3) 0%, transparent 70%)`;
+        });
+        
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateY(-10px)';
+        });
+    });
+
+    // Floating tech orbs animation
+    window.addEventListener('mousemove', (e) => {
+        const x = e.clientX / window.innerWidth;
+        const y = e.clientY / window.innerHeight;
+        
+        const orbs = document.querySelectorAll('.tech-orb');
+        orbs[0].style.transform = `translate(${x * 40}px, ${y * 40}px)`;
+        orbs[1].style.transform = `translate(${-x * 50}px, ${-y * 50}px)`;
+    });
+});

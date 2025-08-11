@@ -1770,7 +1770,7 @@ body {
 .alumni-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
+    gap: 12px;
     margin-bottom: 80px;
 }
 
@@ -2190,4 +2190,312 @@ body {
   .benefit-card {
     padding: 20px;
   }
+}
+
+
+
+/* ====Contributor section==== */
+/* Contributors Section */
+.contributors {
+    position: relative;
+    padding: 100px 0;
+    overflow: hidden;
+    background: linear-gradient(135deg, #0f0f23 0%, #1a1a3a 100%);
+    color: white;
+}
+
+.contributors-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.code-particle {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(circle, rgba(100, 255, 255, 0.1) 1px, transparent 1px),
+        radial-gradient(circle, rgba(255, 100, 255, 0.1) 1px, transparent 1px),
+        radial-gradient(circle, rgba(255, 255, 100, 0.1) 1px, transparent 1px);
+    background-size: 50px 50px, 70px 70px, 90px 90px;
+    animation: floatParticles 120s linear infinite;
+}
+
+.tech-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(60px);
+    opacity: 0.2;
+}
+
+.tech-orb.orb-1 {
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, #00ffaa, transparent 70%);
+    top: 20%;
+    left: -100px;
+    animation: floatTechOrb1 18s ease-in-out infinite alternate;
+}
+
+.tech-orb.orb-2 {
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, #ff00aa, transparent 70%);
+    bottom: -150px;
+    right: -100px;
+    animation: floatTechOrb2 22s ease-in-out infinite alternate;
+}
+
+.dev-gradient-text {
+    background: linear-gradient(90deg, #00ffaa, #0088ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+/* Contributors Grid */
+.contributors-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.contributor-card {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    z-index: 2;
+}
+
+.contributor-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0) 100%);
+    z-index: 1;
+    border-radius: 16px;
+}
+
+.card-glow {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, rgba(0, 255, 255, 0.1) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.contributor-card:hover .card-glow {
+    opacity: 0.5;
+}
+
+.contributor-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+.contributor-image {
+    position: relative;
+    height: 220px;
+    overflow: hidden;
+}
+
+.contributor-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.contributor-card:hover .contributor-image img {
+    transform: scale(1.05);
+}
+
+.image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 50%);
+}
+
+.contributor-badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(0,0,0,0.6);
+    padding: 6px 12px;
+    border-radius: 50px;
+    font-size: 12px;
+    font-weight: 600;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.card-content {
+    padding: 20px;
+    position: relative;
+    z-index: 2;
+}
+
+.card-content h3 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.contributor-role {
+    font-size: 14px;
+    color: #00ffaa;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+/* Skills Chart */
+.skills-chart {
+    margin: 20px 0;
+}
+
+.skill-bar {
+    margin-bottom: 15px;
+}
+
+.skill-label {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+    font-size: 12px;
+    color: rgba(255,255,255,0.8);
+}
+
+.skill-progress {
+    height: 6px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 3px;
+    overflow: hidden;
+    position: relative;
+}
+
+.skill-progress::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    background: linear-gradient(90deg, #00ffaa, #0088ff);
+    border-radius: 3px;
+    transition: width 1.5s ease-out;
+}
+
+/* Tech Stack */
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 20px;
+}
+
+.tech-tag {
+    background: rgba(0, 136, 255, 0.2);
+    color: #00aaff;
+    padding: 4px 10px;
+    border-radius: 50px;
+    font-size: 11px;
+    font-weight: 600;
+    border: 1px solid rgba(0, 136, 255, 0.3);
+}
+
+/* Card Footer */
+.card-footer {
+    padding: 0 20px 20px;
+}
+
+.social-links {
+    display: flex;
+    gap: 12px;
+}
+
+.social-link {
+    color: rgba(255,255,255,0.6);
+    font-size: 16px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-link:hover {
+    color: #00ffaa;
+    transform: translateY(-3px);
+}
+
+/* Featured Card */
+.featured {
+    border: 2px solid #00ffaa;
+}
+
+.featured-ribbon {
+    position: absolute;
+    top: 15px;
+    left: -8px;
+    background: #00ffaa;
+    color: #111;
+    padding: 5px 30px 5px 20px;
+    font-size: 12px;
+    font-weight: 700;
+    z-index: 3;
+    clip-path: polygon(0 0, 100% 0, calc(100% - 15px) 50%, 100% 100%, 0 100%);
+}
+
+/* Animations */
+@keyframes floatTechOrb1 {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(50px, 50px);
+    }
+}
+
+@keyframes floatTechOrb2 {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(-50px, -50px);
+    }
+}
+
+@keyframes codePulse {
+    0% {
+        opacity: 0.5;
+    }
+    50% {
+        opacity: 0.8;
+    }
+    100% {
+        opacity: 0.5;
+    }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .contributors-grid {
+        grid-template-columns: 1fr;
+    }
 }
