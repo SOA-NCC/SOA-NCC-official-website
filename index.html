@@ -1,0 +1,1376 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOA NCC - 4(O) CTC | Unity and Discipline</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Wrong (if files are in a subfolder) -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Correct (if file is in "public/styles.css") -->
+    <link rel="stylesheet" href="/styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <!-- Left: Hamburger, NCC Logo, Brand -->
+            <div class="nav-left dropdown-parent">
+                <button class="hamburger" id="hamburger" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <div class="logo">
+                    <img src="ncc logo.png" alt="SOA NCC Logo" />
+                </div>
+                <div class="brand-text">
+                    <span class="brand-title">SOA NCC</span>
+                    <span class="brand-subtitle">4 (O) CTC | 1 (O) BN</span>
+                    <!-- <span class="brand-subtitle">1 (O) BN</span> -->
+
+                </div>
+                <!-- Dropdown Menu (move inside .dropdown-parent) -->
+                <div class="dropdown-menu" id="dropdown-menu">
+                    <a href="#home">Home</a>
+                    <a href="#about">About Us</a>
+                    <a href="#objectives">Objectives</a>
+                    <a href="#activities">Activities</a>
+                    <a href="#achievements">Achievements</a>
+                    <a href="#alumni">Alumni</a>
+                </div>
+            </div>
+            <!-- Center: Motto -->
+            <div class="nav-center">
+                <span class="motto"></span>
+            </div>
+            <!-- Right: Join Button & College Logo -->
+            <div class="nav-right">
+                <a href="#join" class="join-btn">Join</a>
+                <div class="college-logo">
+                    <img src="SOA_LOGO_WHITE.png" alt="College Logo" />
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-background">
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">SOA NCC</h1>
+                <h2 class="hero-subtitle">4 (O) CTC | 1 (O) BN</h2>
+                <p class="hero-description">Unity and Discipline | Character. Leadership. Service.</p>
+
+                <div class="hero-buttons">
+                    <button class="btn btn-primary" onclick="scrollToSection('about')">Explore</button>
+                    <button class="btn btn-outline" onclick="scrollToSection('join')">Why Join</button>
+                    <button class="btn btn-success" onclick="scrollToSection('achievements')">View Achievements</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="scroll-indicator">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- About section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-grid">
+                <!-- Auto-changing image slideshow -->
+                <div class="about-image-container">
+                    <!-- Image Slideshow Component -->
+                    <div class="about-image-container">
+                        <div class="slideshow">
+                            <img src="AboutPic.jpg" alt="NCC Training 1" class="slide active">
+                            <img src="about-pic-2.jpg" alt="NCC Training 2" class="slide">
+                            <img src="about-pic-3.jpg" alt="NCC Training 3" class="slide">
+                            <img src="about-pic-4.jpg" alt="NCC Training 4" class="slide">
+                        </div>
+
+                        <div class="indicators">
+                            <span class="indicator active" data-index="0"></span>
+                            <span class="indicator" data-index="1"></span>
+                            <span class="indicator" data-index="2"></span>
+                            <span class="indicator" data-index="3"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-content">
+                    <h2>About SOA NCC</h2>
+                    <div class="about-text">
+                        <p>
+                            Established as an integral part of the prestigious <strong>4(O) CTC | 1(O) BN under the
+                                Odisha
+                                Directorate</strong>,
+                            SOA NCC Unit stands as a beacon of excellence in character development, leadership training,
+                            and national service.
+                        </p>
+                        <p>
+                            Affiliated with <strong>Siksha 'O' Anusandhan University</strong>, we are committed to
+                            nurturing young minds
+                            into disciplined citizens and future leaders who embody the highest ideals of patriotism,
+                            integrity, and service.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Interactive Features Grid
+                <div class="interactive-features">
+                    <div class="feature-card" data-feature="leadership">
+                        <i class="fas fa-medal"></i>
+                        <h3>Leadership Development</h3>
+                        <p>Building future leaders through structured training and real-world experience</p>
+                    </div>
+                    <div class="feature-card" data-feature="discipline">
+                        <i class="fas fa-shield-alt"></i>
+                        <h3>Character Building</h3>
+                        <p>Instilling values of discipline, integrity, and national service</p>
+                    </div>
+                    <div class="feature-card" data-feature="adventure">
+                        <i class="fas fa-mountain"></i>
+                        <h3>Adventure Training</h3>
+                        <p>Exciting camps, trekking, and outdoor activities for holistic development</p>
+                    </div>
+                    <div class="feature-card" data-feature="service">
+                        <i class="fas fa-hands-helping"></i>
+                        <h3>Community Service</h3>
+                        <p>Contributing to society through various social service initiatives</p>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+        </div>
+    </section>
+
+
+    <!-- Enhanced Objectives Section -->
+    <section class="ncc-objectives">
+        <div class="container">
+            <div class="core-principles-badge">
+                <svg class="star-icon" viewBox="0 0 24 24">
+                    <path
+                        d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                </svg>
+                Core Principles
+            </div>
+
+            <h1 class="main-title">NCC Objectives</h1>
+
+            <p class="subtitle">
+                Building character, developing leadership, and fostering national unity through disciplined training and
+                service
+            </p>
+
+            <div class="cards-container">
+                <div class="card">
+                    <div class="card-icon aims-icon"></div>
+                    <h3 class="card-title">NCC Aims</h3>
+                    <div class="card-content">
+                        <ul>
+                            <li>Develop character, comradeship, discipline, and leadership</li>
+                            <li>Create a human resource of organized, trained youth</li>
+                            <li>Provide environment to motivate young people</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon vision-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <!-- <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/> -->
+                        </svg>
+                    </div>
+                    <h3 class="card-title">Vision</h3>
+                    <div class="card-content">
+                        <ul>
+                            <li>Empower volunteer youth to become leaders</li>
+                            <li>Develop leadership and character building</li>
+                            <li>Create disciplined and responsible citizens</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon motto-icon"></div>
+                    <h3 class="card-title">Motto</h3>
+                    <div class="card-content">
+                        <ul>
+                            <li>Unity and Discipline as core values</li>
+                            <li>National Integration and secular outlook</li>
+                            <li>Spirit of adventure and sportsmanship</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== ACTIVITIES SECTION ===== -->
+    <section id="activities" class="activities">
+        <div class="container">
+            <!-- Section Header -->
+            <div class="section-header">
+                <h2>Our Activities</h2>
+                <p>Engaging in diverse activities that build character, serve the nation, and develop leadership skills
+                </p>
+            </div>
+
+            <!-- Activities Grid -->
+            <div class="activities-grid">
+                <!-- Parade Card -->
+                <div class="activity-card" data-activity="parade">
+                    <div class="activity-image">
+                        <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=500&h=300&fit=crop"
+                            alt="Parade Activity">
+
+                        <!-- Hover Overlay with Description -->
+                        <div class="activity-overlay">
+                            <div class="overlay-description">
+                                Experience the precision and discipline of NCC parade formations. Our cadets demonstrate
+                                exceptional coordination through synchronized drill movements and ceremonial displays.
+                            </div>
+                            <a href="gallery.html" class="view-gallery-btn">View Gallery</a>
+                        </div>
+
+                        <!-- Title Overlay on Image -->
+                        <div class="activity-title-overlay">
+                            <h3>Parade</h3>
+                        </div>
+                    </div>
+
+                    <!-- Card Content Below Image -->
+                    <div class="activity-content">
+                        <h3>Parade</h3>
+                        <p>Precision drill and ceremonial parades showcasing discipline and coordination</p>
+                    </div>
+                </div>
+
+                <!-- Blood Donation Card -->
+                <div class="activity-card" data-activity="blood-donation">
+                    <div class="activity-image">
+                        <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=500&h=300&fit=crop"
+                            alt="Blood Donation">
+                        <div class="activity-overlay">
+                            <div class="overlay-description">
+                                Join our life-saving mission through regular blood donation camps. Every drop counts in
+                                our commitment to serve humanity and save precious lives in our community.
+                            </div>
+                            <a href="gallery.html" class="view-gallery-btn">View Gallery</a>
+                        </div>
+                        <div class="activity-title-overlay">
+                            <h3>Blood Donation</h3>
+                        </div>
+                    </div>
+                    <div class="activity-content">
+                        <h3>Blood Donation</h3>
+                        <p>Regular blood donation camps serving the community and saving lives</p>
+                    </div>
+                </div>
+
+                <!-- Tree Plantation Card -->
+                <div class="activity-card" data-activity="tree-plantation">
+                    <div class="activity-image">
+                        <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=500&h=300&fit=crop"
+                            alt="Tree Plantation">
+                        <div class="activity-overlay">
+                            <div class="overlay-description">
+                                Contributing to environmental conservation through extensive tree plantation drives.
+                                We're committed to creating a greener future for generations to come.
+                            </div>
+                            <a href="gallery.html" class="view-gallery-btn">View Gallery</a>
+                        </div>
+                        <div class="activity-title-overlay">
+                            <h3>Tree Plantation</h3>
+                        </div>
+                    </div>
+                    <div class="activity-content">
+                        <h3>Tree Plantation</h3>
+                        <p>Environmental conservation through tree plantation drives and awareness campaigns</p>
+                    </div>
+                </div>
+
+                <!-- Swachh Bharat Card -->
+                <div class="activity-card" data-activity="swachh-bharat">
+                    <div class="activity-image">
+                        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&h=300&fit=crop"
+                            alt="Swachh Bharat">
+                        <div class="activity-overlay">
+                            <div class="overlay-description">
+                                Leading the charge for a cleaner India through community cleanliness drives and
+                                awareness programs. Together we build a healthier and cleaner nation.
+                            </div>
+                            <a href="gallery.html" class="view-gallery-btn">View Gallery</a>
+                        </div>
+                        <div class="activity-title-overlay">
+                            <h3>Swachh Bharat</h3>
+                        </div>
+                    </div>
+                    <div class="activity-content">
+                        <h3>Swachh Bharat</h3>
+                        <p>Cleanliness drives and awareness programs for a cleaner, healthier India</p>
+                    </div>
+                </div>
+
+                <!-- Guard of Honour Card -->
+                <div class="activity-card" data-activity="guard-of-honour">
+                    <div class="activity-image">
+                        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=500&h=300&fit=crop"
+                            alt="Guard of Honour">
+                        <div class="activity-overlay">
+                            <div class="overlay-description">
+                                Performing ceremonial duties with utmost respect and precision. Our cadets provide guard
+                                of honour for distinguished guests and important national events.
+                            </div>
+                            <a href="gallery.html" class="view-gallery-btn">View Gallery</a>
+                        </div>
+                        <div class="activity-title-overlay">
+                            <h3>Guard of Honour</h3>
+                        </div>
+                    </div>
+                    <div class="activity-content">
+                        <h3>Guard of Honour</h3>
+                        <p>Ceremonial duties and guard of honour for distinguished guests and events</p>
+                    </div>
+                </div>
+
+                <!-- Camps Card -->
+                <div class="activity-card" data-activity="camps">
+                    <div class="activity-image">
+                        <img src="https://images.unsplash.com/photo-1504851149312-7a075b496cc7?w=500&h=300&fit=crop"
+                            alt="Camps">
+                        <div class="activity-overlay">
+                            <div class="overlay-description">
+                                Immersive training camps focused on adventure activities, leadership development, and
+                                essential life skills that shape confident future leaders.
+                            </div>
+                            <a href="gallery.html" class="view-gallery-btn">View Gallery</a>
+                        </div>
+                        <div class="activity-title-overlay">
+                            <h3>Camps</h3>
+                        </div>
+                    </div>
+                    <div class="activity-content">
+                        <h3>Camps</h3>
+                        <p>Training camps, adventure activities, and skill development programs</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!--====Leadership Messages Section =====-->
+    <section id="leadership" class="leadership">
+        <div class="leadership-background">
+            <div class="military-pattern"></div>
+            <div class="gradient-overlay"></div>
+        </div>
+
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <div class="section-badge">
+                    <i class="fas fa-star"></i>
+                    <span>Our Leadership</span>
+                </div>
+                <h2 class="section-title">
+                    Commanding
+                    <span class="ncc-gradient-text">Officers</span>
+                </h2>
+                <p class="section-subtitle">
+                    Meet the distinguished leaders who guide our NCC unit with dedication and vision
+                </p>
+            </div>
+
+            <!-- Commanding Officer -->
+            <div class="commanding-officer" data-aos="fade-up">
+                <div class="officer-card commander">
+                    <div class="officer-image">
+                        <img src="media/leadership/col-satyabrata-swain.jpg" alt="Col. Satyabrata Swain">
+                        <div class="image-border"></div>
+                        <div class="rank-badge">Commanding Officer</div>
+                    </div>
+                    <div class="officer-details">
+                        <h3>Col. Satyabrata Swain</h3>
+                        <p class="officer-rank">Commanding Officer</p>
+                        <div class="officer-quote">
+                            <i class="fas fa-quote-left"></i>
+                            <p>Leadership is not about being in charge. It's about taking care of those in your charge.
+                            </p>
+                            <i class="fas fa-quote-right"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SD and SW Divisions -->
+            <div class="divisions-grid">
+                <!-- SD Division -->
+                <div class="division-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="division-header">
+                        <div class="division-icon">
+                            <span>SD</span>
+                        </div>
+                        <h3>Senior Division</h3>
+                    </div>
+
+                    <div class="officers-grid">
+                        <!-- SD OC -->
+                        <div class="officer-card">
+                            <div class="officer-image">
+                                <img src="media/leadership/lt-col-shantunu-dey.jpg" alt="Lt. Col. Shantunu Dey">
+                                <div class="image-border"></div>
+                                <div class="rank-badge">Officer</div>
+                            </div>
+                            <div class="officer-details">
+                                <h4>Lt. Col. Shantunu Dey</h4>
+                                <p class="officer-position">Officer Commanding (SD)</p>
+                                <div class="officer-quote">
+                                    <i class="fas fa-quote-left"></i>
+                                    <p>Discipline is the bridge between goals and accomplishment.</p>
+                                    <i class="fas fa-quote-right"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- SD CTO -->
+                        <div class="officer-card">
+                            <div class="officer-image">
+                                <img src="media/leadership/sreyanshu-satya-prakash.jpg" alt="Sreyanshu Satya Prakash">
+                                <div class="image-border"></div>
+                                <div class="rank-badge">Officer</div>
+                            </div>
+                            <div class="officer-details">
+                                <h4>Sreyanshu Satya Prakash</h4>
+                                <p class="officer-position">Care Taker Officer (SD)</p>
+                                <div class="officer-quote">
+                                    <i class="fas fa-quote-left"></i>
+                                    <p>Training today ensures victory tomorrow.</p>
+                                    <i class="fas fa-quote-right"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SW Division -->
+                <div class="division-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="division-header">
+                        <div class="division-icon">
+                            <span>SW</span>
+                        </div>
+                        <h3>Senior Wing</h3>
+                    </div>
+
+                    <div class="officers-grid">
+                        <!-- SW OC -->
+                        <div class="officer-card">
+                            <div class="officer-image">
+                                <img src="media/leadership/col-sanjeev-dewan.jpg" alt="Col. Sanjeev Dewan">
+                                <div class="image-border"></div>
+                                <div class="rank-badge">Officer</div>
+                            </div>
+                            <div class="officer-details">
+                                <h4>Col. Sanjeev Dewan</h4>
+                                <p class="officer-position">Officer Commanding (SW)</p>
+                                <div class="officer-quote">
+                                    <i class="fas fa-quote-left"></i>
+                                    <p>Empowerment through discipline creates unstoppable women leaders.</p>
+                                    <i class="fas fa-quote-right"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- SW CTO -->
+                        <div class="officer-card">
+                            <div class="officer-image">
+                                <img src="media/leadership/dr-rima-sahani.jpg" alt="Dr. Rima Sahani">
+                                <div class="image-border"></div>
+                                <div class="rank-badge">Officer</div>
+                            </div>
+                            <div class="officer-details">
+                                <h4>Dr. Rima Sahani</h4>
+                                <p class="officer-position">Care Taker Officer (SW)</p>
+                                <div class="officer-quote">
+                                    <i class="fas fa-quote-left"></i>
+                                    <p>Knowledge combined with courage creates exceptional leaders.</p>
+                                    <i class="fas fa-quote-right"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Current Ranks Section -->
+    <section id="ranks" class="ranks">
+        <div class="container">
+            <div class="section-header">
+                <h2>Current Cadet Leadership</h2>
+                <p>Meet our distinguished cadet officers leading by example</p>
+            </div>
+
+            <div class="ranks-grid">
+                <div class="cadet-card">
+                    <div class="cadet-image">
+                        <img src="media/Rank Holders/SUO Devi pic.png" />
+                    </div>
+                    <h3>Devi Prasad Sarangi</h3>
+                    <p class="cadet-rank">SUO</p>
+                    <p class="cadet-year">Third Year</p>
+                    <p class="cadet-intro">Leading with dedication and inspiring fellow cadets through
+                        exemplary service.</p>
+                </div>
+
+                <div class="cadet-card">
+                    <div class="cadet-image">
+                        <img src="media/Rank Holders/JUO Raj pic.png" />
+                    </div>
+                    <h3>Raj Sahasranshu Biswal</h3>
+                    <p class="cadet-rank">JUO</p>
+                    <p class="cadet-year">Third Year</p>
+                    <p class="cadet-intro">Committed to excellence and fostering team spirit among
+                        junior cadets.</p>
+                </div>
+
+                <div class="cadet-card">
+                    <div class="cadet-image">
+                        <img src="media/Rank Holders/JUO Nick pic.png" />
+                    </div>
+                    <h3>Nikhilesh Sahoo</h3>
+                    <p class="cadet-rank">JUO</p>
+                    <p class="cadet-year">Third Year</p>
+                    <p class="cadet-intro">Passionate about training and mentoring new cadets in NCC
+                        values.</p>
+                </div>
+
+                <div class="cadet-card">
+                    <div class="cadet-image">
+                        <img src="media/Rank Holders/JUO Anubhav Pic.png" />
+                    </div>
+                    <h3>Anubhav Samantray</h3>
+                    <p class="cadet-rank">JUO</p>
+                    <p class="cadet-year">Third Year</p>
+                    <p class="cadet-intro">Dedicated to community service and upholding the highest
+                        standards of discipline.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section id="achievements" class="achievements">
+        <div class="achievements-background"></div>
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge white">
+                    <i class="fas fa-award"></i>
+                    <span>Our Pride</span>
+                </div>
+                <h2 class="section-title white">Celebrating Excellence</h2>
+                <p class="section-subtitle white">
+                    Recognizing outstanding achievements in training, competitions, and dedicated national service
+                </p>
+            </div>
+
+            <div class="achievements-carousel">
+                <div class="carousel-container">
+                    <div class="carousel-slide active">
+                        <div class="slide-image slide-tsc2025"></div>
+                        <div class="slide-content">
+                            <h3>TSC 2025</h3>
+                            <p>4 Cadets of SOA NCC got selected in IUC and are representing Cuttack group in IGC</p>
+                        </div>
+                    </div>
+                    <div class="carousel-slide">
+                        <div class="slide-image slide-yep"></div>
+                        <div class="slide-content">
+                            <h3>YEP 2024</h3>
+                            <p>JUO Abinash Nanda represented India at the Youth Exchange Program (YEP) in Kyrgyzstan.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="carousel-slide">
+                        <div class="slide-image slide-tsc2024"></div>
+                        <div class="slide-content">
+                            <h3>TSC 2024</h3>
+                            <p>Thal Sainik Camp representation with outstanding performance at Rajpath, New Delhi</p>
+                        </div>
+                    </div>
+                    <div class="carousel-slide">
+                        <div class="slide-image slide-foundation"></div>
+                        <div class="slide-content">
+                            <h3>2nd Best Troop</h3>
+                            <p>06 Cadets of SOA NCC participated in the 77th Capital Foundation Day Celebrations and
+                                were awarded the 2nd Prize for their remarkable performance.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="carousel-btn prev" onclick="changeSlide(-1)">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="carousel-btn next" onclick="changeSlide(1)">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+
+                <div class="carousel-dots">
+                    <span class="dot active" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                    <span class="dot" onclick="currentSlide(4)"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enhanced Alumni Section -->
+    <section id="alumni" class="alumni">
+        <div class="alumni-background">
+            <div class="floating-particles"></div>
+            <div class="gradient-orb orb-1"></div>
+            <div class="gradient-orb orb-2"></div>
+            <div class="gradient-orb orb-3"></div>
+        </div>
+
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <div class="section-badge">
+                    <i class="fas fa-star"></i>
+                    <span>Alumni Excellence</span>
+                </div>
+                <h2 class="section-title">
+                    Our Distinguished
+                    <span class="ncc-gradient-text">Alumni</span>
+                </h2>
+                <p class="section-subtitle">
+                    Celebrating our exceptional alumni and their inspiring journeys of service to the nation
+                </p>
+            </div>
+
+            <div class="alumni-grid">
+                <!-- Alumni Card 1 -->
+                <div class="alumni-card ncc-navy" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card-glow"></div>
+                    <div class="alumni-image">
+                        <img src="media/Alumni/Susant_dhar.png" alt="Sushant Dhar" />
+                        <div class="image-overlay"></div>
+                        <div class="alumni-badge">Alumni</div>
+                    </div>
+                    <div class="card-content">
+                        <h3>Sushant Dhar</h3>
+                        <p class="alumni-position">Navy SSC IT Officer</p>
+                        <p class="alumni-achievement">Recommended at 33 SSB Bhopal</p>
+                        <p class="alumni-description">Successfully recommended for Navy SSC IT, exemplifying technical
+                            excellence and leadership in naval service.</p>
+                    </div>
+                    <div class="card-footer">
+                        <div class="achievement-stats">
+                            <span class="stat-item">
+                                <i class="fas fa-anchor"></i>
+                                Navy
+                            </span>
+                            <span class="stat-item">
+                                <i class="fas fa-code"></i>
+                                IT Officer
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Alumni Card 2 -->
+                <div class="alumni-card ncc-red" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card-glow"></div>
+                    <div class="alumni-image">
+                        <img src="media/Alumni/Kumar_Abinash.png" alt="Kumar Abinash" />
+                        <div class="image-overlay"></div>
+                        <div class="alumni-badge">Alumni</div>
+                    </div>
+                    <div class="card-content">
+                        <h3>Kumar Abinash</h3>
+                        <p class="alumni-position">OPSC Officer</p>
+                        <p class="alumni-achievement">Rank 278 (2022)</p>
+                        <p class="alumni-description">Serving with distinction as a Group B Officer in Odisha
+                            Government, contributing to state administration excellence.</p>
+                    </div>
+                    <div class="card-footer">
+                        <div class="achievement-stats">
+                            <span class="stat-item">
+                                <i class="fas fa-building"></i>
+                                OPSC
+                            </span>
+                            <span class="stat-item">
+                                <i class="fas fa-trophy"></i>
+                                Rank 278
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Alumni Card 3 - Featured -->
+                <div class="alumni-card ncc-white-card featured" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card-glow"></div>
+                    <div class="featured-ribbon">
+                        <span>Featured</span>
+                    </div>
+                    <div class="alumni-image">
+                        <img src="media/Alumni/Ankit_Biswal.png" alt="Ankit Raj Biswal" />
+                        <div class="image-overlay"></div>
+                        <div class="alumni-badge ncc-navy-badge">Alumni</div>
+                    </div>
+                    <div class="card-content">
+                        <h3>Ankit Raj Biswal</h3>
+                        <p class="alumni-position">Lieutenant</p>
+                        <p class="alumni-achievement">Indian Army</p>
+                        <p class="alumni-description">Commissioned as Lieutenant in the Indian Army, leading with honor
+                            after completing training at OTA Chennai.</p>
+                    </div>
+                    <div class="card-footer">
+                        <div class="achievement-stats">
+                            <span class="stat-item">
+                                <i class="fas fa-shield-alt"></i>
+                                Army
+                            </span>
+                            <span class="stat-item">
+                                <i class="fas fa-star"></i>
+                                Lieutenant
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Alumni Card 4 -->
+                <div class="alumni-card ncc-skyblue" data-aos="fade-up" data-aos-delay="400">
+                    <div class="card-glow"></div>
+                    <div class="alumni-image">
+                        <img src="media/Alumni/Ranbir_Singh.png" alt="Ranbir Singh" />
+                        <div class="image-overlay"></div>
+                        <div class="alumni-badge">Alumni</div>
+                    </div>
+                    <div class="card-content">
+                        <h3>Ranbir Singh</h3>
+                        <p class="alumni-position">Flying Officer</p>
+                        <p class="alumni-achievement">Indian Air Force (AFCAT)</p>
+                        <p class="alumni-description">Recommended for Indian Air Force through AFCAT, ready to serve the
+                            nation in the skies with distinction.</p>
+                    </div>
+                    <div class="card-footer">
+                        <div class="achievement-stats">
+                            <span class="stat-item">
+                                <i class="fas fa-plane"></i>
+                                Air Force
+                            </span>
+                            <span class="stat-item">
+                                <i class="fas fa-wings"></i>
+                                Flying Officer
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Statistics Section -->
+            <!-- <div class="alumni-stats" data-aos="fade-up" data-aos-delay="500">
+                <div class="stat-card">
+                    <div class="stat-number" data-count="50">0</div>
+                    <div class="stat-label">Distinguished Alumni</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" data-count="25">0</div>
+                    <div class="stat-label">Defense Services</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" data-count="15">0</div>
+                    <div class="stat-label">Civil Services</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" data-count="98">0</div>
+                    <div class="stat-label">Success Rate %</div>
+                </div>
+            </div> -->
+        </div>
+    </section>
+
+    <!-- === Contributor Section === -->
+    <!-- Contributors Section -->
+    <section id="contributors" class="contributors">
+        <div class="contributors-background">
+            <div class="code-particle"></div>
+            <div class="tech-orb orb-1"></div>
+            <div class="tech-orb orb-2"></div>
+        </div>
+
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <div class="section-badge">
+                    <i class="fas fa-code"></i>
+                    <span>Development Team</span>
+                </div>
+                <h2 class="section-title">
+                    Our Amazing
+                    <span class="dev-gradient-text">Contributors</span>
+                </h2>
+                <p class="section-subtitle">
+                    The talented developers who built this platform with cutting-edge technologies
+                </p>
+            </div>
+
+            <div class="contributors-grid">
+                <!-- Contributor 1 -->
+                <div class="contributor-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card-glow"></div>
+                    <div class="contributor-image">
+                        <img src="media/contributors/dev1.jpg" alt="Lead Developer" />
+                        <div class="image-overlay"></div>
+                        <div class="contributor-badge">
+                            <i class="fas fa-star"></i>
+                            Lead Dev
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3>Alex Johnson</h3>
+                        <p class="contributor-role">Full Stack Developer</p>
+
+                        <div class="skills-chart">
+                            <div class="skill-bar" data-skill="JavaScript" data-level="95">
+                                <div class="skill-label">
+                                    <span>JavaScript</span>
+                                    <span class="skill-percent">0%</span>
+                                </div>
+                                <div class="skill-progress"></div>
+                            </div>
+                            <div class="skill-bar" data-skill="React" data-level="90">
+                                <div class="skill-label">
+                                    <span>React</span>
+                                    <span class="skill-percent">0%</span>
+                                </div>
+                                <div class="skill-progress"></div>
+                            </div>
+                            <div class="skill-bar" data-skill="Node.js" data-level="85">
+                                <div class="skill-label">
+                                    <span>Node.js</span>
+                                    <span class="skill-percent">0%</span>
+                                </div>
+                                <div class="skill-progress"></div>
+                            </div>
+                        </div>
+
+                        <div class="tech-stack">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">MongoDB</span>
+                            <span class="tech-tag">AWS</span>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <div class="social-links">
+                            <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contributor 2 -->
+                <div class="contributor-card featured" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card-glow"></div>
+                    <div class="featured-ribbon">Featured</div>
+                    <div class="contributor-image">
+                        <img src="media/contributors/dev2.jpg" alt="UI/UX Designer" />
+                        <div class="image-overlay"></div>
+                        <div class="contributor-badge">
+                            <i class="fas fa-paint-brush"></i>
+                            Designer
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3>Sarah Williams</h3>
+                        <p class="contributor-role">UI/UX Designer & Frontend Dev</p>
+
+                        <div class="skills-chart">
+                            <div class="skill-bar" data-skill="Figma" data-level="98">
+                                <div class="skill-label">
+                                    <span>Figma</span>
+                                    <span class="skill-percent">0%</span>
+                                </div>
+                                <div class="skill-progress"></div>
+                            </div>
+                            <div class="skill-bar" data-skill="CSS/SCSS" data-level="95">
+                                <div class="skill-label">
+                                    <span>CSS/SCSS</span>
+                                    <span class="skill-percent">0%</span>
+                                </div>
+                                <div class="skill-progress"></div>
+                            </div>
+                            <div class="skill-bar" data-skill="React" data-level="88">
+                                <div class="skill-label">
+                                    <span>React</span>
+                                    <span class="skill-percent">0%</span>
+                                </div>
+                                <div class="skill-progress"></div>
+                            </div>
+                        </div>
+
+                        <div class="tech-stack">
+                            <span class="tech-tag">Figma</span>
+                            <span class="tech-tag">SCSS</span>
+                            <span class="tech-tag">GSAP</span>
+                            <span class="tech-tag">Three.js</span>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <div class="social-links">
+                            <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-dribbble"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-behance"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contributor 3 -->
+                <div class="contributor-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card-glow"></div>
+                    <div class="contributor-image">
+                        <img src="media/contributors/dev3.jpg" alt="Backend Developer" />
+                        <div class="image-overlay"></div>
+                        <div class="contributor-badge">
+                            <i class="fas fa-server"></i>
+                            Backend
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3>Michael Chen</h3>
+                        <p class="contributor-role">Backend Engineer</p>
+
+                        <div class="skills-chart">
+                            <div class="skill-bar" data-skill="Python" data-level="92">
+                                <div class="skill-label">
+                                    <span>Python</span>
+                                    <span class="skill-percent">0%</span>
+                                </div>
+                                <div class="skill-progress"></div>
+                            </div>
+                            <div class="skill-bar" data-skill="Django" data-level="90">
+                                <div class="skill-label">
+                                    <span>Django</span>
+                                    <span class="skill-percent">0%</span>
+                                </div>
+                                <div class="skill-progress"></div>
+                            </div>
+                            <div class="skill-bar" data-skill="Docker" data-level="85">
+                                <div class="skill-label">
+                                    <span>Docker</span>
+                                    <span class="skill-percent">0%</span>
+                                </div>
+                                <div class="skill-progress"></div>
+                            </div>
+                        </div>
+
+                        <div class="tech-stack">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Django</span>
+                            <span class="tech-tag">PostgreSQL</span>
+                            <span class="tech-tag">Kubernetes</span>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <div class="social-links">
+                            <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-dev"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Join NCC Section -->
+    <section id="join" class="join">
+        <div class="join-background">
+            <div class="marching-soldiers"></div>
+            <div class="parallax-flag"></div>
+            <div class="gradient-overlay"></div>
+        </div>
+
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <div class="section-badge white">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>Join Our Legacy</span>
+                </div>
+                <h2 class="section-title white">
+                    Experience the Uniform.<br>
+                    <span class="ncc-gold-text">Live the Discipline.</span>
+                </h2>
+                <p class="section-subtitle white">
+                    Embark on a transformative journey of leadership development, character building, and dedicated
+                    national service.
+                    Join SOA NCC and become part of a legacy that shapes tomorrow's leaders.
+                </p>
+            </div>
+
+            <div class="benefits-grid">
+                <!-- Benefit 1 -->
+                <div class="benefit-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card-glow"></div>
+                    <div class="benefit-icon ncc-red">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3>Adventure & Excellence</h3>
+                    <p>Thrilling expeditions, challenging camps, and outdoor adventures that build unshakeable
+                        resilience and exceptional teamwork skills</p>
+                    <div class="card-particles"></div>
+                </div>
+
+                <!-- Benefit 2 -->
+                <div class="benefit-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card-glow"></div>
+                    <div class="benefit-icon ncc-white">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3>Leadership Mastery</h3>
+                    <p>Develop exceptional leadership, communication, and strategic thinking skills highly valued by top
+                        employers and institutions</p>
+                    <div class="card-particles"></div>
+                </div>
+
+                <!-- Benefit 3 -->
+                <div class="benefit-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card-glow"></div>
+                    <div class="benefit-icon ncc-navy">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Character Excellence</h3>
+                    <p>Build unshakeable confidence, unwavering discipline, and strong moral character that creates
+                        lifelong success and fulfillment</p>
+                    <div class="card-particles"></div>
+                </div>
+
+                <!-- Benefit 4 -->
+                <div class="benefit-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="card-glow"></div>
+                    <div class="benefit-icon ncc-skyblue">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Career Advancement</h3>
+                    <p>NCC certification provides significant advantages in defense services, government positions, and
+                        prestigious career opportunities</p>
+                    <div class="card-particles"></div>
+                </div>
+            </div>
+
+            <div class="join-cta" data-aos="fade-up" data-aos-delay="500">
+                <button class="btn btn-large btn-white btn-magnetic">
+                    <span>Begin Your Journey Today</span>
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+                <p class="join-note">Applications open during admission period • No fees required • Merit-based
+                    selection</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQs Section -->
+    <section id="faqs" class="faqs">
+        <div class="container">
+            <div class="section-header">
+                <h2>Frequently Asked Questions</h2>
+                <p>Get answers to common questions about joining NCC</p>
+            </div>
+
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>Why should I join NCC?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>NCC develops leadership skills, builds character, provides adventure
+                            opportunities, and offers career advantages in defense and government
+                            services. It's a platform for personal growth and national service.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>What are the benefits of NCC?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Benefits include leadership development, adventure activities, career
+                            opportunities in defense services, personality development, national
+                            integration, and lifelong friendships with like-minded individuals.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>Is there any fee for joining NCC?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>No, there is no fee for joining NCC. The program is completely free, and
+                            cadets receive uniforms, training, and participate in camps without any
+                            cost.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>What is the selection process?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Selection is based on academic performance, physical fitness, and interview.
+                            Interested students need to apply during the admission process and clear the
+                            basic fitness and interview rounds.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>What events and activities are conducted?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We conduct regular parades, adventure camps, community service activities,
+                            blood donation drives, tree plantation, cultural programs, and participate
+                            in national-level competitions and camps.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Government Links Section -->
+    <section class="gov-links">
+        <div class="container">
+            <div class="section-header">
+                <h2>Associated Organizations</h2>
+                <p>Our proud associations with premier defense and government organizations</p>
+            </div>
+
+            <div class="org-grid">
+                <div class="org-item">
+                    <div class="org-logo">
+                        <a href="https://indianarmy.nic.in/" target="_blank" rel="noopener">
+                            <img src="media/Army Logo.png" alt="Indian Army Logo" />
+                        </a>
+                    </div>
+                    <p>Indian Army</p>
+                </div>
+
+                <div class="org-item">
+                    <div class="org-logo">
+                        <a href="https://www.joinindiannavy.gov.in/en/about-us/ranks-insignia.html" target="_blank"
+                            rel="noopener">
+                            <img src="media/Navy logo.png" alt="Indian Navy Logo" />
+                        </a>
+                    </div>
+                    <p>Indian Navy</p>
+                </div>
+
+                <div class="org-item">
+                    <div class="org-logo">
+                        <a href="https://afcat.cdac.in/AFCAT/" target="_blank" rel="noopener">
+                            <img src="media/AirForce logo.png" alt="Indian Air Force Logo" />
+                        </a>
+                    </div>
+                    <p>Indian Air Force</p>
+                </div>
+
+                <div class="org-item">
+                    <div class="org-logo">
+                        <a href="https://mod.gov.in/" target="_blank" rel="noopener">
+                            <img src="media/MOD logo.png" alt="Ministry of Defence Logo" />
+                        </a>
+                    </div>
+                    <p>Ministry of Defence</p>
+                </div>
+
+                <div class="org-item">
+                    <div class="org-logo">
+                        <a href="https://indiancc.mygov.in/" target="_blank" rel="noopener">
+                            <img src="ncc logo.png" alt="DG NCC Logo" />
+                        </a>
+                    </div>
+                    <p>DG NCC</p>
+                </div>
+
+                <!-- <div class="org-item">
+                    <div class="org-logo">
+                        <a href="https://www.mygov.in/" target="_blank" rel="noopener">
+                            <img src="media/MyGov logo.png" alt="MyGov NCC Logo" />
+                        </a>
+                    </div>
+                    <p>MyGov</p>
+                </div> -->
+
+                <div class="org-item">
+                    <div class="org-logo">
+                        <a href="https://ssb.gov.in/" target="_blank" rel="noopener">
+                            <img src="media/SSB logo.png" alt="SSB Official Logo" />
+                        </a>
+                    </div>
+                    <p>SSB Official</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <div class="logo">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div class="brand-text">
+                            <h3>SOA NCC</h3>
+                            <p>4(O) CTC</p>
+                        </div>
+                    </div>
+                    <p>Building tomorrow's leaders through discipline, character, and national service.
+                    </p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-contact">
+                    <h4>Contact Information</h4>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>ncc@soa.ac.in</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+91 674 274 0000</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <p>Siksha 'O' Anusandhan University</p>
+                            <p>Kalinga Nagar, Bhubaneswar</p>
+                            <p>Odisha - 751030</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#about">About NCC</a></li>
+                        <li><a href="#activities">Training Programs</a></li>
+                        <li><a href="#achievements">Achievements</a></li>
+                        <li><a href="#join">Join NCC</a></li>
+                        <li><a href="#faqs">FAQs</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 SOA NCC Unit | All Rights Reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom cursor elements -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <script src="script.js"></script>
+    <!-- Custom cursor script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const cursor = document.querySelector('.cursor');
+            const follower = document.querySelector('.cursor-follower');
+            const hoverElements = document.querySelectorAll('a, button, [data-cursor-hover]');
+
+            let posX = 0, posY = 0;
+            let mouseX = 0, mouseY = 0;
+            let followerX = 0, followerY = 0;
+
+            // Smoothing factor for follower (lower = smoother)
+            const smoothing = 0.2;
+
+            // Update cursor position
+            document.addEventListener('mousemove', function (e) {
+                mouseX = e.clientX;
+                mouseY = e.clientY;
+
+                // Immediate cursor
+                cursor.style.left = mouseX + 'px';
+                cursor.style.top = mouseY + 'px';
+            });
+
+            // Animation loop for follower
+            function animate() {
+                // Calculate distance between cursor and follower
+                const distX = mouseX - followerX;
+                const distY = mouseY - followerY;
+
+                // Move follower with easing
+                followerX += distX * smoothing;
+                followerY += distY * smoothing;
+
+                // Apply new position
+                follower.style.left = followerX + 'px';
+                follower.style.top = followerY + 'px';
+
+                requestAnimationFrame(animate);
+            }
+
+            // Start animation
+            animate();
+
+            // Hover effects
+            hoverElements.forEach(el => {
+                el.addEventListener('mouseenter', () => {
+                    cursor.classList.add('hover');
+                    follower.classList.add('hover');
+                });
+
+                el.addEventListener('mouseleave', () => {
+                    cursor.classList.remove('hover');
+                    follower.classList.remove('hover');
+                });
+            });
+
+            // Click effect
+            document.addEventListener('mousedown', () => {
+                cursor.style.transform = 'translate(-50%, -50%) scale(0.8)';
+            });
+
+            document.addEventListener('mouseup', () => {
+                cursor.style.transform = 'translate(-50%, -50%) scale(1)';
+            });
+        });
+    </script>
+</body>
+
+</html>
