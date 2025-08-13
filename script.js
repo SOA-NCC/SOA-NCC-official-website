@@ -865,3 +865,203 @@ document.addEventListener('DOMContentLoaded', function() {
         orbs[1].style.transform = `translate(${-x * 50}px, ${-y * 50}px)`;
     });
 });
+
+
+//====== HERO SECTION ============//
+
+// DOM Elements
+const heroMusic = document.getElementById('heroMusic');
+const musicToggle = document.getElementById('musicToggle');
+const heroSection = document.getElementById('home');
+const scrollIndicator = document.querySelector('.scroll-indicator');
+
+// Music control variables
+let isMusicPlaying = false;
+let originalVolume = 0.3; // Default volume (30%)
+
+// Initialize when page loads
+document.addEventListener('DOMContentLoaded', function() {
+    initializeHeroSection();
+});
+
+// Initialize hero section functionality
+function initializeHeroSection() {
+    setupMusic();
+    setupScrollEffects();
+    setupScrollIndicator();
+    attemptAutoPlay();
+}
+
+// Setup music functionality
+function setupMusic() {
+    // Set initial volume
+    heroMusic.volume = originalVolume;
+    
+    // Music toggle button functionality
+    musicToggle.addEventListener('click', toggleMusic);
+    
+    // Handle music events
+    heroMusic.addEventListener('loadeddata', function() {
+        console.log('Music loaded successfully');
+    });
+    
+    heroMusic.addEventListener('error', function(e) {
+        console.error('Error loading music:', e);
+        musicToggle.style.display = 'none'; // Hide button if music fails to load
+    });
+}
+
+// Attempt to auto-play music (with user interaction fallback)
+function attemptAutoPlay() {
+    // Try to play music immediately
+    const playPromise = heroMusic.play();
+    
+    if (playPromise !== undefined) {
+        playPromise
+            .then(() => {
+                // Auto-play started successfully
+                isMusicPlaying = true;
+                updateMusicButton();
+                console.log('Music auto-play started');
+            })
+            .catch((error) => {
+                // Auto-play failed, wait for user interaction
+                console.log('Auto-play failed, waiting for user interaction');
+                setupUserInteractionMusic();
+            });
+    }
+}
+
+// Setup music to start on first user interaction
+function setupUserInteractionMusic() {
+    const startMusicOnInteraction = () => {
+        if (!isMusicPlaying) {
+            heroMusic.play()
+                .then(() => {
+                    isMusicPlaying = true;
+                    updateMusicButton();
+                    console.log('Music started after user interaction');
+                })
+                .catch((error) => {
+                    console.error('Failed to start music:', error);
+                });
+        }
+        // Remove listeners after first interaction
+        document.removeEventListener('click', startMusicOnInteraction);
+        document.removeEventListener('keydown', startMusicOnInteraction);
+        document.removeEventListener('touchstart', startMusicOnInteraction);
+    };
+    
+    // Add listeners for various user interactions
+    document.addEventListener('click', startMusicOnInteraction);
+    document.addEventListener('keydown', startMusicOnInteraction);
+    document.addEventListener('touchstart', startMusicOnInteraction);
+}
+
+// Toggle music play/pause
+function toggleMusic() {
+    if (isMusicPlaying) {
+        heroMusic.pause();
+        isMusicPlaying = false;
+    } else {
+        heroMusic.play()
+            .then(() => {
+                isMusicPlaying = true;
+            })
+            .catch((error) => {
+                console.error('Error playing music:', error);
+            });
+    }
+    updateMusicButton();
+}
+
+// Update music button icon
+function updateMusicButton() {
+    const icon = musicToggle.querySelector('i');
+    if (isMusicPlaying) {
+        icon.className = 'fas fa-volume-up';
+        musicToggle.classList.remove('muted');
+    } else {
+        icon.className = 'fas fa-volume-mute';
+        musicToggle.classList.add('muted');
+    }
+}
+
+// Setup scroll effects for music fade
+function setupScrollEffects() {
+    let ticking = false;
+    
+    function updateMusicVolume() {
+        if (!isMusicPlaying) return;
+        
+        const heroHeight = heroSection.offsetHeight;
+        const scrolled = window.pageYOffset;
+        const scrollPercentage = Math.min(scrolled / heroHeight, 1);
+        
+        // Fade out music as user scrolls down
+        const newVolume = originalVolume * (1 - scrollPercentage);
+        heroMusic.volume = Math.max(0, newVolume);
+        
+        // Pause music when completely scrolled past hero
+        if (scrollPercentage >= 0.95 && isMusicPlaying) {
+            heroMusic.pause();
+            isMusicPlaying = false;
+            updateMusicButton();
+        }
+        
+        ticking = false;
+    }
+    
+    function onScroll() {
+        if (!ticking) {
+            requestAnimationFrame(updateMusicVolume);
+            ticking = true;
+        }
+    }
+    
+    // Add scroll listener with throttling
+    window.addEventListener('scroll', onScroll, { passive: true });
+}
+
+// Setup scroll indicator functionality
+function setupScrollIndicator() {
+    scrollIndicator.addEventListener('click', function() {
+        scrollToSection('about');
+    });
+}
+
+// Smooth scroll to section function
+function scrollToSection(sectionId) {
+    const section = document.getElementById(sectionId);
+    if (section) {
+        const offsetTop = section.offsetTop;
+        window.scrollTo({
+            top: offsetTop,
+            behavior: 'smooth'
+        });
+    }
+}
+
+// Handle page visibility change (pause music when tab is hidden)
+document.addEventListener('visibilitychange', function() {
+    if (document.hidden && isMusicPlaying) {
+        heroMusic.pause();
+    } else if (!document.hidden && isMusicPlaying) {
+        heroMusic.play().catch(console.error);
+    }
+});
+
+// Handle window resize
+window.addEventListener('resize', function() {
+    // Recalculate hero height for scroll effects
+    setupScrollEffects();
+});
+
+// Preload video and music for better performance
+window.addEventListener('load', function() {
+    const video = document.querySelector('.hero-video');
+    if (video) {
+        video.load(); // Preload video
+    }
+    heroMusic.load(); // Preload music
+});

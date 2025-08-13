@@ -61,8 +61,25 @@
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-background">
+            <!-- Background Video -->
+            <video class="hero-video" autoplay muted loop playsinline>
+                <source src="hero-bg.mp4" type="video/mp4">
+            </video>
+
+            <!-- Video Overlay -->
             <div class="hero-overlay"></div>
         </div>
+
+        <!-- Background Music -->
+        <audio id="heroMusic" loop>
+            <source src="hero-music.mp3" type="audio/mpeg">
+        </audio>
+
+        <!-- Music Control Button -->
+        <button id="musicToggle" class="music-control" aria-label="Toggle Music">
+            <i class="fas fa-volume-up"></i>
+        </button>
+
         <div class="hero-content">
             <div class="hero-text">
                 <h1 class="hero-title">SOA NCC</h1>
