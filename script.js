@@ -1074,3 +1074,4 @@ window.addEventListener('load', function() {
     }
     heroMusic.load(); // Preload music
 });
+
