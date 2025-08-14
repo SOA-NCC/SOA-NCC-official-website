@@ -1,0 +1,499 @@
+/* Modern light theme inspired by reference design */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  /* Updated to light theme background with subtle gradient */
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  color: #1a202c;
+  line-height: 1.6;
+  min-height: 100vh;
+  position: relative;
+}
+
+/* Updated back button for light theme */
+.back-btn {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  /* Updated button styling for light theme */
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  padding: 12px 20px;
+  border-radius: 12px;
+  color: #4a5568;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  z-index: 1000;
+  font-size: 14px;
+}
+
+.back-btn:hover {
+  background: #f7fafc;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  border-color: #cbd5e0;
+}
+
+.back-btn i {
+  font-size: 16px;
+}
+
+.rank-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 80px 20px 60px;
+  min-height: 100vh;
+}
+
+.rank-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.rank-header h1 {
+  /* Updated header styling for light theme */
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #1a202c;
+  margin-bottom: 16px;
+  letter-spacing: -0.025em;
+}
+
+.rank-header p {
+  /* Updated subtitle for light theme */
+  font-size: 1.25rem;
+  color: #4a5568;
+  font-weight: 400;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.section-toggle {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 60px;
+  gap: 4px;
+  /* Updated toggle styling for light theme */
+  background: #ffffff;
+  padding: 6px;
+  border-radius: 12px;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.toggle-btn {
+  padding: 14px 28px;
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  color: #718096;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  position: relative;
+  overflow: hidden;
+}
+
+.toggle-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.1), transparent);
+  transition: left 0.5s;
+}
+
+.toggle-btn:hover::before {
+  left: 100%;
+}
+
+.toggle-btn.active {
+  /* Updated active toggle styling */
+  background: #3b82f6;
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+  transform: translateY(-1px);
+}
+
+.toggle-btn:hover:not(.active) {
+  color: #4a5568;
+  background: #f7fafc;
+}
+
+.rank-section {
+  display: none;
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.rank-section.active {
+  display: block;
+}
+
+.rank-hierarchy {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+}
+
+.rank-level {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 30px;
+  width: 100%;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.rank-level.single {
+  justify-content: center;
+}
+
+/* Completely redesigned officer cards to match reference image */
+.officer-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 32px 24px;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border: 1px solid #e2e8f0;
+  width: 300px;
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.officer-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.officer-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+  border-color: #cbd5e0;
+}
+
+.officer-card:hover::before {
+  opacity: 1;
+}
+
+/* Updated photo styling to match reference */
+.officer-photo {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 20px;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 3px solid #e2e8f0;
+  transition: all 0.4s ease;
+  position: relative;
+}
+
+.officer-photo::before {
+  content: "";
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  right: -3px;
+  bottom: -3px;
+  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+  border-radius: 16px;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.officer-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.officer-card:hover .officer-photo {
+  transform: scale(1.05);
+}
+
+.officer-card:hover .officer-photo::before {
+  opacity: 1;
+}
+
+.officer-card:hover .officer-photo img {
+  transform: scale(1.02);
+}
+
+.officer-name {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1a202c;
+  margin-bottom: 12px;
+  line-height: 1.3;
+  transition: color 0.3s ease;
+}
+
+.officer-card:hover .officer-name {
+  color: #2d3748;
+}
+
+/* Updated rank styling to match reference with blue theme */
+.officer-rank {
+  display: inline-block;
+  background: #3b82f6;
+  color: #ffffff;
+  padding: 6px 16px;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+.officer-card:hover .officer-rank {
+  background: #1d4ed8;
+  transform: scale(1.05);
+}
+
+.officer-year {
+  color: #718096;
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Updated social media buttons to match reference design */
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.social-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: #ffffff;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.social-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 8px;
+  transform: scale(0);
+  transition: transform 0.3s ease;
+  z-index: -1;
+}
+
+.social-btn.linkedin {
+  background: #0077b5;
+}
+
+.social-btn.linkedin::before {
+  background: #005885;
+}
+
+.social-btn.instagram {
+  background: #e4405f;
+}
+
+.social-btn.instagram::before {
+  background: #c13584;
+}
+
+.social-btn.github {
+  background: #333;
+}
+
+.social-btn.github::before {
+  background: #24292e;
+}
+
+.social-btn:hover {
+  transform: translateY(-2px) scale(1.1);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.social-btn:hover::before {
+  transform: scale(1);
+}
+
+.social-btn i {
+  font-size: 14px;
+  z-index: 1;
+}
+
+/* Updated animations for smoother experience */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.officer-card.aos-animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .officer-card {
+    width: 280px;
+  }
+
+  .rank-level {
+    gap: 25px;
+  }
+}
+
+@media (max-width: 992px) {
+  .officer-card {
+    width: 260px;
+  }
+
+  .rank-level {
+    gap: 20px;
+  }
+
+  .rank-header h1 {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .rank-container {
+    padding: 60px 16px 40px;
+  }
+
+  .rank-header h1 {
+    font-size: 2.5rem;
+  }
+
+  .rank-header p {
+    font-size: 1.125rem;
+  }
+
+  .officer-card {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .rank-level {
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+  }
+
+  .section-toggle {
+    flex-direction: column;
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .toggle-btn {
+    padding: 16px 24px;
+    font-size: 0.8rem;
+  }
+
+  .back-btn {
+    top: 15px;
+    left: 15px;
+    padding: 10px 16px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .rank-header h1 {
+    font-size: 2rem;
+  }
+
+  .officer-photo {
+    width: 100px;
+    height: 100px;
+  }
+
+  .officer-name {
+    font-size: 1.125rem;
+  }
+
+  .officer-card {
+    padding: 28px 20px;
+  }
+
+  .rank-container {
+    padding: 50px 12px 30px;
+  }
+}
+
+/* Print styles */
+@media print {
+  .section-toggle,
+  .back-btn {
+    display: none;
+  }
+
+  .rank-section {
+    display: block !important;
+  }
+
+  .officer-card {
+    break-inside: avoid;
+    box-shadow: none;
+    border: 1px solid #e2e8f0;
+  }
+
+  body {
+    background: white;
+  }
+}
