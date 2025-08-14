@@ -278,280 +278,145 @@ body {
 
 /* Hero Section */
 .hero {
-  height: 100vh;
-  background: linear-gradient(135deg, #dc2626, #1e3a8a, #0ea5e9);
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
 }
 
+/* Hero background fallback + video */
 .hero-background {
-  position: absolute;
-  inset: 0;
+    position: absolute;
+    inset: 0;
+    background: url('media/HeroPage/HeroImage.jpg') center center / cover no-repeat;
+    z-index: -2;
 }
 
-/* Background Video */
 .hero-video {
-  position: absolute;
-  top: 0%;
-  left: 0%;
-  /* width: 100%;
-  min-height: 100%; */
-  width: 100%;
-  height: 100%;
-  z-index: -2;
-  /* transform: translateX(-50%) translateY(-50%); */
-  object-fit: cover;
-  object-position: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    z-index: -1;
 }
 
-/* Video Overlay */
+/* Overlay */
 .hero-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.5);
-  z-index: -1;
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 0;
 }
-.hero-background {
-  position: absolute;
-  inset: 0;
-  background: url('media/HeroPage/iter\ pic.jpg') center center / cover no-repeat;
-  z-index: -2; /* keep video and overlay above */
-}
-
-/* Music Control Button */
-.music-control {
-  position: fixed;
-  bottom: 30px; /* Changed from top to bottom */
-  right: 30px; /* Keep on right side but at bottom */
-  z-index: 1000;
-  background: rgba(255, 255, 255, 0.2);
-  border: 2px solid rgba(255, 255, 255, 0.3);
-  border-radius: 50%;
-  width: 60px;
-  height: 60px;
-  color: white;
-  font-size: 20px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.3s ease;
-  backdrop-filter: blur(10px);
-}
-
-.music-control:hover {
-  background: rgba(255, 255, 255, 0.3);
-  border-color: rgba(255, 255, 255, 0.5);
-  transform: scale(1.1);
-}
-
-.music-control.muted {
-  opacity: 0.6;
-}
-
 
 /* Hero Content */
 .hero-content {
-  position: relative;
-  z-index: 10;
-  text-align: center;
-  color: white;
-  max-width: 800px;
-  padding: 0 20px;
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    color: white;
+    max-width: 800px;
+    padding: 0 20px;
 }
 
 .hero-title {
-  font-size: clamp(3rem, 8vw, 7rem);
-  font-weight: bold;
-  margin-bottom: 16px;
-  background: linear-gradient(135deg, #FF9933, #ffffff, #138808);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  animation: fadeInUp 1s ease-out;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    font-size: clamp(3rem, 8vw, 7rem);
+    font-weight: bold;
+    margin-bottom: 16px;
+    background: linear-gradient(135deg, #FF9933, #ffffff, #138808);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
 }
 
 .hero-subtitle {
-  font-size: clamp(1.5rem, 4vw, 3rem);
-  font-weight: 600;
-  margin-bottom: 24px;
-  animation: fadeInUp 1s ease-out 0.2s both;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    font-size: clamp(1.5rem, 4vw, 3rem);
+    font-weight: 600;
+    margin-bottom: 24px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
 }
 
 .hero-description {
-  font-size: clamp(1.2rem, 3vw, 2rem);
-  font-weight: 500;
-  margin-bottom: 32px;
-  animation: fadeInUp 1s ease-out 0.4s both;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    font-size: clamp(1.2rem, 3vw, 2rem);
+    font-weight: 500;
+    margin-bottom: 32px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
 }
 
 .hero-buttons {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
-  justify-content: center;
-  animation: fadeInUp 1s ease-out 0.6s both;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
 }
 
-
-
-
-/* Button Styles */
-.btn {
-  padding: 16px 40px; /* Increased padding for rectangular look */
-  border: none;
-  border-radius: 0; /* Remove border-radius for rectangular shape */
-  font-weight: 600;
-  font-size: 16px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  text-decoration: none;
-  display: inline-block;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-  text-transform: uppercase; /* Make text uppercase for military look */
-  letter-spacing: 1px; /* Add letter spacing */
-  min-width: 180px; /* Ensure consistent width */
+/* Music Control */
+.music-control {
+    position: fixed;
+    bottom: 20px;
+    left: 20px; /* left bottom */
+    z-index: 1000;
+    background: rgba(255,255,255,0.2);
+    border: 2px solid rgba(255,255,255,0.3);
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
 }
 
-.btn-primary {
-background: linear-gradient(135deg, #FF9933, #FFB84D);
-  color: white;
+.music-control:hover {
+    background: rgba(255,255,255,0.3);
+    border-color: rgba(255,255,255,0.5);
+    transform: scale(1.1);
 }
 
-.btn-primary:hover {
-background: linear-gradient(135deg, #e68a2e, #ffcc66);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(255, 107, 53, 0.4);
+.music-control.muted {
+    opacity: 0.6;
 }
 
-.btn-outline {
-  background: linear-gradient(135deg, #ffffff, #f0f0f0);
-  color: #333;
-  border: 2px solid white; /* Ensure white border */
-}
-
-.btn-outline:hover {
-  background: linear-gradient(135deg, #f9f9f9, #e6e6e6);
-  color: #1f2937;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(255, 255, 255, 0.3);
-}
-
-.btn-success {
-  background: linear-gradient(135deg, #138808, #28a745);
-  color: white;
-}
-
-.btn-success:hover {
-  background: linear-gradient(135deg, #0f6e06, #34d058);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(40, 167, 69, 0.4);
-}
-
-
-/* Scroll Indicator */
+/* Scroll indicator */
 .scroll-indicator {
-  position: absolute;
-  bottom: 32px;
-  left: 50%;
-  transform: translateX(-50%);
-  color: white;
-  animation: bounce 2s infinite;
-  cursor: pointer;
-}
-
-.scroll-indicator i {
-  font-size: 32px;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-}
-
-/* Animations */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+    position: absolute;
+    bottom: 32px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    cursor: pointer;
+    animation: bounce 2s infinite;
 }
 
 @keyframes bounce {
-  0%, 20%, 50%, 80%, 100% {
-    transform: translateX(-50%) translateY(0);
-  }
-  40% {
-    transform: translateX(-50%) translateY(-10px);
-  }
-  60% {
-    transform: translateX(-50%) translateY(-5px);
-  }
+    0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+    40% { transform: translateX(-50%) translateY(-10px); }
+    60% { transform: translateX(-50%) translateY(-5px); }
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-  .hero-buttons {
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .btn {
-    width: 250px; /* Fixed width for mobile */
-    padding: 14px 30px; /* Slightly smaller padding on mobile */
-  }
-  
-  .music-control {
-    bottom: 20px; /* Closer to bottom on mobile */
-    right: 20px;
-    width: 50px;
-    height: 50px;
-    font-size: 18px;
-  }
+/* Responsive */
+@media (max-width:768px) {
+    .hero-buttons { flex-direction: column; }
+    .btn { width: 250px; padding: 14px 30px; }
+    .music-control { width: 50px; height: 50px; font-size: 18px; bottom: 15px; left: 15px; }
 }
 
-@media (max-width: 480px) {
-  .hero-content {
-    padding: 0 15px;
-  }
-  
-  .hero-title {
-    font-size: clamp(2.5rem, 7vw, 5rem);
-  }
-  
-  .hero-subtitle {
-    font-size: clamp(1.2rem, 3.5vw, 2.5rem);
-  }
-  
-  .hero-description {
-    font-size: clamp(1rem, 2.5vw, 1.8rem);
-  }
-
-  .btn {
-    width: 200px; /* Smaller width for very small screens */
-    padding: 12px 25px;
-    font-size: 14px;
-  }
-
-  .music-control {
-    bottom: 15px;
-    right: 15px;
-    width: 45px;
-    height: 45px;
-    font-size: 16px;
-  }
+@media (max-width:480px) {
+    .hero-title { font-size: clamp(2.5rem, 7vw, 5rem); }
+    .hero-subtitle { font-size: clamp(1.2rem, 3.5vw, 2.5rem); }
+    .hero-description { font-size: clamp(1rem, 2.5vw, 1.8rem); }
+    .btn { width: 200px; padding: 12px 25px; font-size: 14px; }
 }
 
-/* Smooth scrolling */
-html {
-  scroll-behavior: smooth;
-}
 
 /* About Section */
 

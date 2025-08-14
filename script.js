@@ -238,16 +238,16 @@ document.addEventListener("DOMContentLoaded", () => {
 })
 
 // Parallax effect for hero section
-window.addEventListener("scroll", () => {
-  const scrolled = window.pageYOffset
-  const hero = document.querySelector(".hero")
-  const heroBackground = document.querySelector(".hero-background")
+// window.addEventListener("scroll", () => {
+//   const scrolled = window.pageYOffset
+//   const hero = document.querySelector(".hero")
+//   const heroBackground = document.querySelector(".hero-background")
 
-  if (hero && heroBackground) {
-    const rate = scrolled * -0.5
-    heroBackground.style.transform = `translateY(${rate}px)`
-  }
-})
+//   if (hero && heroBackground) {
+//     const rate = scrolled * -0.5
+//     heroBackground.style.transform = `translateY(${rate}px)`
+//   }
+// })
 
 // Counter animation for statistics (if needed)
 function animateCounter(element, target, duration = 2000) {
@@ -987,41 +987,50 @@ function updateMusicButton() {
     }
 }
 
+// ===== Hero Video Fallback ===== //
+const heroVideo = document.querySelector('.hero-video');
+
+heroVideo.addEventListener('error', () => {
+    console.warn('Hero video failed to load. Using fallback image.');
+    // Hide video element
+    heroVideo.style.display = 'none';
+});
+
+
 // Setup scroll effects for music fade
 function setupScrollEffects() {
     let ticking = false;
-    
+
     function updateMusicVolume() {
         if (!isMusicPlaying) return;
-        
+
         const heroHeight = heroSection.offsetHeight;
         const scrolled = window.pageYOffset;
-        const scrollPercentage = Math.min(scrolled / heroHeight, 1);
-        
-        // Fade out music as user scrolls down
-        const newVolume = originalVolume * (1 - scrollPercentage);
-        heroMusic.volume = Math.max(0, newVolume);
-        
-        // Pause music when completely scrolled past hero
-        if (scrollPercentage >= 0.95 && isMusicPlaying) {
-            heroMusic.pause();
-            isMusicPlaying = false;
-            updateMusicButton();
+
+        // Only start fading music after user scrolls past hero
+        let newVolume = originalVolume;
+        if (scrolled > heroHeight) {
+            const extraScroll = scrolled - heroHeight;
+            const fadeDistance = 10000; // pixels over which music fades completely
+            const fadePercent = Math.min(extraScroll / fadeDistance, 1);
+            newVolume = originalVolume * (1 - fadePercent);
         }
-        
+
+        heroMusic.volume = Math.max(0, newVolume);
+
         ticking = false;
     }
-    
+
     function onScroll() {
         if (!ticking) {
             requestAnimationFrame(updateMusicVolume);
             ticking = true;
         }
     }
-    
-    // Add scroll listener with throttling
+
     window.addEventListener('scroll', onScroll, { passive: true });
 }
+
 
 // Setup scroll indicator functionality
 function setupScrollIndicator() {
