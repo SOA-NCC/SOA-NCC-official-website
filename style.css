@@ -290,7 +290,7 @@ body {
 .hero-background {
     position: absolute;
     inset: 0;
-    background: url('media/HeroPage/HeroImage.jpg') center center / cover no-repeat;
+    background: url('media/HeroPage/HeroImage.jpeg') center center / cover no-repeat;
     z-index: -2;
 }
 
