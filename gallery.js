@@ -1,77 +1,155 @@
-/* ===== GALLERY PAGE JAVASCRIPT ===== */
+/* ===== DYNAMIC GALLERY JAVASCRIPT ===== */
+
+// Gallery data cache
+let galleryData = null
 
 // Wait for DOM to be fully loaded
-document.addEventListener('DOMContentLoaded', function() {
-    
-    // ===== INITIALIZE GALLERY =====
-    initializeGallery();
-    
-    // ===== SETUP EVENT LISTENERS =====
-    setupEventListeners();
-    
-    // ===== SETUP ANIMATIONS =====
-    setupAnimations();
-});
+document.addEventListener("DOMContentLoaded", () => {
+  initializeGallery()
+  setupEventListeners()
+})
 
 /* ===== INITIALIZATION FUNCTIONS ===== */
 
 /**
- * Initialize gallery based on URL parameters
+ * Initialize gallery by loading data and displaying content
  */
-function initializeGallery() {
-    try {
-        // Get activity type from URL parameter
-        const activityType = getUrlParameter('activity');
-        
-        if (activityType) {
-            // Show the corresponding gallery
-            showGallery(activityType);
-        } else {
-            // Default to parade gallery if no parameter
-            showGallery('parade');
-        }
-        
-        // Update page title based on activity
-        updatePageTitle(activityType);
-        
-    } catch (error) {
-        console.error('Error initializing gallery:', error);
-        // Fallback to parade gallery
-        showGallery('parade');
-    }
+async function initializeGallery() {
+  try {
+    // Show loading state
+    showLoadingState()
+
+    // Load gallery data from JSON
+    await loadGalleryData()
+
+    // Get activity type from URL parameter
+    const activityType = getUrlParameter("activity") || "parade"
+
+    // Display the gallery
+    displayGallery(activityType)
+
+    // Update page title
+    updatePageTitle(activityType)
+
+    // Hide loading state
+    hideLoadingState()
+  } catch (error) {
+    console.error("Error initializing gallery:", error)
+    showErrorState()
+  }
 }
 
 /**
- * Show specific gallery section
+ * Load gallery data from JSON file
+ */
+async function loadGalleryData() {
+  try {
+    const response = await fetch("gallery-data.json")
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`)
+    }
+    galleryData = await response.json()
+  } catch (error) {
+    console.error("Error loading gallery data:", error)
+    throw error
+  }
+}
+
+/**
+ * Display gallery for specific activity type
  * @param {string} activityType - Type of activity gallery to show
  */
-function showGallery(activityType) {
-    try {
-        // Hide all gallery sections first
-        const allGalleries = document.querySelectorAll('.gallery-page');
-        allGalleries.forEach(gallery => {
-            gallery.classList.remove('active');
-        });
-        
-        // Show the requested gallery
-        const targetGallery = document.getElementById(`${activityType}-gallery`);
-        if (targetGallery) {
-            targetGallery.classList.add('active');
-            
-            // Trigger entrance animation for gallery items
-            animateGalleryItems(targetGallery);
-        } else {
-            console.error(`Gallery not found: ${activityType}-gallery`);
-            // Fallback to first available gallery
-            if (allGalleries.length > 0) {
-                allGalleries[0].classList.add('active');
-                animateGalleryItems(allGalleries[0]);
-            }
-        }
-        
-    } catch (error) {
-        console.error('Error showing gallery:', error);
+function displayGallery(activityType) {
+  try {
+    // Get activity data
+    const activityData = galleryData[activityType]
+
+    if (!activityData) {
+      throw new Error(`Activity data not found: ${activityType}`)
     }
+
+    // Update header content
+    document.getElementById("galleryTitle").textContent = activityData.title
+    document.getElementById("galleryDescription").textContent = activityData.description
+
+    // Generate gallery items
+    const galleryGrid = document.getElementById("galleryGrid")
+    galleryGrid.innerHTML = "" // Clear existing content
+
+    activityData.images.forEach((image, index) => {
+      const galleryItem = createGalleryItem(image, index)
+      galleryGrid.appendChild(galleryItem)
+    })
+
+    // Setup animations for new items
+    setupAnimations()
+  } catch (error) {
+    console.error("Error displaying gallery:", error)
+    showErrorState()
+  }
+}
+
+/**
+ * Create a gallery item element
+ * @param {Object} imageData - Image data object
+ * @param {number} index - Image index for animation delay
+ * @returns {HTMLElement} Gallery item element
+ */
+function createGalleryItem(imageData, index) {
+  const galleryItem = document.createElement("div")
+  galleryItem.className = "gallery-item"
+  galleryItem.setAttribute("tabindex", "0")
+  galleryItem.style.animationDelay = `${index * 100}ms`
+
+  galleryItem.innerHTML = `
+        <img src="${imageData.src}" alt="${imageData.alt}" loading="lazy">
+        <div class="gallery-overlay">
+            <div class="gallery-overlay-text">${imageData.caption}</div>
+        </div>
+    `
+
+  // Add click event for modal
+  galleryItem.addEventListener("click", function () {
+    openImageModal(this)
+  })
+
+  // Add keyboard accessibility
+  galleryItem.addEventListener("keydown", function (e) {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault()
+      openImageModal(this)
+    }
+  })
+
+  return galleryItem
+}
+
+/* ===== STATE MANAGEMENT ===== */
+
+/**
+ * Show loading state
+ */
+function showLoadingState() {
+  document.getElementById("loadingState").style.display = "block"
+  document.getElementById("dynamicGallery").style.display = "none"
+  document.getElementById("errorState").style.display = "none"
+}
+
+/**
+ * Hide loading state
+ */
+function hideLoadingState() {
+  document.getElementById("loadingState").style.display = "none"
+  document.getElementById("dynamicGallery").style.display = "block"
+}
+
+/**
+ * Show error state
+ */
+function showErrorState() {
+  document.getElementById("loadingState").style.display = "none"
+  document.getElementById("dynamicGallery").style.display = "none"
+  document.getElementById("errorState").style.display = "block"
 }
 
 /* ===== EVENT LISTENERS SETUP ===== */
@@ -80,58 +158,36 @@ function showGallery(activityType) {
  * Setup all event listeners
  */
 function setupEventListeners() {
-    
-    // ===== BACK BUTTON EVENT =====
-    const backBtn = document.getElementById('backBtn');
-    if (backBtn) {
-        backBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            navigateBack();
-        });
+  // Back button event
+  const backBtn = document.getElementById("backBtn")
+  if (backBtn) {
+    backBtn.addEventListener("click", (e) => {
+      e.preventDefault()
+      navigateBack()
+    })
+  }
+
+  // Keyboard navigation
+  document.addEventListener("keydown", (e) => {
+    // Escape key to go back
+    if (e.key === "Escape") {
+      navigateBack()
     }
-    
-    // ===== GALLERY ITEM CLICKS =====
-    const galleryItems = document.querySelectorAll('.gallery-item');
-    galleryItems.forEach(item => {
-        item.addEventListener('click', function() {
-            // Open image in modal or lightbox (future enhancement)
-            openImageModal(this);
-        });
-        
-        // Add keyboard accessibility
-        item.addEventListener('keydown', function(e) {
-            if (e.key === 'Enter' || e.key === ' ') {
-                e.preventDefault();
-                openImageModal(this);
-            }
-        });
-        
-        // Make items focusable
-        item.setAttribute('tabindex', '0');
-    });
-    
-    // ===== KEYBOARD NAVIGATION =====
-    document.addEventListener('keydown', function(e) {
-        // Escape key to go back
-        if (e.key === 'Escape') {
-            navigateBack();
-        }
-        
-        // Arrow key navigation between gallery items
-        if (e.key.startsWith('Arrow')) {
-            navigateGalleryItems(e);
-        }
-    });
-    
-    // ===== BROWSER BACK BUTTON =====
-    window.addEventListener('popstate', function(e) {
-        // Handle browser back button
-        if (e.state && e.state.activity) {
-            showGallery(e.state.activity);
-        } else {
-            navigateBack();
-        }
-    });
+
+    // Arrow key navigation between gallery items
+    if (e.key.startsWith("Arrow")) {
+      navigateGalleryItems(e)
+    }
+  })
+
+  // Browser back button
+  window.addEventListener("popstate", (e) => {
+    if (e.state && e.state.activity) {
+      displayGallery(e.state.activity)
+    } else {
+      navigateBack()
+    }
+  })
 }
 
 /* ===== NAVIGATION FUNCTIONS ===== */
@@ -140,19 +196,16 @@ function setupEventListeners() {
  * Navigate back to activities page
  */
 function navigateBack() {
-    try {
-        // Try to go back in browser history first
-        if (window.history.length > 1) {
-            window.history.back();
-        } else {
-            // Fallback to activities page
-            window.location.href = 'index.html#activities';
-        }
-    } catch (error) {
-        console.error('Error navigating back:', error);
-        // Final fallback
-        window.location.href = 'index.html';
+  try {
+    if (window.history.length > 1) {
+      window.history.back()
+    } else {
+      window.location.href = "index.html#activities"
     }
+  } catch (error) {
+    console.error("Error navigating back:", error)
+    window.location.href = "index.html"
+  }
 }
 
 /**
@@ -160,32 +213,29 @@ function navigateBack() {
  * @param {KeyboardEvent} e - Keyboard event
  */
 function navigateGalleryItems(e) {
-    const activeGallery = document.querySelector('.gallery-page.active');
-    if (!activeGallery) return;
-    
-    const galleryItems = Array.from(activeGallery.querySelectorAll('.gallery-item'));
-    const focusedItem = document.activeElement;
-    
-    if (galleryItems.includes(focusedItem)) {
-        e.preventDefault();
-        const currentIndex = galleryItems.indexOf(focusedItem);
-        let nextIndex;
-        
-        switch (e.key) {
-            case 'ArrowRight':
-            case 'ArrowDown':
-                nextIndex = (currentIndex + 1) % galleryItems.length;
-                break;
-            case 'ArrowLeft':
-            case 'ArrowUp':
-                nextIndex = (currentIndex - 1 + galleryItems.length) % galleryItems.length;
-                break;
-            default:
-                return;
-        }
-        
-        galleryItems[nextIndex].focus();
+  const galleryItems = Array.from(document.querySelectorAll(".gallery-item"))
+  const focusedItem = document.activeElement
+
+  if (galleryItems.includes(focusedItem)) {
+    e.preventDefault()
+    const currentIndex = galleryItems.indexOf(focusedItem)
+    let nextIndex
+
+    switch (e.key) {
+      case "ArrowRight":
+      case "ArrowDown":
+        nextIndex = (currentIndex + 1) % galleryItems.length
+        break
+      case "ArrowLeft":
+      case "ArrowUp":
+        nextIndex = (currentIndex - 1 + galleryItems.length) % galleryItems.length
+        break
+      default:
+        return
     }
+
+    galleryItems[nextIndex].focus()
+  }
 }
 
 /* ===== ANIMATION FUNCTIONS ===== */
@@ -194,51 +244,37 @@ function navigateGalleryItems(e) {
  * Setup intersection observer for animations
  */
 function setupAnimations() {
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
-    
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0) scale(1)';
-            }
-        });
-    }, observerOptions);
-    
-    // Observe all gallery items
-    const galleryItems = document.querySelectorAll('.gallery-item');
-    galleryItems.forEach(item => {
-        // Set initial state
-        item.style.opacity = '0';
-        item.style.transform = 'translateY(30px) scale(0.95)';
-        item.style.transition = 'all 0.6s ease';
-        
-        // Start observing
-        observer.observe(item);
-    });
-}
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: "0px 0px -50px 0px",
+  }
 
-/**
- * Animate gallery items entrance
- * @param {HTMLElement} gallery - Gallery container element
- */
-function animateGalleryItems(gallery) {
-    const items = gallery.querySelectorAll('.gallery-item');
-    
-    items.forEach((item, index) => {
-        // Reset animation state
-        item.style.opacity = '0';
-        item.style.transform = 'translateY(30px) scale(0.95)';
-        
-        // Animate with staggered delay
-        setTimeout(() => {
-            item.style.opacity = '1';
-            item.style.transform = 'translateY(0) scale(1)';
-        }, index * 100);
-    });
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = "1"
+        entry.target.style.transform = "translateY(0) scale(1)"
+      }
+    })
+  }, observerOptions)
+
+  // Observe all gallery items
+  const galleryItems = document.querySelectorAll(".gallery-item")
+  galleryItems.forEach((item, index) => {
+    // Set initial state
+    item.style.opacity = "0"
+    item.style.transform = "translateY(30px) scale(0.95)"
+    item.style.transition = "all 0.6s ease"
+
+    // Add staggered delay
+    setTimeout(() => {
+      item.style.opacity = "1"
+      item.style.transform = "translateY(0) scale(1)"
+    }, index * 100)
+
+    // Start observing for future animations
+    observer.observe(item)
+  })
 }
 
 /* ===== MODAL FUNCTIONS ===== */
@@ -248,16 +284,16 @@ function animateGalleryItems(gallery) {
  * @param {HTMLElement} galleryItem - Clicked gallery item
  */
 function openImageModal(galleryItem) {
-    try {
-        const img = galleryItem.querySelector('img');
-        const overlayText = galleryItem.querySelector('.gallery-overlay-text');
-        
-        if (!img) return;
-        
-        // Create modal overlay
-        const modal = document.createElement('div');
-        modal.className = 'image-modal';
-        modal.innerHTML = `
+  try {
+    const img = galleryItem.querySelector("img")
+    const overlayText = galleryItem.querySelector(".gallery-overlay-text")
+
+    if (!img) return
+
+    // Create modal overlay
+    const modal = document.createElement("div")
+    modal.className = "image-modal"
+    modal.innerHTML = `
             <div class="modal-overlay">
                 <div class="modal-content">
                     <button class="modal-close" aria-label="Close modal">&times;</button>
@@ -265,11 +301,13 @@ function openImageModal(galleryItem) {
                     <div class="modal-caption">${overlayText ? overlayText.textContent : img.alt}</div>
                 </div>
             </div>
-        `;
-        
-        // Add modal styles
-        const modalStyles = `
-            <style>
+        `
+
+    // Add modal styles if not already present
+    if (!document.querySelector("#modal-styles")) {
+      const modalStyles = document.createElement("style")
+      modalStyles.id = "modal-styles"
+      modalStyles.innerHTML = `
                 .image-modal {
                     position: fixed;
                     top: 0;
@@ -310,48 +348,57 @@ function openImageModal(galleryItem) {
                     display: flex;
                     align-items: center;
                     justify-content: center;
+                    transition: all 0.3s ease;
+                }
+                .modal-close:hover {
+                    transform: scale(1.1);
                 }
                 .modal-caption {
                     color: white;
                     margin-top: 20px;
                     font-size: 1.1rem;
                     line-height: 1.5;
+                    max-width: 600px;
+                    margin-left: auto;
+                    margin-right: auto;
                 }
-            </style>
-        `;
-        
-        // Add styles to head if not already present
-        if (!document.querySelector('#modal-styles')) {
-            const styleTag = document.createElement('style');
-            styleTag.id = 'modal-styles';
-            styleTag.innerHTML = modalStyles;
-            document.head.appendChild(styleTag);
-        }
-        
-        // Add modal to body
-        document.body.appendChild(modal);
-        
-        // Close modal events
-        const closeBtn = modal.querySelector('.modal-close');
-        const overlay = modal.querySelector('.modal-overlay');
-        
-        closeBtn.addEventListener('click', () => closeModal(modal));
-        overlay.addEventListener('click', (e) => {
-            if (e.target === overlay) closeModal(modal);
-        });
-        
-        // Close on Escape key
-        const escapeHandler = (e) => {
-            if (e.key === 'Escape') {
-                closeModal(modal);
-                document.removeEventListener('keydown', escapeHandler);
-            }
-        };
-        document.addEventListener('keydown', escapeHandler);
-        
-    } catch (error) {
-        console.error('Error opening modal:', error);
+                @media (max-width: 768px) {
+                    .modal-close {
+                        top: -30px;
+                        font-size: 1.5rem;
+                    }
+                    .modal-caption {
+                        font-size: 1rem;
+                        margin-top: 15px;
+                    }
+                }
+            `
+      document.head.appendChild(modalStyles)
     }
+
+    // Add modal to body
+    document.body.appendChild(modal)
+
+    // Close modal events
+    const closeBtn = modal.querySelector(".modal-close")
+    const overlay = modal.querySelector(".modal-overlay")
+
+    closeBtn.addEventListener("click", () => closeModal(modal))
+    overlay.addEventListener("click", (e) => {
+      if (e.target === overlay) closeModal(modal)
+    })
+
+    // Close on Escape key
+    const escapeHandler = (e) => {
+      if (e.key === "Escape") {
+        closeModal(modal)
+        document.removeEventListener("keydown", escapeHandler)
+      }
+    }
+    document.addEventListener("keydown", escapeHandler)
+  } catch (error) {
+    console.error("Error opening modal:", error)
+  }
 }
 
 /**
@@ -359,12 +406,12 @@ function openImageModal(galleryItem) {
  * @param {HTMLElement} modal - Modal element to close
  */
 function closeModal(modal) {
-    modal.style.animation = 'fadeOut 0.3s ease';
-    setTimeout(() => {
-        if (modal.parentNode) {
-            modal.parentNode.removeChild(modal);
-        }
-    }, 300);
+  modal.style.animation = "fadeOut 0.3s ease"
+  setTimeout(() => {
+    if (modal.parentNode) {
+      modal.parentNode.removeChild(modal)
+    }
+  }, 300)
 }
 
 /* ===== UTILITY FUNCTIONS ===== */
@@ -375,8 +422,8 @@ function closeModal(modal) {
  * @returns {string|null} Parameter value or null if not found
  */
 function getUrlParameter(param) {
-    const urlParams = new URLSearchParams(window.location.search);
-    return urlParams.get(param);
+  const urlParams = new URLSearchParams(window.location.search)
+  return urlParams.get(param)
 }
 
 /**
@@ -384,52 +431,21 @@ function getUrlParameter(param) {
  * @param {string} activityType - Type of activity
  */
 function updatePageTitle(activityType) {
-    const titles = {
-        'parade': 'NCC Parade Gallery',
-        'blood-donation': 'NCC Blood Donation Gallery',
-        'tree-plantation': 'NCC Tree Plantation Gallery',
-        'swachh-bharat': 'NCC Swachh Bharat Gallery',
-        'guard-of-honour': 'NCC Guard of Honour Gallery',
-        'camps': 'NCC Camps Gallery'
-    };
-    
-    document.title = titles[activityType] || 'NCC Activities Gallery';
+  if (galleryData && galleryData[activityType]) {
+    document.title = galleryData[activityType].title + " - NCC Activities"
+  } else {
+    document.title = "NCC Activities Gallery"
+  }
 }
 
 /* ===== ERROR HANDLING ===== */
 
 // Global error handler
-window.addEventListener('error', function(e) {
-    console.error('Gallery error:', e.error);
-});
+window.addEventListener("error", (e) => {
+  console.error("Gallery error:", e.error)
+})
 
 // Handle unhandled promise rejections
-window.addEventListener('unhandledrejection', function(e) {
-    console.error('Gallery promise rejection:', e.reason);
-});
-
-/* ===== PERFORMANCE OPTIMIZATION ===== */
-
-// Lazy load images when they come into view
-function setupLazyLoading() {
-    const images = document.querySelectorAll('.gallery-item img');
-    const imageObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const img = entry.target;
-                if (img.dataset.src) {
-                    img.src = img.dataset.src;
-                    img.removeAttribute('data-src');
-                    observer.unobserve(img);
-                }
-            }
-        });
-    });
-    
-    images.forEach(img => {
-        imageObserver.observe(img);
-    });
-}
-
-// Initialize lazy loading if needed
-// setupLazyLoading();
+window.addEventListener("unhandledrejection", (e) => {
+  console.error("Gallery promise rejection:", e.reason)
+})

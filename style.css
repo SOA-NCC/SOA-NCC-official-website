@@ -155,6 +155,10 @@ body {
   background: none;
 }
 
+.logo:hover {
+  transform: scale(1.1);
+}
+
 .brand-text {
   display: flex;
   flex-direction: column;
@@ -215,6 +219,9 @@ body {
   border-radius: 9px;
   background: none;
 }
+.college-logo:hover {
+  transform: scale(1.1);
+}
 
 @media (max-width: 768px) {
   .brand-text {
@@ -256,7 +263,7 @@ body {
   color: #30353d;
   text-decoration: none;
   font-size: 18px;
-  transition: background 0.2s;
+  transition: background 0.s;
 }
 
 .dropdown-menu a:hover {
@@ -1326,8 +1333,8 @@ body {
 }
 
 .ranks-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  display: flex;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 32px;
 }
 
