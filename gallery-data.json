@@ -4,68 +4,68 @@
     "description": "Witness the precision and discipline of our NCC parade formations",
     "images": [
       {
-        "src": "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=400&h=300&fit=crop",
+        "src": "media/Activities/Parade/1.jpeg?w=400&h=300&fit=crop",
         "alt": "Parade Formation",
         "caption": "Perfect synchronization in parade formation demonstrating unity and discipline"
       },
       {
-        "src": "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=300&fit=crop",
+        "src": "media/Activities/Parade/2.jpeg?w=400&h=300&fit=crop",
         "alt": "Ceremonial Parade",
         "caption": "Ceremonial parade showcasing the pride and honor of NCC cadets"
       },
       {
-        "src": "https://images.unsplash.com/photo-1600195077909-46e573870d99?w=400&h=300&fit=crop",
+        "src": "media/Activities/Parade/3.jpeg?w=400&h=300&fit=crop",
         "alt": "Drill Practice",
         "caption": "Intensive drill practice sessions building character and teamwork"
       },
       {
-        "src": "https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=400&h=300&fit=crop",
+        "src": "media/Activities/Parade/4.jpeg?w=400&h=300&fit=crop",
         "alt": "Flag Ceremony",
         "caption": "Flag ceremony displaying respect and patriotism"
       },
       {
-        "src": "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop",
+        "src": "media/Activities/Parade/5.jpeg?w=400&h=300&fit=crop",
         "alt": "Parade Training",
         "caption": "Rigorous parade training sessions for excellence"
       },
       {
-        "src": "https://images.unsplash.com/photo-1607344645866-009c7803b2ea?w=400&h=300&fit=crop",
+        "src": "media/Activities/Parade/6.jpeg?w=400&h=300&fit=crop",
         "alt": "Formation March",
         "caption": "Formation march displaying military precision and coordination"
       }
     ]
   },
   "blood-donation": {
-    "title": "Blood Donation Gallery",
+    "title": "Adventure",
     "description": "Saving lives through our community service initiatives",
     "images": [
       {
-        "src": "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&h=300&fit=crop",
+        "src": "media/Activities/Adventures/1.jpeg?w=400&h=300&fit=crop",
         "alt": "Blood Donation Camp",
         "caption": "Volunteers participating in blood donation camp to save lives"
       },
       {
-        "src": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=400&h=300&fit=crop",
+        "src": "media/Activities/Adventures/2.jpeg?w=400&h=300&fit=crop",
         "alt": "Medical Check",
         "caption": "Medical professionals ensuring safe blood donation procedures"
       },
       {
-        "src": "https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=400&h=300&fit=crop",
+        "src": "media/Activities/Adventures/3.jpeg?w=400&h=300&fit=crop",
         "alt": "Registration",
         "caption": "Registration process for blood donation volunteers"
       },
       {
-        "src": "https://images.unsplash.com/photo-1584515933487-779824d29309?w=400&h=300&fit=crop",
+        "src": "media/Activities/Adventures/4.jpeg?w=400&h=300&fit=crop",
         "alt": "Community Service",
         "caption": "NCC cadets showing commitment to community service"
       },
       {
-        "src": "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&h=300&fit=crop",
+        "src": "media/Activities/Adventures/5.jpeg?w=400&h=300&fit=crop",
         "alt": "Donation Drive",
         "caption": "Community blood donation drive organized by NCC"
       },
       {
-        "src": "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=400&h=300&fit=crop",
+        "src": "media/Activities/Adventures/6.jpeg?w=400&h=300&fit=crop",
         "alt": "Health Check",
         "caption": "Pre-donation health check ensuring donor safety"
       }
@@ -76,104 +76,104 @@
     "description": "Contributing to environmental conservation and sustainability",
     "images": [
       {
-        "src": "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=400&h=300&fit=crop",
+        "src": "media/Activities/TreePlantation/1.jpeg?w=400&h=300&fit=crop",
         "alt": "Tree Planting",
         "caption": "Cadets actively participating in tree plantation drives"
       },
       {
-        "src": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=400&h=300&fit=crop",
+        "src": "media/Activities/TreePlantation/2.jpeg?w=400&h=300&fit=crop",
         "alt": "Green Initiative",
         "caption": "Green initiative promoting environmental awareness"
       },
       {
-        "src": "https://images.unsplash.com/photo-1574680096145-d05b474e2155?w=400&h=300&fit=crop",
+        "src": "media/Activities/TreePlantation/3.jpeg?w=400&h=300&fit=crop",
         "alt": "Sapling Care",
         "caption": "Caring for newly planted saplings with dedication"
       },
       {
-        "src": "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=400&h=300&fit=crop",
+        "src": "media/Activities/TreePlantation/4.jpeg?w=400&h=300&fit=crop",
         "alt": "Environmental Awareness",
         "caption": "Spreading environmental awareness in the community"
       },
       {
-        "src": "https://images.unsplash.com/photo-1556075798-4825dfaaf498?w=400&h=300&fit=crop",
+        "src": "media/Activities/TreePlantation/5.jpeg?w=400&h=300&fit=crop",
         "alt": "Planting Session",
         "caption": "Community tree planting session for a greener future"
       },
       {
-        "src": "https://images.unsplash.com/photo-1569163139394-de4e4f43e4e5?w=400&h=300&fit=crop",
+        "src": "media/Activities/TreePlantation/6.jpeg?w=400&h=300&fit=crop",
         "alt": "Environmental Care",
         "caption": "Environmental care and conservation activities"
       }
     ]
   },
   "swachh-bharat": {
-    "title": "Swachh Bharat Gallery",
+    "title": "Startup and Innovation",
     "description": "Building a cleaner and healthier India",
     "images": [
       {
-        "src": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop",
+        "src": "media/Activities/Startups_Projects/1.jpeg?w=400&h=300&fit=crop",
         "alt": "Cleaning Drive",
         "caption": "Community cleaning drives for a better tomorrow"
       },
       {
-        "src": "https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?w=400&h=300&fit=crop",
+        "src": "media/Activities/Startups_Projects/2.jpeg?w=400&h=300&fit=crop",
         "alt": "Waste Management",
         "caption": "Promoting proper waste management practices"
       },
       {
-        "src": "https://images.unsplash.com/photo-1614731709955-dd97d8e08c2b?w=400&h=300&fit=crop",
+        "src": "media/Activities/Startups_Projects/3.jpeg?w=400&h=300&fit=crop",
         "alt": "Street Cleaning",
         "caption": "Street cleaning initiatives by dedicated volunteers"
       },
       {
-        "src": "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=400&h=300&fit=crop",
+        "src": "media/Activities/Startups_Projects/4.jpeg?w=400&h=300&fit=crop",
         "alt": "Awareness Campaign",
         "caption": "Awareness campaigns for cleanliness and hygiene"
       },
       {
-        "src": "https://images.unsplash.com/photo-1583258292688-d0213dc5a3a8?w=400&h=300&fit=crop",
+        "src": "media/Activities/Startups_Projects/5.jpeg?w=400&h=300&fit=crop",
         "alt": "Clean Up Drive",
         "caption": "Community clean-up drives making India cleaner"
       },
       {
-        "src": "https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?w=400&h=300&fit=crop",
+        "src": "https://upload.wikimedia.org/wikipedia/commons/0/02/Loading.png?w=400&h=300&fit=crop",
         "alt": "Sanitation Drive",
         "caption": "Sanitation drives for public health improvement"
       }
     ]
   },
   "guard-of-honour": {
-    "title": "Guard of Honour Gallery",
+    "title": "Social Service Gallery",
     "description": "Ceremonial duties performed with pride and precision",
     "images": [
       {
-        "src": "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=300&fit=crop",
+        "src": "media/Activities/SocialService/1.jpeg?w=400&h=300&fit=crop",
         "alt": "Guard Formation",
         "caption": "Perfect guard formation displaying military precision"
       },
       {
-        "src": "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=400&h=300&fit=crop",
+        "src": "media/Activities/SocialService/2.jpeg?w=400&h=300&fit=crop",
         "alt": "Ceremonial Guard",
         "caption": "Ceremonial guard duties at important events"
       },
       {
-        "src": "https://images.unsplash.com/photo-1600195077909-46e573870d99?w=400&h=300&fit=crop",
+        "src": "media/Activities/SocialService/3.jpeg?w=400&h=300&fit=crop",
         "alt": "Honor Guard",
         "caption": "Honor guard presenting arms with military precision"
       },
       {
-        "src": "https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=400&h=300&fit=crop",
+        "src": "media/Activities/SocialService/4.jpeg?w=400&h=300&fit=crop",
         "alt": "State Function",
         "caption": "Guard of honour at state functions and ceremonies"
       },
       {
-        "src": "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop",
+        "src": "media/Activities/SocialService/5.jpeg?w=400&h=300&fit=crop",
         "alt": "Military Ceremony",
         "caption": "Military ceremony with full honors and dignity"
       },
       {
-        "src": "https://images.unsplash.com/photo-1607344645866-009c7803b2ea?w=400&h=300&fit=crop",
+        "src": "media/Activities/SocialService/6.jpeg?w=400&h=300&fit=crop",
         "alt": "Official Ceremony",
         "caption": "Official ceremonies with proper protocol and respect"
       }
@@ -184,32 +184,32 @@
     "description": "Adventure activities and skill development programs",
     "images": [
       {
-        "src": "https://images.unsplash.com/photo-1504851149312-7a075b496cc7?w=400&h=300&fit=crop",
+        "src": "media/Activities/Camps/1.jpeg?w=400&h=300&fit=crop",
         "alt": "Adventure Camp",
         "caption": "Adventure training camps building courage and resilience"
       },
       {
-        "src": "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=300&fit=crop",
+        "src": "media/Activities/Camps/2.jpeg?w=400&h=300&fit=crop",
         "alt": "Training Session",
         "caption": "Intensive training sessions for leadership development"
       },
       {
-        "src": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=300&fit=crop",
+        "src": "media/Activities/Camps/3.jpeg?w=400&h=300&fit=crop",
         "alt": "Outdoor Activities",
         "caption": "Outdoor activities promoting teamwork and adventure spirit"
       },
       {
-        "src": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=400&h=300&fit=crop",
+        "src": "media/Activities/Camps/4.jpeg?w=400&h=300&fit=crop",
         "alt": "Skill Building",
         "caption": "Skill building exercises in natural environments"
       },
       {
-        "src": "https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=400&h=300&fit=crop",
+        "src": "media/Activities/Camps/5.jpeg?w=400&h=300&fit=crop",
         "alt": "Camp Training",
         "caption": "Comprehensive training programs in camp settings"
       },
       {
-        "src": "https://images.unsplash.com/photo-1533134486753-c833f0ed4866?w=400&h=300&fit=crop",
+        "src": "media/Activities/Camps/6.jpeg?w=400&h=300&fit=crop",
         "alt": "Adventure Training",
         "caption": "Adventure training developing physical and mental strength"
       }
