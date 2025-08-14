@@ -216,6 +216,17 @@ body {
   background: none;
 }
 
+@media (max-width: 768px) {
+  .brand-text {
+    display: none; /* hides SOA NCC & subtitle */
+  }
+
+  .join-btn {
+    display: none; /* hides the Join button */
+  }
+}
+
+
 /* Dropdown Menu */
 .dropdown-menu {
   position: absolute;
@@ -752,7 +763,7 @@ html {
   backdrop-filter: blur(10px);
   border: 2px solid rgba(255, 255, 255, 0.1);
   border-radius: 16px;
-  padding: 40px 30px;
+  padding: 25px 20px;
   text-align: center;
   transition: all 0.3s ease;
   position: relative;
@@ -766,8 +777,9 @@ html {
 }
 
 .card-icon {
-  width: 60px;
-  height: 60px;
+  margin-bottom: 15px;
+  width: 50px;
+  height: 50px;
   border-radius: 12px;
   margin: 0 auto 25px;
   display: flex;
@@ -789,18 +801,20 @@ html {
 
 .motto-icon {
   background-color: #0ea5e9;
+  
 }
 
 .card-title {
+  margin-bottom: 15px;
+  font-size: 1.5rem;
   font-size: 1.7rem;
   font-weight: bold;
   color: white;
-  margin-bottom: 25px;
 }
 
 .card-content {
   color: rgba(255, 255, 255, 0.9);
-  line-height: 1.8;
+  line-height: 1.5;
 }
 
 .card-content ul {
@@ -809,7 +823,7 @@ html {
 }
 
 .card-content li {
-  margin-bottom: 15px;
+  margin-bottom: 10px;
   position: relative;
   padding-left: 20px;
   font-size: 18px;
