@@ -343,7 +343,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const indicators = document.querySelectorAll('.indicator');
   let currentIndex = 0;
   let slideInterval;
-  const slideDuration = 7000; // 7 seconds
+  const slideDuration = 4000; // 4 seconds
 
   function showSlide(index) {
     slides.forEach(slide => slide.classList.remove('active'));
@@ -595,7 +595,7 @@ function autoSlide() {
 }
 
 // Enable auto-play every 5 seconds (uncomment the line below)
-// setInterval(autoSlide, 5000);
+setInterval(autoSlide, 5000);
 
 // Touch/swipe support for mobile devices
 let startX = 0;
