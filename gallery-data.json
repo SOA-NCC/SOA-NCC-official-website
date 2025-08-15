@@ -37,37 +37,37 @@
   },
   "blood-donation": {
     "title": "Adventure",
-    "description": "Saving lives through our community service initiatives",
+    "description": "NCC Adventure Life through our community service initiatives",
     "images": [
       {
         "src": "media/Activities/Adventures/1.jpeg?w=400&h=300&fit=crop",
         "alt": "Blood Donation Camp",
-        "caption": "Volunteers participating in blood donation camp to save lives"
+        "caption": "NCC Adventure Life"
       },
       {
         "src": "media/Activities/Adventures/2.jpeg?w=400&h=300&fit=crop",
         "alt": "Medical Check",
-        "caption": "Medical professionals ensuring safe blood donation procedures"
+        "caption": "NCC Adventure Life"
       },
       {
         "src": "media/Activities/Adventures/3.jpeg?w=400&h=300&fit=crop",
         "alt": "Registration",
-        "caption": "Registration process for blood donation volunteers"
+        "caption": "NCC Adventure Life"
       },
       {
         "src": "media/Activities/Adventures/4.jpeg?w=400&h=300&fit=crop",
         "alt": "Community Service",
-        "caption": "NCC cadets showing commitment to community service"
+        "caption": "NCC Adventure Life"
       },
       {
         "src": "media/Activities/Adventures/5.jpeg?w=400&h=300&fit=crop",
         "alt": "Donation Drive",
-        "caption": "Community blood donation drive organized by NCC"
+        "caption": "NCC Adventure Life"
       },
       {
         "src": "media/Activities/Adventures/6.jpeg?w=400&h=300&fit=crop",
         "alt": "Health Check",
-        "caption": "Pre-donation health check ensuring donor safety"
+        "caption": "NCC Adventure Life"
       }
     ]
   },
@@ -114,74 +114,74 @@
       {
         "src": "media/Activities/Startups_Projects/1.jpeg?w=400&h=300&fit=crop",
         "alt": "Cleaning Drive",
-        "caption": "Community cleaning drives for a better tomorrow"
+        "caption": "Our Startup and Innovation for a better tomorrow"
       },
       {
         "src": "media/Activities/Startups_Projects/2.jpeg?w=400&h=300&fit=crop",
         "alt": "Waste Management",
-        "caption": "Promoting proper waste management practices"
+        "caption": "Our Startup and Innovation for a better tomorrow"
       },
       {
         "src": "media/Activities/Startups_Projects/3.jpeg?w=400&h=300&fit=crop",
         "alt": "Street Cleaning",
-        "caption": "Street cleaning initiatives by dedicated volunteers"
+        "caption": "Our Startup and Innovation for a better tomorrow"
       },
       {
         "src": "media/Activities/Startups_Projects/4.jpeg?w=400&h=300&fit=crop",
         "alt": "Awareness Campaign",
-        "caption": "Awareness campaigns for cleanliness and hygiene"
+        "caption": "Our Startup and Innovation for a better tomorrow"
       },
       {
         "src": "media/Activities/Startups_Projects/5.jpeg?w=400&h=300&fit=crop",
         "alt": "Clean Up Drive",
-        "caption": "Community clean-up drives making India cleaner"
+        "caption": "Our Startup and Innovation for a better tomorrow"
       },
       {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/0/02/Loading.png?w=400&h=300&fit=crop",
+        "src": "media/Activities/Startups_Projects/6.jpeg?w=400&h=300&fit=crop",
         "alt": "Sanitation Drive",
-        "caption": "Sanitation drives for public health improvement"
+        "caption": "Our Startup and Innovation for a better tomorrow"
       }
     ]
   },
-  "guard-of-honour": {
+  "social-service": {
     "title": "Social Service Gallery",
-    "description": "Ceremonial duties performed with pride and precision",
+    "description": "Social Service activities and community engagement",
     "images": [
       {
         "src": "media/Activities/SocialService/1.jpeg?w=400&h=300&fit=crop",
         "alt": "Guard Formation",
-        "caption": "Perfect guard formation displaying military precision"
+        "caption": "Swach Bharat , clean India , Green India."
       },
       {
         "src": "media/Activities/SocialService/2.jpeg?w=400&h=300&fit=crop",
         "alt": "Ceremonial Guard",
-        "caption": "Ceremonial guard duties at important events"
+        "caption": "Swach Bharat , clean India , Green India."
       },
       {
         "src": "media/Activities/SocialService/3.jpeg?w=400&h=300&fit=crop",
         "alt": "Honor Guard",
-        "caption": "Honor guard presenting arms with military precision"
+        "caption": "Reporting in Media as a cadet for nation"
       },
       {
         "src": "media/Activities/SocialService/4.jpeg?w=400&h=300&fit=crop",
         "alt": "State Function",
-        "caption": "Guard of honour at state functions and ceremonies"
+        "caption": "Community blood donation drive organized by NCC"
       },
       {
         "src": "media/Activities/SocialService/5.jpeg?w=400&h=300&fit=crop",
         "alt": "Military Ceremony",
-        "caption": "Military ceremony with full honors and dignity"
+        "caption": "Swach Bharat , clean India , Green India."
       },
       {
         "src": "media/Activities/SocialService/6.jpeg?w=400&h=300&fit=crop",
         "alt": "Official Ceremony",
-        "caption": "Official ceremonies with proper protocol and respect"
+        "caption": "Donation of blood , Save of lives."
       }
     ]
   },
   "camps": {
     "title": "Camps Gallery",
-    "description": "Adventure activities and skill development programs",
+    "description": "Camp activities and skill development programs",
     "images": [
       {
         "src": "media/Activities/Camps/1.jpeg?w=400&h=300&fit=crop",

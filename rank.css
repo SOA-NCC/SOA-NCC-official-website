@@ -23,11 +23,11 @@ body {
   top: 20px;
   left: 20px;
   /* Updated button styling for light theme */
-  background: #ffffff;
-  border: 1px solid #e2e8f0;
+  background: #364aba;
+  border: 1px solid #353b43;
   padding: 12px 20px;
   border-radius: 12px;
-  color: #4a5568;
+  color: #f8f9f9;
   font-weight: 600;
   cursor: pointer;
   display: flex;
@@ -40,7 +40,7 @@ body {
 }
 
 .back-btn:hover {
-  background: #f7fafc;
+  background: #272d63;
   transform: translateY(-2px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
   border-color: #cbd5e0;
