@@ -9,8 +9,33 @@
 
 body {
   font-family: "Arial", sans-serif;
-  background: #f8fafc;
+  /* Enhanced background with stronger contrast and patterns for better glassmorphism visibility */
+  background: radial-gradient(circle at 25% 75%, rgba(0, 63, 136, 0.2) 0%, transparent 50%),
+    radial-gradient(circle at 75% 25%, rgba(255, 153, 51, 0.2) 0%, transparent 50%),
+    linear-gradient(
+      135deg,
+      rgba(255, 245, 245, 0.9) 0%,
+      rgba(255, 255, 255, 0.3) 25%,
+      rgba(235, 245, 255, 0.9) 50%,
+      rgba(255, 255, 255, 0.3) 75%,
+      rgba(245, 255, 245, 0.9) 100%
+    );
+  background-attachment: fixed;
   min-height: 100vh;
+}
+
+/* Added subtle pattern overlay for enhanced glassmorphism effect */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.2) 1px, transparent 0);
+  background-size: 25px 25px;
+  pointer-events: none;
+  z-index: -1;
 }
 
 /* ===== GALLERY CONTAINER ===== */
@@ -32,10 +57,12 @@ body {
   position: fixed;
   top: 20px;
   left: 20px;
-  background: #3b82f6;
-  color: white;
+  /* Enhanced glassmorphism with stronger blur and transparency */
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(25px) saturate(180%);
+  color: #003f88;
   padding: 12px 20px;
-  border-radius: 25px;
+  border-radius: 20px;
   text-decoration: none;
   font-weight: 500;
   display: inline-flex;
@@ -43,13 +70,17 @@ body {
   gap: 8px;
   transition: all 0.3s ease;
   z-index: 1000;
-  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.6);
 }
 
 .back-btn:hover {
-  background: #2563eb;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4);
+  /* More dramatic hover effect with stronger glow */
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 20px 60px rgba(0, 63, 136, 0.3), inset 0 0 30px rgba(0, 63, 136, 0.15);
+  border-color: rgba(0, 63, 136, 0.5);
+  backdrop-filter: blur(30px) saturate(200%);
 }
 
 .back-btn i {
@@ -112,16 +143,26 @@ body {
 .gallery-item {
   position: relative;
   height: 250px;
-  border-radius: 12px;
+  border-radius: 24px;
   overflow: hidden;
   cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s ease;
+  /* Enhanced glassmorphism with stronger transparency and blur */
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(25px) saturate(180%);
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.8), inset 0 -1px 0
+    rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.6);
 }
 
 .gallery-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  /* More dramatic hover effect with enhanced glassmorphism */
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.2), inset 0 0 40px rgba(0, 63, 136, 0.15), inset 0 1px 0
+    rgba(255, 255, 255, 0.9);
+  border-color: rgba(0, 63, 136, 0.5);
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(30px) saturate(200%);
 }
 
 .gallery-item img {
@@ -138,12 +179,14 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.7);
+  /* Enhanced overlay with stronger glassmorphism */
+  background: rgba(0, 63, 136, 0.7);
+  backdrop-filter: blur(20px) saturate(150%);
   display: flex;
   align-items: center;
   justify-content: center;
   opacity: 0;
-  transition: all 0.3s ease;
+  transition: all 0.4s ease;
   padding: 20px;
   text-align: center;
 }
@@ -153,8 +196,8 @@ body {
 }
 
 .gallery-item:hover img {
-  transform: scale(1.05);
-  filter: blur(2px);
+  transform: scale(1.08);
+  filter: blur(3px);
 }
 
 .gallery-overlay-text {
@@ -162,6 +205,8 @@ body {
   font-size: 1rem;
   line-height: 1.6;
   font-weight: 500;
+  /* Added subtle glow to overlay text */
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
 /* ===== LOADING ANIMATION ===== */
@@ -225,19 +270,24 @@ body {
 }
 
 .retry-btn {
-  background: #3b82f6;
-  color: white;
+  /* Enhanced glassmorphism for retry button */
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(25px) saturate(180%);
+  color: #003f88;
   padding: 12px 24px;
-  border: none;
-  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 20px;
   font-size: 1rem;
   cursor: pointer;
   transition: all 0.3s ease;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.8);
 }
 
 .retry-btn:hover {
-  background: #2563eb;
-  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 20px 60px rgba(0, 63, 136, 0.3), inset 0 0 30px rgba(255, 153, 51, 0.15);
+  backdrop-filter: blur(30px) saturate(200%);
 }
 
 /* ===== RESPONSIVE DESIGN ===== */
@@ -310,12 +360,12 @@ body {
 
 /* ===== ACCESSIBILITY ===== */
 .gallery-item:focus {
-  outline: 2px solid #3b82f6;
+  outline: 2px solid #003f88;
   outline-offset: 2px;
 }
 
 .back-btn:focus {
-  outline: 2px solid #ffffff;
+  outline: 2px solid #003f88;
   outline-offset: 2px;
 }
 

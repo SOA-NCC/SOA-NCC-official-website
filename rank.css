@@ -9,12 +9,36 @@
 
 body {
   font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  /* Updated to light theme background with subtle gradient */
-  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  /* Enhanced background with stronger contrast and patterns for better glassmorphism visibility */
+  background: radial-gradient(circle at 20% 80%, rgba(0, 63, 136, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(255, 153, 51, 0.15) 0%, transparent 50%),
+    linear-gradient(
+      135deg,
+      rgba(255, 245, 245, 0.9) 0%,
+      rgba(255, 255, 255, 0.4) 25%,
+      rgba(235, 245, 255, 0.9) 50%,
+      rgba(255, 255, 255, 0.4) 75%,
+      rgba(245, 255, 245, 0.9) 100%
+    );
+  background-attachment: fixed;
   color: #1a202c;
   line-height: 1.6;
   min-height: 100vh;
   position: relative;
+}
+
+/* Added subtle pattern overlay for enhanced glassmorphism effect */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.15) 1px, transparent 0);
+  background-size: 20px 20px;
+  pointer-events: none;
+  z-index: -1;
 }
 
 /* Updated back button for light theme */
@@ -22,28 +46,31 @@ body {
   position: fixed;
   top: 20px;
   left: 20px;
-  /* Updated button styling for light theme */
-  background: #364aba;
-  border: 1px solid #353b43;
+  /* Enhanced glassmorphism with stronger blur and transparency */
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(25px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.6);
   padding: 12px 20px;
-  border-radius: 12px;
-  color: #f8f9f9;
+  border-radius: 20px;
+  color: #003f88;
   font-weight: 600;
   cursor: pointer;
   display: flex;
   align-items: center;
   gap: 8px;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.8);
   z-index: 1000;
   font-size: 14px;
 }
 
 .back-btn:hover {
-  background: #272d63;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-  border-color: #cbd5e0;
+  /* More dramatic hover effect with stronger glow */
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 20px 60px rgba(0, 63, 136, 0.3), inset 0 0 30px rgba(0, 63, 136, 0.15);
+  border-color: rgba(0, 63, 136, 0.5);
+  backdrop-filter: blur(30px) saturate(200%);
 }
 
 .back-btn i {
@@ -85,15 +112,16 @@ body {
   justify-content: center;
   margin-bottom: 60px;
   gap: 4px;
-  /* Updated toggle styling for light theme */
-  background: #ffffff;
+  /* Enhanced glassmorphism for section toggle */
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(25px) saturate(180%);
   padding: 6px;
-  border-radius: 12px;
+  border-radius: 20px;
   width: fit-content;
   margin-left: auto;
   margin-right: auto;
-  border: 1px solid #e2e8f0;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.8);
 }
 
 .toggle-btn {
@@ -128,16 +156,16 @@ body {
 }
 
 .toggle-btn.active {
-  /* Updated active toggle styling */
-  background: #3b82f6;
+  /* Updated active toggle with NCC blue */
+  background: #003f88;
   color: #ffffff;
-  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+  box-shadow: 0 4px 12px rgba(0, 63, 136, 0.3), inset 0 0 15px rgba(255, 153, 51, 0.1);
   transform: translateY(-1px);
 }
 
 .toggle-btn:hover:not(.active) {
-  color: #4a5568;
-  background: #f7fafc;
+  color: #003f88;
+  background: rgba(255, 255, 255, 0.3);
 }
 
 .rank-section {
@@ -172,13 +200,16 @@ body {
 
 /* Completely redesigned officer cards to match reference image */
 .officer-card {
-  background: #ffffff;
-  border-radius: 16px;
+  /* Enhanced glassmorphism with stronger transparency and blur */
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(25px) saturate(180%);
+  border-radius: 24px;
   padding: 32px 24px;
   text-align: center;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.8), inset 0 -1px 0
+    rgba(255, 255, 255, 0.2);
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  border: 1px solid #e2e8f0;
+  border: 1px solid rgba(255, 255, 255, 0.6);
   width: 300px;
   position: relative;
   overflow: hidden;
@@ -193,42 +224,45 @@ body {
   left: 0;
   right: 0;
   height: 4px;
-  background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+  /* Updated gradient with NCC colors */
+  background: linear-gradient(135deg, #003f88 0%, #ff9933 100%);
   opacity: 0;
   transition: opacity 0.3s ease;
 }
 
 .officer-card:hover {
-  transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
-  border-color: #cbd5e0;
+  /* More dramatic hover effect with enhanced glassmorphism */
+  transform: translateY(-12px) scale(1.03);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.2), inset 0 0 40px rgba(0, 63, 136, 0.15), inset 0 1px 0
+    rgba(255, 255, 255, 0.9);
+  border-color: rgba(0, 63, 136, 0.5);
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(30px) saturate(200%);
 }
 
-.officer-card:hover::before {
-  opacity: 1;
-}
-
-/* Updated photo styling to match reference */
 .officer-photo {
   width: 120px;
   height: 120px;
   margin: 0 auto 20px;
-  border-radius: 16px;
+  border-radius: 20px;
   overflow: hidden;
-  border: 3px solid #e2e8f0;
+  /* Enhanced glassmorphism border */
+  border: 2px solid rgba(255, 255, 255, 0.6);
   transition: all 0.4s ease;
   position: relative;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
 }
 
 .officer-photo::before {
   content: "";
   position: absolute;
-  top: -3px;
-  left: -3px;
-  right: -3px;
-  bottom: -3px;
-  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
-  border-radius: 16px;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  /* Updated gradient with NCC colors */
+  background: linear-gradient(135deg, #003f88, #ff9933);
+  border-radius: 20px;
   z-index: -1;
   opacity: 0;
   transition: opacity 0.3s ease;
@@ -242,7 +276,8 @@ body {
 }
 
 .officer-card:hover .officer-photo {
-  transform: scale(1.05);
+  transform: scale(1.08);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
 }
 
 .officer-card:hover .officer-photo::before {
@@ -269,7 +304,8 @@ body {
 /* Updated rank styling to match reference with blue theme */
 .officer-rank {
   display: inline-block;
-  background: #3b82f6;
+  /* Updated with NCC blue */
+  background: #003f88;
   color: #ffffff;
   padding: 6px 16px;
   border-radius: 8px;
@@ -282,8 +318,10 @@ body {
 }
 
 .officer-card:hover .officer-rank {
-  background: #1d4ed8;
+  /* Added saffron accent on hover */
+  background: #ff9933;
   transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(255, 153, 51, 0.3);
 }
 
 .officer-year {
