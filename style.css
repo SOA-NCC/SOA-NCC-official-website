@@ -3355,6 +3355,7 @@ body {
 
 /* Added animated liquid gradient blobs for light theme */
 .contributors::before {
+  /* content: ""; */
   position: absolute;
   top: -50%;
   left: -50%;
