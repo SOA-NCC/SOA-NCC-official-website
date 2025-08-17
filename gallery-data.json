@@ -37,36 +37,36 @@
   },
   "blood-donation": {
     "title": "Adventure",
-    "description": "NCC Adventure Life through our community service initiatives",
+    "description": "NCC cadets getting exposure to thrilling adventures",
     "images": [
       {
         "src": "media/Activities/Adventures/1.jpeg?w=400&h=300&fit=crop",
-        "alt": "Blood Donation Camp",
-        "caption": "NCC Adventure Life"
+        "alt": "AMC Camp",
+        "caption": "CQMS Putta Siddharth excelled in Uttarkashi's Adventure Mountaineering Course (Nov '23), completing a 12km trek to 9,842ft Harunta Bugyal and securing 2nd in cross-country running."
       },
       {
         "src": "media/Activities/Adventures/2.jpeg?w=400&h=300&fit=crop",
-        "alt": "Medical Check",
-        "caption": "NCC Adventure Life"
+        "alt": "Rajgir Trekking Camp",
+        "caption": "Five SOA NCC cadets completed the Rajgir Trekking Camp (2023), a 10-day expedition covering Nalanda ruins, Viswa Shanti Stupa, Ghora Katora, Nalanda International University, and Giriyak Dam."
       },
       {
         "src": "media/Activities/Adventures/3.jpeg?w=400&h=300&fit=crop",
-        "alt": "Registration",
-        "caption": "NCC Adventure Life"
+        "alt": "Rajgir Trekking Camp",
+        "caption": "Five SOA NCC cadets completed the Rajgir Trekking Camp (2023), a 10-day expedition covering Nalanda ruins, Viswa Shanti Stupa, Ghora Katora, Nalanda International University, and Giriyak Dam."
       },
       {
         "src": "media/Activities/Adventures/4.jpeg?w=400&h=300&fit=crop",
-        "alt": "Community Service",
-        "caption": "NCC Adventure Life"
+        "alt": "Rajgir Trekking Camp",
+        "caption": "Five SOA NCC cadets completed the Rajgir Trekking Camp (2023), a 10-day expedition covering Nalanda ruins, Viswa Shanti Stupa, Ghora Katora, Nalanda International University, and Giriyak Dam."
       },
       {
         "src": "media/Activities/Adventures/5.jpeg?w=400&h=300&fit=crop",
-        "alt": "Donation Drive",
-        "caption": "NCC Adventure Life"
+        "alt": "Rajgir Trekking Camp",
+        "caption": "Five SOA NCC cadets completed the Rajgir Trekking Camp (2023), a 10-day expedition covering Nalanda ruins, Viswa Shanti Stupa, Ghora Katora, Nalanda International University, and Giriyak Dam."
       },
       {
         "src": "media/Activities/Adventures/6.jpeg?w=400&h=300&fit=crop",
-        "alt": "Health Check",
+        "alt": "Super Seniors Trip",
         "caption": "NCC Adventure Life"
       }
     ]
@@ -196,7 +196,7 @@
       {
         "src": "media/Activities/Camps/3.jpeg?w=400&h=300&fit=crop",
         "alt": "Outdoor Activities",
-        "caption": "Outdoor activities promoting teamwork and adventure spirit"
+        "caption": "JUO Abinash Nanda represented India at the Youth Exchange Program (YEP) in Kyrgyzstan, showcasing dedication and bringing pride to SOA NCC."
       },
       {
         "src": "media/Activities/Camps/4.jpeg?w=400&h=300&fit=crop",
@@ -211,7 +211,7 @@
       {
         "src": "media/Activities/Camps/6.jpeg?w=400&h=300&fit=crop",
         "alt": "Adventure Training",
-        "caption": "Adventure training developing physical and mental strength"
+        "caption": "Three SOA NCC cadets—CDT Abinash Nanda, CDT Abhishek Bhanja, and CDT Debi Prasad Dash—were selected for the prestigious Republic Day Camp 2024, setting a new benchmark for 4 O CTC."
       }
     ]
   }

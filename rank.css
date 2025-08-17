@@ -346,13 +346,14 @@ body {
   background: #c13584;
 }
 
-.social-btn.github {
-  background: #333;
+.social-btn.email {
+  background: #d44638; 
 }
 
-.social-btn.github::before {
-  background: #24292e;
+.social-btn.email::before {
+  background: #a33227;
 }
+
 
 .social-btn:hover {
   transform: translateY(-2px) scale(1.1);

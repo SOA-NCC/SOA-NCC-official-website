@@ -300,6 +300,11 @@ body {
     background: url('media/HeroPage/HeroImage.jpeg') center center / cover no-repeat;
     z-index: -2;
 }
+@media (max-width: 768px) {
+    .hero-section {
+        background-position: right center; /* Shift to right edge */
+    }
+}
 
 .hero-video {
     position: absolute;
@@ -1334,9 +1339,23 @@ body {
 
 .ranks-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* slightly bigger for balance */
   gap: 32px;
 }
+
+@media (max-width: 1024px) {
+  .ranks-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 cards per row for tablets */
+  }
+}
+
+@media (max-width: 768px) {
+  .ranks-grid {
+    grid-template-columns: 1fr; /* 1 card per row for mobile */
+    gap: 20px;
+  }
+}
+
 
 .cadet-card {
   background: white;

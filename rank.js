@@ -59,7 +59,7 @@ function initRankStructure() {
 
 function initScrollAnimations() {
   const observerOptions = {
-    threshold: 0.1,
+    threshold: 0.2,
     rootMargin: "0px 0px -100px 0px",
   }
 
@@ -123,7 +123,7 @@ function createRippleEffect(element) {
     if (ripple.parentNode) {
       ripple.parentNode.removeChild(ripple)
     }
-  }, 600)
+  }, 500)
 }
 
 function initParallaxEffects() {
@@ -132,7 +132,7 @@ function initParallaxEffects() {
     const parallaxElements = document.querySelectorAll(".rank-header")
 
     parallaxElements.forEach((element) => {
-      const speed = 0.5
+      const speed = 0.2
       element.style.transform = `translateY(${scrolled * speed}px)`
     })
   })
