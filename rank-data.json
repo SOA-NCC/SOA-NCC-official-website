@@ -1,0 +1,298 @@
+{
+  "header": {
+    "title": "Current Cadet Leadership",
+    "subtitle": "Meet our distinguished cadet officers leading by example"
+  },
+  "sections": {
+    "sd": {
+      "name": "SD RANK HOLDERS",
+      "officers": {
+        "SUO": [
+          {
+            "name": "Devi Prasad Sarangi",
+            "rank": "SUO",
+            "year": "Third Year",
+            "image": "media/Rank-Holders/SD/SUO DEVI PRASAD SARANGI.png",
+            "social": {
+              "linkedin": "#",
+              "email": "deviprsarangi@gmail.com"
+            }
+          }
+        ],
+        "JUO": [
+          {
+            "name": "Nikhilesh Sahoo",
+            "rank": "JUO",
+            "year": "Third Year",
+            "image": "media/Rank-Holders/SD/JUO NIKHILESH SAHOO.png",
+            "social": {
+              "linkedin": "https://www.linkedin.com/in/nikhilesh-sahoo-b882b8319?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+              "email": "Nikhlesh067@gmail.com"
+            }
+          },
+          {
+            "name": "Raj Sahasransu Biswal",
+            "rank": "JUO",
+            "year": "Third Year",
+            "image": "media/Rank-Holders/SD/JUO RAJ SAHASRANSU BISWAL.png",
+            "social": {
+              "linkedin": "https://www.linkedin.com/in/raj-sahasransu-biswal-117697294?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+              "email": "rajsahasransu@nyrama.in"
+            }
+          },
+          {
+            "name": "Anubhav Samantaray",
+            "rank": "JUO",
+            "year": "Third Year",
+            "image": "media/Rank-Holders/SD/JUO ANUBHAB SAMANTARAY.png",
+            "social": {
+              "linkedin": "#",
+              "email": "samantarayanubhab@gmail.com"
+            }
+          }
+        ],
+        "CQMS": [
+          {
+            "name": "Ayushman Patra",
+            "rank": "CQMS",
+            "year": "Third Year",
+            "image": "media/Rank-Holders/SD/CQMS AYUSHMAN PATRA.jpg",
+            "social": {
+              "linkedin": "https://www.linkedin.com/public-profile/settings",
+              "email": "ayushpatra651@gmail.com"
+            }
+          },
+          {
+            "name": "Soumya Ranjan Swain",
+            "rank": "CQMS",
+            "year": "Third Year",
+            "image": "media/Rank-Holders/SD/CQMS SOUMYA RANJAN SWAIN.jpeg",
+            "social": {
+              "linkedin": "#",
+              "email": "gmail"
+            }
+          }
+        ],
+        "SGT": [
+          {
+            "name": "Vaibhav Krishnan",
+            "rank": "SGT",
+            "year": "Third Year",
+            "image": "media/Rank-Holders/SD/SGT VAIBHAV KRISHNAN .jpeg",
+            "social": {
+              "linkedin": "#",
+              "email": "gmail"
+            }
+          },
+          {
+            "name": "R D Pavan Kumar",
+            "rank": "SGT",
+            "year": "Third Year",
+            "image": "media/Rank-Holders/SD/⁠SGT R D PAVAN KUMAR.jpeg",
+            "social": {
+              "linkedin": "https://www.linkedin.com/in/pavan-kumar-432248298",
+              "email": "rdpkumar2308@gmail.com"
+            }
+          }
+        ],
+        "CPL": [
+          {
+            "name": "Kumar Bibhudatta",
+            "rank": "CPL",
+            "year": "Third Year",
+            "image": "media/Rank-Holders/SD/CPL KUMAR BIBHUDATTA .jpg",
+            "social": {
+              "linkedin": "#",
+              "email": "gmail"
+            }
+          },
+          {
+            "name": "Deepak Kumar Agasti",
+            "rank": "CPL",
+            "year": "Third Year",
+            "image": "media/Rank-Holders/SD/⁠CPL DEEPAK KUMAR AGASTI.jpeg",
+            "social": {
+              "linkedin": "#",
+              "email": "gmail"
+            }
+          }
+        ],
+        "LCPL": [
+          {
+            "name": "Ayush Behera",
+            "rank": "LCPL",
+            "year": "Third Year",
+            "image": "media/Rank-Holders/SD/LCPL AYUSH BEHERA.jpeg",
+            "social": {
+              "linkedin": "#",
+              "email": "ayushbehera0708@gmail.com"
+            }
+          },
+          {
+            "name": "Swadhin Mohanty",
+            "rank": "LCPL",
+            "year": "Third Year",
+            "image": "media/Rank-Holders/SD/⁠LCPL SWADHIN MOHANTY.jpeg",
+            "social": {
+              "linkedin": "https://www.linkedin.com/in/swadhin-mohanty-30862733a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+              "email": "swadhinkrmohanty15@gmail.com"
+            }
+          },
+          {
+            "name": "Himanshu Kumar Behera",
+            "rank": "LCPL",
+            "year": "Third Year",
+            "image": "media/Rank-Holders/SD/LCPL HIMANSHU KUMAR BEHERA.jpeg",
+            "social": {
+              "linkedin": "#",
+              "email": "gmail"
+            }
+          },
+          {
+            "name": "Nishant Gupta",
+            "rank": "LCPL",
+            "year": "Third Year",
+            "image": "media/Rank-Holders/SD/⁠LCPL NISHANT GUPTA .jpeg",
+            "social": {
+              "linkedin": "www.linkedin.com/in/nishant-gupta-b90366338",
+              "email": "guptanishant1106@hotmail.com"
+            }
+          },
+          {
+            "name": "Pranab Das",
+            "rank": "LCPL",
+            "year": "Third Year",
+            "image": "media/Rank-Holders/SD/⁠LCPL Pranab Das.jpg",
+            "social": {
+              "linkedin": "#",
+              "email": "pranabdas60065@gmail.com"
+            }
+          }
+        ]
+      }
+    },
+    "sw": {
+      "name": "SW RANK HOLDERS",
+      "officers": {
+        "JUO": [
+          {
+            "name": "Komal Kumari",
+            "rank": "JUO",
+            "year": "Fourth Year",
+            "image": "media/Rank-Holders/SW/JUO Komal Kumari.jpeg",
+            "social": {
+              "linkedin": "#",
+              "email": "komlkri2004@gmail.com"
+            }
+          }
+        ],
+        "SGT": [
+          {
+            "name": "Anjali Rudrapal",
+            "rank": "SGT",
+            "year": "Third Year",
+            "image": "media/Rank-Holders/SW/SGT Anjali Rudrapal.jpg",
+            "social": {
+              "linkedin": "https://www.linkedin.com/in/anjali-rudrapal-691a54305?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+              "email": "anjalirudrapal100@gmail.com"
+            }
+          },
+          {
+            "name": "Akansha Ajay",
+            "rank": "SGT",
+            "year": "Third Year",
+            "image": "media/Rank-Holders/SW/SGT Akansha Ajay.jpg",
+            "social": {
+              "linkedin": "https://www.linkedin.com/in/akansha-ajay-685622302?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+              "email": "akankshaajay05@gmail.com"
+            }
+          }
+        ],
+        "CPL": [
+          {
+            "name": "JN Jayashree",
+            "rank": "CPL",
+            "year": "Third Year",
+            "image": "media/Rank-Holders/SW/CPL JN Jayashree.jpg",
+            "social": {
+              "linkedin": "https://www.linkedin.com/in/jn-jayashree-2837642a4?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+              "email": "jnjayashree16@gmail.com"
+            }
+          },
+          {
+            "name": "Arpita Panda",
+            "rank": "CPL",
+            "year": "Third Year",
+            "image": "media/Rank-Holders/SW/LCPL Arpita Panda.jpeg",
+            "social": {
+              "linkedin": "https://www.linkedin.com/in/arpita-panda-6b136a319?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+              "email": "pandaarpita2005@gmail.com"
+            }
+          }
+        ],
+        "LCPL": [
+          {
+            "name": "Khushboo Priya",
+            "rank": "LCPL",
+            "year": "Third Year",
+            "image": "media/Rank-Holders/SW/LCPL Khushboo Priya.jpg",
+            "social": {
+              "linkedin": "#",
+              "email": "gmail"
+            }
+          },
+          {
+            "name": "Shalini Prusty",
+            "rank": "LCPL",
+            "year": "Fourth Year",
+            "image": "https://images.assetsdelivery.com/compings_v2/thesomeday123/thesomeday1231712/thesomeday123171200008.jpg?height=120&width=120",
+            "social": {
+              "linkedin": "#",
+              "email": "gmail"
+            }
+          },
+          {
+            "name": "Taniprava Sahoo",
+            "rank": "LCPL",
+            "year": "Third Year",
+            "image": "media/Rank-Holders/SW/LCPL Taniprava Sahoo.jpeg",
+            "social": {
+              "linkedin": "https://www.linkedin.com/in/taniprava-sahoo?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+              "email": "sahootaniprava@gmail.com"
+            }
+          },
+          {
+            "name": "Priti Prachurya",
+            "rank": "LCPL",
+            "year": "Third Year",
+            "image": "media/Rank-Holders/SW/LCPL Priti Prachurya.jpg",
+            "social": {
+              "linkedin": "#",
+              "email": "gmail"
+            }
+          },
+          {
+            "name": "Humshika Rajguru Mohapatra",
+            "rank": "LCPL",
+            "year": "Third Year",
+            "image": "media/Rank-Holders/SW/LCPL Humshika Rajguru Mohapatra.jpeg",
+            "social": {
+              "linkedin": "https://www.linkedin.com/in/humshika-rajguru-mohapatra-974aa4286?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+              "email": "humshika06@gmail.com"
+            }
+          },
+          {
+            "name": "Sasmita Behera",
+            "rank": "LCPL",
+            "year": "Third Year",
+            "image": "media/Rank-Holders/SW/LCPL Sasmita Behera.jpg",
+            "social": {
+              "linkedin": "https://www.linkedin.com/in/sasmita-behera-93b80034b",
+              "email": "rb6879610@gmail.com"
+            }
+          }
+        ]
+      }
+    }
+  }
+}

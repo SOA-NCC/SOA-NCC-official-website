@@ -347,13 +347,12 @@ body {
 }
 
 .social-btn.email {
-  background: #d44638; 
+  background: #d44638;
 }
 
 .social-btn.email::before {
   background: #a33227;
 }
-
 
 .social-btn:hover {
   transform: translateY(-2px) scale(1.1);

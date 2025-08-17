@@ -2049,6 +2049,61 @@ body {
   font-weight: 500;
 }
 
+/* Default logo size */
+.org-item {
+  flex: 0 0 auto;
+  width: 150px;
+  margin: 0 24px;
+  text-align: center;
+}
+
+/* Smaller logos on mobile */
+@media (max-width: 400px) {
+  .org-item {
+    width: 90px;  /* smaller width */
+    margin: 0 12px; /* tighter spacing */
+  }
+}
+
+
+/* Scrolling banner */
+.scroll-banner {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  background: #f3f4f6;
+}
+
+.scroll-content {
+  display: flex;
+  width: max-content;
+  animation: scroll-left 25s linear infinite;
+  animation-play-state: running;
+  transition: animation-duration 0.5s ease;
+}
+
+.scroll-banner:hover .scroll-content {
+  animation-play-state: paused; /* fully stops scrolling */
+}
+
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.org-item {
+  flex: 0 0 auto;
+  width: 150px;
+  margin: 0 24px;
+  text-align: center;
+}
+
+
 /* Footer */
 .footer {
   background: #1f2937;

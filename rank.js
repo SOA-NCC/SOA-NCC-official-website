@@ -1,4 +1,136 @@
-// Rank Structure JavaScript with Advanced Animations
+// Dynamic Rank Structure JavaScript with Advanced Animations
+
+let rankData = null
+
+// Load rank data from JSON
+async function loadRankData() {
+  try {
+    showLoading()
+    const response = await fetch("rank-data.json")
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`)
+    }
+
+    rankData = await response.json()
+    populateRankStructure()
+    hideLoading()
+    initRankStructure()
+  } catch (error) {
+    console.error("Error loading rank data:", error)
+    showError()
+  }
+}
+
+// Show loading state
+function showLoading() {
+  document.getElementById("loading").style.display = "flex"
+  document.getElementById("error").style.display = "none"
+  document.getElementById("rank-container").style.display = "none"
+}
+
+// Hide loading state
+function hideLoading() {
+  document.getElementById("loading").style.display = "none"
+  document.getElementById("rank-container").style.display = "block"
+}
+
+// Show error state
+function showError() {
+  document.getElementById("loading").style.display = "none"
+  document.getElementById("error").style.display = "flex"
+  document.getElementById("rank-container").style.display = "none"
+}
+
+// Populate the rank structure from JSON data
+function populateRankStructure() {
+  if (!rankData) return
+
+  document.getElementById("main-title").textContent = rankData.header.title
+  document.getElementById("main-subtitle").textContent = rankData.header.subtitle
+
+  const toggleContainer = document.getElementById("section-toggle")
+  toggleContainer.innerHTML = ""
+
+  Object.keys(rankData.sections).forEach((sectionKey, index) => {
+    const section = rankData.sections[sectionKey]
+    const toggleBtn = document.createElement("div")
+    toggleBtn.className = `toggle-btn ${index === 0 ? "active" : ""}`
+    toggleBtn.setAttribute("data-section", sectionKey)
+    toggleBtn.textContent = section.name
+    toggleContainer.appendChild(toggleBtn)
+  })
+
+  populateSection("sd", "sd-hierarchy")
+
+  populateSection("sw", "sw-hierarchy")
+}
+
+// Populate a specific section with officers
+function populateSection(sectionKey, containerId) {
+  const section = rankData.sections[sectionKey]
+  const container = document.getElementById(containerId)
+  container.innerHTML = ""
+
+  // Define rank order for proper hierarchy display
+  const rankOrder = ["SUO", "JUO", "CQMS", "SGT", "CPL", "LCPL"]
+
+  rankOrder.forEach((rank) => {
+    if (section.officers[rank] && section.officers[rank].length > 0) {
+      const rankLevel = createRankLevel(rank, section.officers[rank])
+      container.appendChild(rankLevel)
+    }
+  })
+}
+
+// Create a rank level container with officers
+function createRankLevel(rank, officers) {
+  const rankLevel = document.createElement("div")
+
+  if (rank === "SUO" || (rank === "JUO" && officers.length === 1)) {
+    rankLevel.className = `rank-level ${rank.toLowerCase()} single`
+  } else if (rank === "JUO") {
+    rankLevel.className = `rank-level ${rank.toLowerCase()}`
+  } else if (rank === "CQMS" || rank === "SGT") {
+    rankLevel.className = "rank-level middle"
+  } else if (rank === "CPL") {
+    rankLevel.className = "rank-level cpl"
+  } else if (rank === "LCPL") {
+    rankLevel.className = "rank-level lcpl"
+  } else {
+    rankLevel.className = "rank-level"
+  }
+
+  officers.forEach((officer, index) => {
+    const officerCard = createOfficerCard(officer, index * 100)
+    rankLevel.appendChild(officerCard)
+  })
+
+  return rankLevel
+}
+
+// Create an individual officer card
+function createOfficerCard(officer, delay) {
+  const card = document.createElement("div")
+  card.className = `officer-card rank-${officer.rank.toLowerCase()}`
+  card.setAttribute("data-aos", "fade-up")
+  card.setAttribute("data-aos-delay", delay.toString())
+
+  card.innerHTML = `
+        <div class="officer-photo">
+            <img src="${officer.image}" alt="${officer.name}" onerror="this.src='https://images.assetsdelivery.com/compings_v2/thesomeday123/thesomeday1231712/thesomeday123171200008.jpg?height=120&width=120'">
+        </div>
+        <div class="officer-name">${officer.name}</div>
+        <div class="officer-rank">${officer.rank}</div>
+        <div class="officer-year">${officer.year}</div>
+        <div class="social-links">
+            <a href="${officer.social.linkedin}" class="social-btn linkedin"><i class="fab fa-linkedin-in"></i></a>
+            <a href="mailto:${officer.social.email}" class="social-btn email"><i class="fas fa-envelope"></i></a>
+        </div>
+    `
+
+  return card
+}
 
 // Initialize the rank structure functionality
 function initRankStructure() {
@@ -170,6 +302,62 @@ function addKeyboardNavigation() {
 
 const style = document.createElement("style")
 style.textContent = `
+  .loading-container, .error-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .loading-spinner {
+    width: 50px;
+    height: 50px;
+    border: 4px solid #e2e8f0;
+    border-top: 4px solid #3b82f6;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 20px;
+  }
+
+  .error-message {
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e2e8f0;
+    max-width: 400px;
+  }
+
+  .error-message i {
+    font-size: 3rem;
+    color: #ef4444;
+    margin-bottom: 20px;
+  }
+
+  .retry-btn {
+    background: #3b82f6;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    margin-top: 20px;
+    transition: background 0.3s ease;
+  }
+
+  .retry-btn:hover {
+    background: #1d4ed8;
+  }
+
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
   @keyframes pulse {
     0% { transform: scale(1); }
     50% { transform: scale(1.05); }
@@ -201,7 +389,7 @@ document.head.appendChild(style)
 
 // Auto-initialize when DOM is ready
 document.addEventListener("DOMContentLoaded", () => {
-  initRankStructure()
+  loadRankData()
 })
 
 // Handle window resize for responsive behavior
