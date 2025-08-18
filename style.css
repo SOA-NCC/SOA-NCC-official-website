@@ -346,7 +346,7 @@ body {
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    /* text-shadow: 2px 2px 4px rgba(0,0,0,0.3); */
 }
 
 .hero-subtitle {
@@ -368,7 +368,10 @@ body {
     flex-wrap: wrap;
     gap: 16px;
     justify-content: center;
+    align-items: center;
 }
+
+
 
 /* Music Control */
 .music-control {
@@ -426,7 +429,7 @@ body {
 }
 
 @media (max-width:480px) {
-    .hero-title { font-size: clamp(2.5rem, 7vw, 5rem); }
+    .hero-title { font-size: clamp(4rem, 7vw, 5rem); }
     .hero-subtitle { font-size: clamp(1.2rem, 3.5vw, 2.5rem); }
     .hero-description { font-size: clamp(1rem, 2.5vw, 1.8rem); }
     .btn { width: 200px; padding: 12px 25px; font-size: 14px; }
@@ -662,7 +665,7 @@ body {
 
 .card {
   /* Light theme glass card with premium effects */
-  background: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.890);
   backdrop-filter: blur(20px);
   border: 1px solid rgba(255, 255, 255, 0.8);
   box-shadow: 0 8px 32px rgba(11, 31, 75, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.9);
@@ -724,20 +727,20 @@ body {
 }
 
 .aims-icon {
-  background-color: #ef4444;
+  background-color: #ff6e6e;
   color: white;
   /* Added glass effect to icon */
   box-shadow: 0 4px 20px rgba(239, 68, 68, 0.3);
 }
 
 .vision-icon {
-  background-color: #f8fafc;
-  color: #1e293b;
+  background-color: #77a7fb;
+  color: white;
   box-shadow: 0 4px 20px rgba(30, 41, 59, 0.2);
 }
 
 .motto-icon {
-  background-color: #0ea5e9;
+  background-color: #8fdbff;
   color: white;
   box-shadow: 0 4px 20px rgba(14, 165, 233, 0.3);
 }
@@ -1966,35 +1969,6 @@ body {
   overflow: hidden;
 }
 
-.marching-soldiers {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 150px;
-  background-image: url("media/marching-soldiers-silhouette.png");
-  background-repeat: repeat-x;
-  background-position: bottom center;
-  /* Adjusted opacity for light theme */
-  opacity: 0.08;
-  animation: march 60s linear infinite;
-}
-
-.parallax-flag {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 300px;
-  height: 200px;
-  background-image: url("media/ncc-flag.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: top right;
-  /* Adjusted opacity for light theme */
-  opacity: 0.12;
-  transform: translateY(0);
-  transition: transform 0.5s ease-out;
-}
 
 .gradient-overlay {
   position: absolute;
@@ -2003,7 +1977,7 @@ body {
   width: 100%;
   height: 100%;
   /* Updated overlay for light theme */
-  /* background: linear-gradient(135deg, rgba(240, 249, 255, 0.6) 0%, rgba(224, 242, 254, 0.4) 100%); */
+  background: linear-gradient(135deg, rgba(240, 249, 255, 0.6) 0%, rgba(224, 242, 254, 0.4) 100%);
 }
 
 /* Section Header */
@@ -2057,11 +2031,11 @@ body {
 .benefit-card {
   position: relative;
   /* Updated card background for light theme glassmorphism */
-  background: rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.890);
   backdrop-filter: blur(15px);
   border-radius: 20px;
   padding: 30px;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.4s cubic-bezier(8, 0, 4, 2);
   border: 1px solid rgba(255, 255, 255, 0.3);
   overflow: hidden;
   box-shadow: 0 8px 32px rgba(93, 169, 233, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.4);
@@ -2087,7 +2061,7 @@ body {
   /* Updated glow effect for light theme */
   background: radial-gradient(circle at center, rgba(93, 169, 233, 0.15) 0%, transparent 70%);
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.2s ease;
 }
 
 .benefit-card:hover .card-glow {
@@ -2095,9 +2069,9 @@ body {
 }
 
 .benefit-card:hover {
-  transform: translateY(-12px) scale(1.02);
+  transform: translateY(-50px) scale(10);
   /* Updated hover shadow for light theme */
-  box-shadow: 0 20px 60px rgba(93, 169, 233, 0.2), 0 0 0 1px rgba(255, 255, 255, 0.5), inset 0 1px 0
+  box-shadow: 0 20px 60px rgba(66, 144, 208, 0.2), 0 0 0 1px rgba(255, 255, 255, 0.5), inset 0 1px 0
     rgba(255, 255, 255, 0.6);
 }
 
@@ -2117,23 +2091,23 @@ body {
   transform: scale(1.1) rotate(5deg);
 }
 
-.ncc-red {
-  background: linear-gradient(135deg, #8b0000, #b22222);
+.join-ncc-red {
+  background: linear-gradient(135deg, #e76767, #f6a9a9);
   color: white;
 }
 
-.ncc-white {
-  background: linear-gradient(135deg, #ffffff, #f5f5f5);
-  color: #333;
-}
-
-.ncc-navy {
-  background: linear-gradient(135deg, #000080, #1e90ff);
+.join-ncc-white {
+  background: linear-gradient(135deg, #feec86, #f3b560);
   color: white;
 }
 
-.ncc-skyblue {
-  background: linear-gradient(135deg, #87ceeb, #00bfff);
+.join-ncc-navy {
+  background: linear-gradient(135deg, #6262fc, #92c5f7);
+  color: white;
+}
+
+.join-ncc-skyblue {
+  background: linear-gradient(135deg, #bee4f4, #6fd5f8);
   color: white;
 }
 
@@ -2200,14 +2174,12 @@ body {
 }
 
 .btn-white {
-  /* Updated button styling for light theme */
   background: linear-gradient(135deg, #0b1f4b 0%, #5da9e9 100%);
   color: white;
   box-shadow: 0 8px 25px rgba(93, 169, 233, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }
 
 .btn-white:hover {
-  /* Updated button hover for light theme */
   background: linear-gradient(135deg, #0a1a3a 0%, #4a90d9 100%);
   box-shadow: 0 12px 35px rgba(93, 169, 233, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.3);
   transform: translateY(-3px);
@@ -2234,21 +2206,7 @@ body {
   letter-spacing: 0.5px;
 }
 
-/* Magnetic Button Effect */
-.btn-magnetic {
-  transition: transform 0.2s ease;
-}
 
-/* Animations */
-@keyframes march {
-  0% {
-    background-position: 0 bottom;
-  }
-
-  100% {
-    background-position: 2000px bottom;
-  }
-}
 
 /* Responsive Adjustments */
 @media (max-width: 768px) {
@@ -2273,7 +2231,7 @@ body {
 
   .btn-large {
     padding: 15px 30px;
-    font-size: 14px;
+    font-size: 12px;
   }
 }
 
@@ -2985,7 +2943,7 @@ body {
 .alumni-card:hover {
   transform: translateY(-10px);
   /* Enhanced light theme hover shadow */
-  box-shadow: 0 20px 50px rgba(59, 130, 246, 0.2), 0 0 30px rgba(56, 189, 248, 0.1);
+  box-shadow: 0 20px 50px rgba(59, 130, 246, 0.2), 0 0 30px rgba(177, 232, 255, 0.1);
 }
 
 .alumni-image {
@@ -3101,44 +3059,32 @@ body {
 /* Color Variants */
 .ncc-navy {
   /* Light theme navy variant */
-  background: linear-gradient(135deg, rgba(59, 130, 246, 0.15) 0%, rgba(30, 64, 175, 0.1) 100%);
+background: linear-gradient(135deg, rgba(0, 102, 204, 0.15), rgba(173, 216, 230, 0.25));
+backdrop-filter: blur(16px);
+
 }
 
 .ncc-red {
   /* Light theme red variant */
-  background: linear-gradient(135deg, rgba(239, 68, 68, 0.15) 0%, rgba(185, 28, 28, 0.1) 100%);
+background: linear-gradient(135deg, rgba(128, 0, 128, 0.15), rgba(230, 230, 250, 0.25));
+backdrop-filter: blur(16px);
+
+
 }
 
 .ncc-white-card {
   /* Light theme white variant */
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.4) 0%, rgba(248, 250, 252, 0.3) 100%);
+background: linear-gradient(135deg, rgba(220, 20, 60, 0.18), rgba(255, 182, 193, 0.25));
+backdrop-filter: blur(16px);
+
 }
 
 .ncc-skyblue {
   /* Light theme sky blue variant */
-  background: linear-gradient(135deg, rgba(56, 189, 248, 0.15) 0%, rgba(14, 165, 233, 0.1) 100%);
+background: linear-gradient(135deg, rgba(70, 130, 180, 0.15), rgba(176, 224, 230, 0.25));
+backdrop-filter: blur(16px);
 }
 
-/* Featured Card */
-.featured {
-  /* Light theme featured border */
-  border: 2px solid #3b82f6;
-  box-shadow: 0 0 30px rgba(59, 130, 246, 0.3);
-}
-
-.featured-ribbon {
-  position: absolute;
-  top: 15px;
-  left: -8px;
-  /* Light theme ribbon */
-  background: #3b82f6;
-  color: white;
-  padding: 5px 30px 5px 20px;
-  font-size: 12px;
-  font-weight: 600;
-  z-index: 3;
-  clip-path: polygon(0 0, 100% 0, calc(100% - 15px) 50%, 100% 100%, 0 100%);
-}
 
 /* Animations */
 @keyframes floatParticles {
