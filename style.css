@@ -1867,16 +1867,16 @@ body {
   width: 14px;
   height: 14px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 224, 177, 0.594);
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
 .dot.active,
 .dot:hover {
-  background: var(--ncc-gold);
+  background:  rgba(230, 189, 64, 0.536);
   transform: scale(1.3);
-  box-shadow: 0 4px 15px rgba(251, 191, 36, 0.4);
+  box-shadow: 0 4px 15px rgba(143, 143, 142, 0.466);
 }
 
 /* Responsive Design */

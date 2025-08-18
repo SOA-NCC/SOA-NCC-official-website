@@ -1,4 +1,4 @@
-/* Modern light theme inspired by reference design */
+/* Modern light theme inspired by reference design - PERFORMANCE OPTIMIZED */
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
 
 * {
@@ -9,46 +9,34 @@
 
 body {
   font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  /* Enhanced background with stronger contrast and patterns for better glassmorphism visibility */
-  background: radial-gradient(circle at 20% 80%, rgba(0, 63, 136, 0.15) 0%, transparent 50%),
-    radial-gradient(circle at 80% 20%, rgba(255, 153, 51, 0.15) 0%, transparent 50%),
+  /* Restored previous background gradient with radial patterns for better visual depth */
+  background: radial-gradient(circle at 20% 80%, rgba(255, 153, 51, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(0, 63, 136, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(255, 255, 255, 0.2) 0%, transparent 50%),
     linear-gradient(
       135deg,
-      rgba(255, 245, 245, 0.9) 0%,
-      rgba(255, 255, 255, 0.4) 25%,
-      rgba(235, 245, 255, 0.9) 50%,
-      rgba(255, 255, 255, 0.4) 75%,
-      rgba(245, 255, 245, 0.9) 100%
+      rgba(255, 245, 245, 0.8) 0%,
+      rgba(255, 255, 255, 0.6) 25%,
+      rgba(235, 245, 255, 0.8) 50%,
+      rgba(255, 255, 255, 0.6) 75%,
+      rgba(245, 255, 245, 0.8) 100%
     );
-  background-attachment: fixed;
   color: #1a202c;
   line-height: 1.6;
   min-height: 100vh;
   position: relative;
 }
 
-/* Added subtle pattern overlay for enhanced glassmorphism effect */
-body::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.15) 1px, transparent 0);
-  background-size: 20px 20px;
-  pointer-events: none;
-  z-index: -1;
-}
+/* Removed pattern overlay to improve scroll performance */
 
 /* Updated back button for light theme */
 .back-btn {
   position: fixed;
   top: 20px;
   left: 20px;
-  /* Enhanced glassmorphism with stronger blur and transparency */
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(25px) saturate(180%);
+  /* Reduced backdrop-filter blur from 25px to 12px for better performance */
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.6);
   padding: 12px 20px;
   border-radius: 20px;
@@ -59,18 +47,21 @@ body::before {
   align-items: center;
   gap: 8px;
   transition: all 0.3s ease;
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  /* Simplified shadow for better performance */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
   z-index: 1000;
   font-size: 14px;
+  /* Added hardware acceleration */
+  transform: translateZ(0);
+  will-change: transform;
 }
 
 .back-btn:hover {
-  /* More dramatic hover effect with stronger glow */
-  background: rgba(255, 255, 255, 0.25);
-  transform: translateY(-3px) scale(1.05);
-  box-shadow: 0 20px 60px rgba(0, 63, 136, 0.3), inset 0 0 30px rgba(0, 63, 136, 0.15);
-  border-color: rgba(0, 63, 136, 0.5);
-  backdrop-filter: blur(30px) saturate(200%);
+  /* Optimized hover by removing backdrop-filter change and using only transform */
+  background: rgba(255, 255, 255, 0.35);
+  transform: translateY(-2px) scale(1.02) translateZ(0);
+  box-shadow: 0 12px 35px rgba(0, 63, 136, 0.2);
+  border-color: rgba(0, 63, 136, 0.4);
 }
 
 .back-btn i {
@@ -112,16 +103,17 @@ body::before {
   justify-content: center;
   margin-bottom: 60px;
   gap: 4px;
-  /* Enhanced glassmorphism for section toggle */
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(25px) saturate(180%);
+  /* Reduced backdrop-filter blur for better performance */
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
   padding: 6px;
   border-radius: 20px;
   width: fit-content;
   margin-left: auto;
   margin-right: auto;
   border: 1px solid rgba(255, 255, 255, 0.6);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  /* Simplified shadow */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
 }
 
 .toggle-btn {
@@ -192,6 +184,8 @@ body::before {
   width: 100%;
   flex-wrap: wrap;
   position: relative;
+  /* Added CSS containment for better performance */
+  contain: layout style;
 }
 
 .rank-level.single {
@@ -200,21 +194,24 @@ body::before {
 
 /* Completely redesigned officer cards to match reference image */
 .officer-card {
-  /* Enhanced glassmorphism with stronger transparency and blur */
-  background: rgba(255, 255, 255, 0.12);
-  backdrop-filter: blur(25px) saturate(180%);
+  /* Reduced backdrop-filter blur from 25px to 15px and simplified effects */
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(15px);
   border-radius: 24px;
   padding: 32px 24px;
   text-align: center;
-  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.8), inset 0 -1px 0
-    rgba(255, 255, 255, 0.2);
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  /* Simplified shadow for better performance */
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   border: 1px solid rgba(255, 255, 255, 0.6);
   width: 300px;
   position: relative;
   overflow: hidden;
   opacity: 0;
   transform: translateY(30px);
+  /* Added hardware acceleration and performance hints */
+  transform-style: preserve-3d;
+  will-change: transform;
 }
 
 .officer-card::before {
@@ -224,20 +221,9 @@ body::before {
   left: 0;
   right: 0;
   height: 4px;
-  /* Updated gradient with NCC colors */
   background: linear-gradient(135deg, #003f88 0%, #ff9933 100%);
   opacity: 0;
   transition: opacity 0.3s ease;
-}
-
-.officer-card:hover {
-  /* More dramatic hover effect with enhanced glassmorphism */
-  transform: translateY(-12px) scale(1.03);
-  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.2), inset 0 0 40px rgba(0, 63, 136, 0.15), inset 0 1px 0
-    rgba(255, 255, 255, 0.9);
-  border-color: rgba(0, 63, 136, 0.5);
-  background: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(30px) saturate(200%);
 }
 
 .officer-photo {
@@ -246,11 +232,12 @@ body::before {
   margin: 0 auto 20px;
   border-radius: 20px;
   overflow: hidden;
-  /* Enhanced glassmorphism border */
   border: 2px solid rgba(255, 255, 255, 0.6);
   transition: all 0.4s ease;
   position: relative;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  /* Added hardware acceleration */
+  transform: translateZ(0);
 }
 
 .officer-photo::before {
@@ -260,7 +247,6 @@ body::before {
   left: -2px;
   right: -2px;
   bottom: -2px;
-  /* Updated gradient with NCC colors */
   background: linear-gradient(135deg, #003f88, #ff9933);
   border-radius: 20px;
   z-index: -1;
@@ -275,9 +261,21 @@ body::before {
   transition: transform 0.4s ease;
 }
 
+.officer-card:hover {
+  /* Optimized hover effect with reduced blur and simplified shadows */
+  transform: translateY(-8px) scale(1.02) translateZ(0);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15), inset 0 0 25px rgba(0, 63, 136, 0.1);
+  border-color: rgba(0, 63, 136, 0.4);
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.officer-card:hover::before {
+  opacity: 1;
+}
+
 .officer-card:hover .officer-photo {
-  transform: scale(1.08);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+  transform: scale(1.05) translateZ(0);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
 }
 
 .officer-card:hover .officer-photo::before {
@@ -301,10 +299,8 @@ body::before {
   color: #2d3748;
 }
 
-/* Updated rank styling to match reference with blue theme */
 .officer-rank {
   display: inline-block;
-  /* Updated with NCC blue */
   background: #003f88;
   color: #ffffff;
   padding: 6px 16px;
@@ -318,9 +314,8 @@ body::before {
 }
 
 .officer-card:hover .officer-rank {
-  /* Added saffron accent on hover */
   background: #ff9933;
-  transform: scale(1.05);
+  transform: scale(1.05) translateZ(0);
   box-shadow: 0 4px 15px rgba(255, 153, 51, 0.3);
 }
 
@@ -333,7 +328,6 @@ body::before {
   letter-spacing: 0.05em;
 }
 
-/* Updated social media buttons to match reference design */
 .social-links {
   display: flex;
   justify-content: center;
@@ -406,7 +400,6 @@ body::before {
   z-index: 1;
 }
 
-/* Updated animations for smoother experience */
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -420,10 +413,9 @@ body::before {
 
 .officer-card.aos-animate {
   opacity: 1;
-  transform: translateY(0);
+  transform: translateY(0) translateZ(0);
 }
 
-/* Responsive Design */
 @media (max-width: 1200px) {
   .officer-card {
     width: 280px;
@@ -514,7 +506,6 @@ body::before {
   }
 }
 
-/* Print styles */
 @media print {
   .section-toggle,
   .back-btn {
