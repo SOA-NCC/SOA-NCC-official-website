@@ -1075,6 +1075,7 @@ window.addEventListener('load', function() {
     heroMusic.load(); // Preload music
 });
 
+// <===== Contributors Section ======>
 
 document.addEventListener("DOMContentLoaded", () => {
   const track = document.getElementById("carousel-track")
@@ -1113,6 +1114,7 @@ document.addEventListener("DOMContentLoaded", () => {
       dot.classList.toggle("active", index === currentSlide)
     })
   }
+  
 
   // Navigate to specific slide
   function goToSlide(slideIndex) {
