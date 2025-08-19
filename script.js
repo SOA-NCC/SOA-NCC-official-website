@@ -1,3 +1,10 @@
+window.addEventListener("load", function() {
+  // Hide loader after page is fully loaded
+  document.getElementById("loader").style.display = "none";
+  document.getElementById("content").style.display = "block";
+});
+
+
 // Navigation functionality
 document.addEventListener("DOMContentLoaded", () => {
   const hamburger = document.getElementById("hamburger")
