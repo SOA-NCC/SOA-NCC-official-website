@@ -1075,3 +1075,162 @@ window.addEventListener('load', function() {
     heroMusic.load(); // Preload music
 });
 
+
+document.addEventListener("DOMContentLoaded", () => {
+  const track = document.getElementById("carousel-track")
+  const cards = document.querySelectorAll(".contributor-card")
+  const dots = document.querySelectorAll(".dot")
+  const prevBtn = document.getElementById("prev-btn")
+  const nextBtn = document.getElementById("next-btn")
+
+  let currentSlide = 2 // Start with middle card active
+  const totalSlides = cards.length
+
+  // Calculate card width including gap
+  function getCardWidth() {
+    const card = cards[0]
+    const cardStyle = window.getComputedStyle(card)
+    const cardWidth = card.offsetWidth
+    const gap = 30 // Gap between cards
+    return cardWidth + gap
+  }
+
+  // Update carousel position and active states
+  function updateCarousel() {
+    const cardWidth = getCardWidth()
+    const offset = currentSlide * cardWidth
+    const centerOffset = track.parentElement.offsetWidth / 2 - cardWidth / 2
+
+    track.style.transform = `translateX(${centerOffset - offset}px)`
+
+    // Update active card
+    cards.forEach((card, index) => {
+      card.classList.toggle("active", index === currentSlide)
+    })
+
+    // Update active dot
+    dots.forEach((dot, index) => {
+      dot.classList.toggle("active", index === currentSlide)
+    })
+  }
+
+  // Navigate to specific slide
+  function goToSlide(slideIndex) {
+    currentSlide = Math.max(0, Math.min(slideIndex, totalSlides - 1))
+    updateCarousel()
+  }
+
+  // Previous slide
+  function prevSlide() {
+    goToSlide(currentSlide - 1)
+  }
+
+  // Next slide
+  function nextSlide() {
+    goToSlide(currentSlide + 1)
+  }
+
+  // Event listeners
+  prevBtn.addEventListener("click", prevSlide)
+  nextBtn.addEventListener("click", nextSlide)
+
+  // Dot navigation
+  dots.forEach((dot, index) => {
+    dot.addEventListener("click", () => goToSlide(index))
+  })
+
+  // Touch/swipe functionality
+  let startX = 0
+  let isDragging = false
+
+  function handleStart(e) {
+    isDragging = true
+    startX = e.type === "mousedown" ? e.clientX : e.touches[0].clientX
+    track.style.transition = "none"
+  }
+
+  function handleMove(e) {
+    if (!isDragging) return
+    e.preventDefault()
+
+    const currentX = e.type === "mousemove" ? e.clientX : e.touches[0].clientX
+    const diffX = startX - currentX
+    const cardWidth = getCardWidth()
+    const offset = currentSlide * cardWidth
+    const centerOffset = track.parentElement.offsetWidth / 2 - cardWidth / 2
+
+    track.style.transform = `translateX(${centerOffset - offset - diffX}px)`
+  }
+
+  function handleEnd(e) {
+    if (!isDragging) return
+    isDragging = false
+
+    const endX = e.type === "mouseup" ? e.clientX : e.changedTouches[0].clientX
+    const diffX = startX - endX
+    const threshold = 50
+
+    track.style.transition = "transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)"
+
+    if (Math.abs(diffX) > threshold) {
+      if (diffX > 0 && currentSlide < totalSlides - 1) {
+        nextSlide()
+      } else if (diffX < 0 && currentSlide > 0) {
+        prevSlide()
+      } else {
+        updateCarousel() // Snap back to current position
+      }
+    } else {
+      updateCarousel() // Snap back to current position
+    }
+  }
+
+  // Mouse events
+  track.addEventListener("mousedown", handleStart)
+  document.addEventListener("mousemove", handleMove)
+  document.addEventListener("mouseup", handleEnd)
+
+  // Touch events
+  track.addEventListener("touchstart", handleStart, { passive: false })
+  track.addEventListener("touchmove", handleMove, { passive: false })
+  track.addEventListener("touchend", handleEnd, { passive: true })
+
+  // Keyboard navigation
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "ArrowLeft") {
+      prevSlide()
+    } else if (e.key === "ArrowRight") {
+      nextSlide()
+    }
+  })
+
+  // Auto-play functionality (optional)
+  let autoPlayInterval
+
+  function startAutoPlay() {
+    autoPlayInterval = setInterval(() => {
+      if (currentSlide >= totalSlides - 1) {
+        goToSlide(0)
+      } else {
+        nextSlide()
+      }
+    }, 4000)
+  }
+
+  function stopAutoPlay() {
+    clearInterval(autoPlayInterval)
+  }
+
+  // Start auto-play
+  startAutoPlay()
+
+  // Pause auto-play on hover
+  track.addEventListener("mouseenter", stopAutoPlay)
+  track.addEventListener("mouseleave", startAutoPlay)
+
+  // Handle window resize
+  window.addEventListener("resize", updateCarousel)
+
+  // Initial setup
+  updateCarousel()
+})
