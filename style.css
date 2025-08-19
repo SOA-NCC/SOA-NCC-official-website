@@ -303,11 +303,6 @@ body {
     background: url('media/HeroPage/HeroImage.jpeg') center center / cover no-repeat;
     z-index: -2;
 }
-@media (max-width: 768px) {
-    .hero-section {
-        background-position: right center; /* Shift to right edge */
-    }
-}
 
 .hero-video {
     position: absolute;
@@ -1874,7 +1869,7 @@ body {
 
 .dot.active,
 .dot:hover {
-  background:  rgba(230, 189, 64, 0.466);
+  background:  rgba(255, 209, 72, 0.466);
   transform: scale(1.3);
   box-shadow: 0 4px 15px rgba(143, 143, 142, 0.466);
 }
