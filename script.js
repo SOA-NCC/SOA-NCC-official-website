@@ -836,41 +836,41 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // 3D tilt effect
-    const contributorCards = document.querySelectorAll('.contributor-card');
+    // const contributorCards = document.querySelectorAll('.contributor-card');
     
-    contributorCards.forEach(card => {
-        card.addEventListener('mousemove', (e) => {
-            const rect = card.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
+    // contributorCards.forEach(card => {
+    //     card.addEventListener('mousemove', (e) => {
+    //         const rect = card.getBoundingClientRect();
+    //         const x = e.clientX - rect.left;
+    //         const y = e.clientY - rect.top;
             
-            const centerX = rect.width / 2;
-            const centerY = rect.height / 2;
+    //         const centerX = rect.width / 2;
+    //         const centerY = rect.height / 2;
             
-            const angleX = (y - centerY) / 15;
-            const angleY = (centerX - x) / 15;
+    //         const angleX = (y - centerY) / 15;
+    //         const angleY = (centerX - x) / 15;
             
-            card.style.transform = `perspective(1000px) rotateX(${angleX}deg) rotateY(${angleY}deg) translateY(-10px)`;
+    //         card.style.transform = `perspective(1000px) rotateX(${angleX}deg) rotateY(${angleY}deg) translateY(-10px)`;
             
-            // Glow effect follow
-            const glow = card.querySelector('.card-glow');
-            glow.style.background = `radial-gradient(circle at ${x}px ${y}px, rgba(0, 255, 255, 0.3) 0%, transparent 70%)`;
-        });
+    //         // Glow effect follow
+    //         const glow = card.querySelector('.card-glow');
+    //         glow.style.background = `radial-gradient(circle at ${x}px ${y}px, rgba(0, 255, 255, 0.3) 0%, transparent 70%)`;
+    //     });
         
-        card.addEventListener('mouseleave', () => {
-            card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateY(-10px)';
-        });
-    });
+    //     card.addEventListener('mouseleave', () => {
+    //         card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateY(-10px)';
+    //     });
+    // });
 
     // Floating tech orbs animation
-    window.addEventListener('mousemove', (e) => {
-        const x = e.clientX / window.innerWidth;
-        const y = e.clientY / window.innerHeight;
+    // window.addEventListener('mousemove', (e) => {
+    //     const x = e.clientX / window.innerWidth;
+    //     const y = e.clientY / window.innerHeight;
         
-        const orbs = document.querySelectorAll('.tech-orb');
-        orbs[0].style.transform = `translate(${x * 40}px, ${y * 40}px)`;
-        orbs[1].style.transform = `translate(${-x * 50}px, ${-y * 50}px)`;
-    });
+    //     const orbs = document.querySelectorAll('.tech-orb');
+    //     orbs[0].style.transform = `translate(${x * 40}px, ${y * 40}px)`;
+    //     orbs[1].style.transform = `translate(${-x * 50}px, ${-y * 50}px)`;
+    // });
 });
 
 

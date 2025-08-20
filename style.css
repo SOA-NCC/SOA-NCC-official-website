@@ -3519,9 +3519,6 @@ backdrop-filter: blur(16px);
     min-height: 600px;
   }
 
-  .carousel-container-contributor {
-  }
-
   .contributor-card {
     flex: 0 0 300px;
     height: 400px;
@@ -3556,9 +3553,6 @@ backdrop-filter: blur(16px);
   .contributors {
     padding: 40px 0;
     min-height: 550px;
-  }
-
-  .carousel-container-contributor {
   }
 
   .contributor-card {
