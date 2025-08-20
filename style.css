@@ -2653,6 +2653,10 @@ body {
   margin-bottom: 24px;
 }
 
+.contact-item{
+  color: rgb(156, 163, 175); text-decoration: none;
+}
+
 .footer-logo .logo {
   width: 48px;
   height: 48px;
@@ -2664,7 +2668,7 @@ body {
 }
 
 .footer-brand p {
-  color: #9ca3af;
+  color: rgb(156, 163, 175);
   margin-bottom: 24px;
   line-height: 1.6;
 }
