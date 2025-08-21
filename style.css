@@ -522,7 +522,7 @@ button {
 }
 
 .about-content h2 {
-  font-size: 2.5rem;
+  font-size: 3rem;
   font-weight: bold;
   font-family: 'Arial', sans-serif;
   margin-bottom: 24px;
@@ -867,7 +867,7 @@ button {
 
 .section-header h2 {
   text-align: center;
-  font-size: 2.5rem;
+  font-size: 3rem;
   color: #434343;
   margin-bottom: 16px;
   font-weight: bold;
@@ -1019,10 +1019,6 @@ button {
   .activities-grid {
     grid-template-columns: 1fr;
     gap: 24px;
-  }
-
-  .section-header h2 {
-    font-size: 2rem;
   }
 
   .activity-image {
@@ -1295,7 +1291,7 @@ button {
 
 .officer-card.commander .officer-rank {
   font-size: 16px;
-  color: #26394f;
+  color: #2a525e;
   font-weight: 600;
   margin-bottom: 20px;
 }
