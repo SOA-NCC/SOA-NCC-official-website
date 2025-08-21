@@ -526,3 +526,42 @@ body {
     background: white;
   }
 }
+
+/* === FOOTER === */
+.footer {
+  /* background: linear-gradient(135deg, #0b1f4b 0%, #111827 100%); */
+  display: absolute;
+  color: white;
+  padding: 64px 0 32px;
+}
+
+.footer-bottom {
+  border-top: 1px solid #374151;
+  padding-top: 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.footer-bottom p {
+  color: #9ca3af;
+  font-size: 14px;
+}
+
+.footer-bottom-links {
+  display: flex;
+  gap: 24px;
+}
+
+.footer-bottom-links a {
+  color: #9ca3af;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+.footer-bottom-links a:hover {
+  color: white;
+}
