@@ -863,14 +863,14 @@ document.addEventListener('DOMContentLoaded', function() {
     // });
 
     // Floating tech orbs animation
-    // window.addEventListener('mousemove', (e) => {
-    //     const x = e.clientX / window.innerWidth;
-    //     const y = e.clientY / window.innerHeight;
+    window.addEventListener('mousemove', (e) => {
+        const x = e.clientX / window.innerWidth;
+        const y = e.clientY / window.innerHeight;
         
-    //     const orbs = document.querySelectorAll('.tech-orb');
-    //     orbs[0].style.transform = `translate(${x * 40}px, ${y * 40}px)`;
-    //     orbs[1].style.transform = `translate(${-x * 50}px, ${-y * 50}px)`;
-    // });
+        const orbs = document.querySelectorAll('.tech-orb');
+        orbs[0].style.transform = `translate(${x * 40}px, ${y * 40}px)`;
+        orbs[1].style.transform = `translate(${-x * 50}px, ${-y * 50}px)`;
+    });
 });
 
 
@@ -1179,7 +1179,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const diffX = startX - endX
     const threshold = 50
 
-    track.style.transition = "transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)"
+    track.style.transform = `translateX(-${index * slideWidth}px)`;
+
 
     if (Math.abs(diffX) > threshold) {
       if (diffX > 0 && currentSlide < totalSlides - 1) {
