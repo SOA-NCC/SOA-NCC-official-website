@@ -1,11 +1,11 @@
 {
   "parade": {
     "title": "Parade Gallery",
-    "description": "Witness the precision and discipline of our NCC parade formations",
+    "description": "Witness the precision and discipline of our NCC parade platoon.",
     "images": [
       {
         "src": "media/Activities/Parade/1.jpeg?w=400&h=300&fit=crop",
-        "alt": "Parade Formation",
+        "alt": "Parade Platoon",
         "caption": "6 Cadets secured 2nd Prize at 77th Capital Foundation Day."
       },
       {
@@ -170,7 +170,7 @@
       {
         "src": "media/Activities/SocialService/5.jpeg?w=400&h=300&fit=crop",
         "alt": "Military Ceremony",
-        "caption": "Our cadets save lives through blood donation."
+        "caption": "Cadets involved in Puneet Sagar Abhiyan"
       },
       {
         "src": "media/Activities/SocialService/6.jpeg?w=400&h=300&fit=crop",
