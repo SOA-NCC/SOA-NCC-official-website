@@ -115,13 +115,11 @@ button {
 
 .navbar {
   width: 100%;
-  background: #ffffff00;
-  border-bottom: 1px solid #e5e5e500;
   position: fixed;
   top: 0;
   left: 0;
   z-index: 1000;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.429);
+  /* Other color adjustments in script.js line 29 */
 }
 
 .nav-container {
@@ -412,8 +410,8 @@ button {
     bottom: 20px;
     left: 20px; /* left bottom */
     z-index: 1000;
-    background: rgba(255,255,255,0.2);
-    border: 2px solid rgba(255,255,255,0.3);
+    background: rgba(178, 178, 178, 0.443);
+    border: 2px solid rgba(236, 236, 236, 0.424);
     border-radius: 50%;
     width: 60px;
     height: 60px;
@@ -428,7 +426,7 @@ button {
 }
 
 .music-control:hover {
-    background: rgba(255,255,255,0.3);
+    background: rgba(66, 184, 231, 0.511);
     border-color: rgba(255,255,255,0.5);
     transform: scale(1.1);
 }
@@ -2896,7 +2894,6 @@ button {
   position: relative;
   border-radius: 16px;
   overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
   height: 100%;
   /* Light theme card shadow */
   box-shadow: 0 10px 30px rgba(59, 130, 246, 0.1);
@@ -2904,6 +2901,10 @@ button {
   background: rgba(255, 255, 255, 0.25);
   backdrop-filter: blur(15px);
   border: 1px solid rgba(142, 142, 142, 0.3);
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+  transform-style: preserve-3d;
+  will-change: transform;
+  
 }
 
 .alumni-card::before {
@@ -2921,23 +2922,21 @@ button {
 
 .card-glow {
   position: absolute;
-  width: 100%;
-  height: 100%;
-  /* Light theme glow effect */
-  background: radial-gradient(circle at center, rgba(59, 130, 246, 0.15) 0%, transparent 70%);
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.4s ease; /* smooth fade */
 }
+
 
 .alumni-card:hover .card-glow {
   opacity: 1;
 }
 
-.alumni-card:hover {
-  transform: translateY(-10px);
-  /* Enhanced light theme hover shadow */
+/* .alumni-card:hover {
   box-shadow: 0 20px 50px rgba(59, 130, 246, 0.2), 0 0 30px rgba(177, 232, 255, 0.1);
-}
+} */
 
 .alumni-image {
   position: relative;
@@ -2981,6 +2980,39 @@ button {
   z-index: 2;
   border: 1px solid rgba(59, 130, 246, 0.2);
 }
+
+.card-shine {
+  position: absolute;
+  top: 0;
+  left: -75%; /* start off left side */
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.4) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: skewX(-20deg);
+  pointer-events: none;
+  opacity: 0;
+}
+
+/* Trigger sweep animation */
+.alumni-card:hover .card-shine {
+  animation: shineSweep 1.2s ease forwards;
+  opacity: 1;
+}
+
+@keyframes shineSweep {
+  0% {
+    left: -75%;
+  }
+  100% {
+    left: 125%;
+  }
+}
+
 
 .ncc-navy-badge {
   /* Light theme navy badge */
@@ -3051,32 +3083,29 @@ button {
 
 /* Color Variants */
 .ncc-navy {
-  /* Light theme navy variant */
-background: linear-gradient(135deg, rgba(0, 102, 204, 0.15), rgba(173, 216, 230, 0.25));
+background: linear-gradient(135deg, rgba(0, 136, 166, 0.15), rgba(166, 215, 231, 0.25));
 backdrop-filter: blur(16px);
 
 }
 
-.ncc-red {
-  /* Light theme red variant */
+/* These are not used, if you want to give colors to each card, change the html:
+<div class="alumni-card -------ncc-navy-------" data-aos="fade-up" data-aos-delay="400">
+*/
+
+/* .ncc-red {
 background: linear-gradient(135deg, rgba(128, 0, 128, 0.15), rgba(230, 230, 250, 0.25));
 backdrop-filter: blur(16px);
-
-
 }
 
 .ncc-white-card {
-  /* Light theme white variant */
 background: linear-gradient(135deg, rgba(220, 20, 60, 0.18), rgba(255, 182, 193, 0.25));
 backdrop-filter: blur(16px);
-
 }
 
 .ncc-skyblue {
-  /* Light theme sky blue variant */
 background: linear-gradient(135deg, rgba(70, 130, 180, 0.15), rgba(176, 224, 230, 0.25));
 backdrop-filter: blur(16px);
-}
+} */
 
 
 /* Animations */
@@ -3121,13 +3150,15 @@ backdrop-filter: blur(16px);
 }
 
 /* Responsive Adjustments */
+/* Tablet */
 @media (max-width: 768px) {
   .section-title {
     font-size: 36px;
   }
 
   .alumni-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr); /* two equal-width columns */
+    gap: 16px; /* optional: add spacing between cards */
   }
 
   .alumni-stats {
@@ -3135,15 +3166,22 @@ backdrop-filter: blur(16px);
   }
 }
 
+/* Phone */
 @media (max-width: 480px) {
   .section-title {
     font-size: 30px;
   }
 
+  .alumni-grid {
+    grid-template-columns: repeat(2, 1fr); /* still 2 cards per row */
+    gap: 12px; /* smaller gap on phones */
+  }
+  
   .alumni-stats {
-    grid-template-columns: 1fr;
+    grid-template-columns: 2fr;
   }
 }
+
 
 /* Animations */
 @keyframes fadeInUp {

@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Navbar scroll effect
   window.addEventListener("scroll", () => {
     if (window.scrollY > 50) {
-      navbar.style.background = "rgba(12, 8, 1, 0.28)"
+      navbar.style.background = "rgba(12, 8, 1, 0.5)"
       navbar.style.boxShadow = "0 2px 20px rgba(0, 0, 0, 0)"
     } else {
       navbar.style.background = "rgba(255, 255, 255, 0)"
@@ -601,8 +601,8 @@ function autoSlide() {
   showSlide(slideIndex);
 }
 
-// Enable auto-play every 5 seconds (uncomment the line below)
-setInterval(autoSlide, 5000);
+// Enable auto-play every 4 seconds (uncomment the line below)
+setInterval(autoSlide, 4000);
 
 // Touch/swipe support for mobile devices
 let startX = 0;
@@ -836,31 +836,40 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // 3D tilt effect
-    // const contributorCards = document.querySelectorAll('.contributor-card');
-    
-    // contributorCards.forEach(card => {
-    //     card.addEventListener('mousemove', (e) => {
-    //         const rect = card.getBoundingClientRect();
-    //         const x = e.clientX - rect.left;
-    //         const y = e.clientY - rect.top;
-            
-    //         const centerX = rect.width / 2;
-    //         const centerY = rect.height / 2;
-            
-    //         const angleX = (y - centerY) / 15;
-    //         const angleY = (centerX - x) / 15;
-            
-    //         card.style.transform = `perspective(1000px) rotateX(${angleX}deg) rotateY(${angleY}deg) translateY(-10px)`;
-            
-    //         // Glow effect follow
-    //         const glow = card.querySelector('.card-glow');
-    //         glow.style.background = `radial-gradient(circle at ${x}px ${y}px, rgba(0, 255, 255, 0.3) 0%, transparent 70%)`;
-    //     });
-        
-    //     card.addEventListener('mouseleave', () => {
-    //         card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateY(-10px)';
-    //     });
-    // });
+const alumniCards = document.querySelectorAll('.alumni-card');
+
+alumniCards.forEach(card => {
+    const glow = card.querySelector('.card-glow');
+
+    card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+
+        const angleX = (y - centerY) / 15;
+        const angleY = (centerX - x) / 15;
+
+        // 3D tilt
+        card.style.transform = `perspective(1000px) rotateX(${angleX}deg) rotateY(${angleY}deg) translateY(-10px)`;
+
+        // Glow follows cursor
+        glow.style.opacity = "1";
+        glow.style.background = `radial-gradient(circle at ${x}px ${y}px, rgba(0, 255, 255, 0.3) 0%, transparent 70%)`;
+    });
+
+    card.addEventListener('mouseleave', () => {
+        // Reset tilt
+        card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateY(0)';
+
+        // Fade out glow
+        glow.style.opacity = "0";
+    });
+});
+
+
 
     // Floating tech orbs animation
     window.addEventListener('mousemove', (e) => {
@@ -916,23 +925,30 @@ function setupMusic() {
         console.error('Error loading music:', e);
         musicToggle.style.display = 'none'; // Hide button if music fails to load
     });
+
+    // ✅ Keep state in sync with actual audio
+    heroMusic.addEventListener('play', () => {
+        isMusicPlaying = true;
+        updateMusicButton();
+    });
+
+    heroMusic.addEventListener('pause', () => {
+        isMusicPlaying = false;
+        updateMusicButton();
+    });
 }
 
 // Attempt to auto-play music (with user interaction fallback)
 function attemptAutoPlay() {
-    // Try to play music immediately
     const playPromise = heroMusic.play();
     
     if (playPromise !== undefined) {
         playPromise
             .then(() => {
-                // Auto-play started successfully
-                isMusicPlaying = true;
-                updateMusicButton();
                 console.log('Music auto-play started');
+                // state & icon now update via 'play' event
             })
             .catch((error) => {
-                // Auto-play failed, wait for user interaction
                 console.log('Auto-play failed, waiting for user interaction');
                 setupUserInteractionMusic();
             });
@@ -942,11 +958,9 @@ function attemptAutoPlay() {
 // Setup music to start on first user interaction
 function setupUserInteractionMusic() {
     const startMusicOnInteraction = () => {
-        if (!isMusicPlaying) {
+        if (heroMusic.paused) {
             heroMusic.play()
                 .then(() => {
-                    isMusicPlaying = true;
-                    updateMusicButton();
                     console.log('Music started after user interaction');
                 })
                 .catch((error) => {
@@ -967,19 +981,13 @@ function setupUserInteractionMusic() {
 
 // Toggle music play/pause
 function toggleMusic() {
-    if (isMusicPlaying) {
-        heroMusic.pause();
-        isMusicPlaying = false;
+    if (heroMusic.paused) {
+        heroMusic.play().catch((error) => {
+            console.error('Error playing music:', error);
+        });
     } else {
-        heroMusic.play()
-            .then(() => {
-                isMusicPlaying = true;
-            })
-            .catch((error) => {
-                console.error('Error playing music:', error);
-            });
+        heroMusic.pause();
     }
-    updateMusicButton();
 }
 
 // Update music button icon
@@ -993,6 +1001,7 @@ function updateMusicButton() {
         musicToggle.classList.add('muted');
     }
 }
+
 
 // ===== Hero Video Fallback ===== //
 const heroVideo = document.querySelector('.hero-video');
