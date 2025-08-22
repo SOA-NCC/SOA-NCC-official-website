@@ -818,29 +818,77 @@ button {
   animation: cardFloat 6s ease-in-out infinite 4s;
 }
 
+/* Tablet adjustments */
 @media (max-width: 768px) {
-  .ncc-objectives {
-    padding: 40px 15px;
+  .ncc-objectives { 
+    padding: 40px 15px; 
   }
-
+  
   .main-title {
     font-size: 2.5rem;
   }
 
+  
   .cards-container {
     grid-template-columns: 1fr;
     gap: 20px;
   }
 
   .card {
-    padding: 30px 25px;
+    padding: 18px 16px; /* reduce card padding */
+    border-radius: 16px; /* slightly smaller radius */
   }
 
-  /* Simplified hover effects for mobile */
-  .card:hover {
-    transform: translateY(-5px);
+  .card-title {
+    font-size: 1.3rem; /* shrink title */
+    margin-bottom: 10px;
+  }
+
+  .card-content li {
+    font-size: 15px; /* reduce list font */
+    margin-bottom: 6px;
   }
 }
+
+/* Phone adjustments */
+@media (max-width: 480px) {
+  .ncc-objectives { 
+    padding: 40px 15px; 
+  }
+  
+  .main-title {
+    font-size: 2.5rem;
+  }
+
+  
+  .cards-container {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .card {
+    padding: 15px 14px; /* very compact */
+    border-radius: 14px;
+  }
+
+  .card-icon {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 15px;
+    font-size: 20px;
+  }
+
+  .card-title {
+    font-size: 1.5rem;
+    margin-bottom: 8px;
+  }
+
+  .card-content li {
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
+}
+
 
 /* ================= ACTIVITIES SECTION ================= */
 .activities {
@@ -1373,7 +1421,7 @@ button {
   border-bottom: 1px solid rgba(93, 169, 233, 0.15);
 }
 
-.division-icon {
+/* .division-icon {
   width: 60px;
   height: 60px;
   border-radius: 50%;
@@ -1385,10 +1433,9 @@ button {
   font-weight: 700;
   margin-right: 20px;
   color: white;
-  /* Added glow effect */
   box-shadow: 0 4px 15px rgba(93, 169, 233, 0.3), 0 0 20px rgba(11, 31, 75, 0.2);
   transition: all 0.3s ease;
-}
+} */
 
 .division-card:hover .division-icon {
   transform: scale(1.1);
@@ -3063,6 +3110,7 @@ button {
 
 .achievement-stats {
   display: flex;
+  flex-wrap: wrap; 
   gap: 15px;
 }
 
@@ -3079,6 +3127,8 @@ button {
   border: 1px solid rgba(59, 130, 246, 0.1);
   padding: 6px 12px;
   border-radius: 50px;
+  /* flex: 1 1 auto; */
+  min-width: 0; 
 }
 
 /* Color Variants */
@@ -3162,6 +3212,7 @@ backdrop-filter: blur(16px);
   }
 
   .alumni-stats {
+    text-size-adjust: 18px;
     grid-template-columns: repeat(2, 1fr);
   }
 }
