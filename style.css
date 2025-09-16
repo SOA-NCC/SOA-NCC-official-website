@@ -248,10 +248,11 @@ button {
   .brand-text {
     display: none; /* hides SOA NCC & subtitle */
   }
-
-  .join-btn {
-    display: none; /* hides the Join button */
-  }
+  /* hides the Join button in mobile or phone, uncomment when not to use */
+  
+  /* .join-btn {
+    display: none;
+  } */
 }
 
 
